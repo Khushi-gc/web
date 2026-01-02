@@ -1,11 +1,275 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<main>
+		<section class="hero">
+			<div class="hero-content">
+				<div class="badge">The Recommended Stack</div>
+				<h1 class="hero-title">
+					Build the <span class="gradient-text">Dream</span>
+				</h1>
+				<p class="hero-subtitle">
+					Astro <span class="dot">•</span> GSAP <span class="dot">•</span> Lenis
+				</p>
+				<div class="cta-group">
+					<a href="#" class="btn primary">Start Building</a>
+					<a href="#" class="btn secondary">Read the Docs</a>
+				</div>
+			</div>
+			
+			<div class="scroll-down">
+				<div class="mouse"></div>
+			</div>
+		</section>
+
+		<section class="features">
+			<div class="feature-card" id="astro-card">
+				<div class="icon">🚀</div>
+				<h2>Astro</h2>
+				<p>Keeps the initial load extremely fast (90-100 Google Lighthouse score).</p>
+			</div>
+			<div class="feature-card" id="gsap-card">
+				<div class="icon">✨</div>
+				<h2>GSAP</h2>
+				<p>Professional animation library. Lighter than loading React just for motion.</p>
+			</div>
+			<div class="feature-card" id="lenis-card">
+				<div class="icon">🌊</div>
+				<h2>Lenis</h2>
+				<p>Plugs into Astro easily and gives that premium smooth scroll feel.</p>
+			</div>
+		</section>
+
+		<section class="showcase">
+			<h2>Performance Meets Art</h2>
+			<p>Don't compromise on speed or aesthetics.</p>
+		</section>
+	</main>
 </Layout>
+
+<style>
+	main {
+		width: 100%;
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	/* Hero Section */
+	.hero {
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		position: relative;
+	}
+
+	.badge {
+		background: rgba(255, 255, 255, 0.1);
+		padding: 0.5rem 1rem;
+		border-radius: 999px;
+		font-size: 0.875rem;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		margin-bottom: 2rem;
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	.hero-title {
+		font-size: clamp(3rem, 10vw, 6rem);
+		font-weight: 700;
+		line-height: 1.1;
+		margin: 0 0 1.5rem 0;
+		letter-spacing: -0.02em;
+		opacity: 0;
+		transform: translateY(30px);
+	}
+
+	.gradient-text {
+		background: linear-gradient(135deg, #fff 0%, #a5a5a5 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		display: inline-block;
+	}
+
+	.hero-subtitle {
+		font-size: clamp(1.125rem, 3vw, 1.5rem);
+		color: #a1a1a1;
+		margin-bottom: 3rem;
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	.dot {
+		color: #333;
+		margin: 0 0.5rem;
+	}
+
+	.cta-group {
+		display: flex;
+		gap: 1rem;
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	.btn {
+		padding: 1rem 2rem;
+		border-radius: 8px;
+		text-decoration: none;
+		font-weight: 500;
+		transition: all 0.3s ease;
+	}
+
+	.btn.primary {
+		background: #fff;
+		color: #000;
+	}
+
+	.btn.primary:hover {
+		background: #e0e0e0;
+		transform: translateY(-2px);
+	}
+
+	.btn.secondary {
+		background: rgba(255, 255, 255, 0.05);
+		color: #fff;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.btn.secondary:hover {
+		background: rgba(255, 255, 255, 0.1);
+	}
+
+	/* Features Section */
+	.features {
+		padding: 10rem 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	.feature-card {
+		background: rgba(255, 255, 255, 0.03);
+		border: 1px solid rgba(255, 255, 255, 0.05);
+		border-radius: 16px;
+		padding: 2.5rem;
+		transition: all 0.4s ease;
+		opacity: 0; /* JS will handle this */
+	}
+
+	.feature-card:hover {
+		background: rgba(255, 255, 255, 0.05);
+		border-color: rgba(255, 255, 255, 0.1);
+		transform: translateY(-5px);
+	}
+
+	.icon {
+		font-size: 2.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.feature-card h2 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: #fff;
+	}
+
+	.feature-card p {
+		color: #a1a1a1;
+		line-height: 1.6;
+	}
+
+	/* Showcase Section */
+	.showcase {
+		height: 80vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		opacity: 0.5;
+	}
+
+	.showcase h2 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+
+	/* Scroll Indicator */
+	.scroll-down {
+		position: absolute;
+		bottom: 2rem;
+		left: 50%;
+		transform: translateX(-50%);
+		opacity: 0;
+	}
+
+	.mouse {
+		width: 26px;
+		height: 40px;
+		border: 2px solid rgba(255, 255, 255, 0.3);
+		border-radius: 20px;
+		position: relative;
+	}
+	
+	.mouse::before {
+		content: '';
+		position: absolute;
+		top: 6px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 4px;
+		height: 4px;
+		background: #fff;
+		border-radius: 50%;
+		animation: scroll 2s infinite;
+	}
+
+	@keyframes scroll {
+		0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+		100% { transform: translateX(-50%) translateY(15px); opacity: 0; }
+	}
+</style>
+
+<script>
+	import { gsap } from "gsap";
+	
+	document.addEventListener('DOMContentLoaded', () => {
+		const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+		tl.to(".badge", { y: 0, opacity: 1, duration: 1 })
+		  .to(".hero-title", { y: 0, opacity: 1, duration: 1 }, "-=0.8")
+		  .to(".hero-subtitle", { y: 0, opacity: 1, duration: 1 }, "-=0.8")
+		  .to(".cta-group", { y: 0, opacity: 1, duration: 1 }, "-=0.8")
+		  .to(".scroll-down", { opacity: 1, duration: 1 }, "-=0.5");
+
+		// Simple stagger for features when they come into view
+		// Note: For full scroll animations, we'd add ScrollTrigger
+		// But for now, let's just animate them in if they are close enough or use IntersectionObserver
+		// To keep it light as per requirements, we'll try basic IntersectionObserver for the cards
+		
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					gsap.to(entry.target, {
+						y: 0,
+						opacity: 1,
+						duration: 0.8,
+						ease: "power2.out",
+						stagger: 0.2
+					});
+					observer.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.1 });
+
+		document.querySelectorAll('.feature-card').forEach((card) => {
+			gsap.set(card, { y: 50, opacity: 0 }); // Set initial state
+			observer.observe(card);
+		});
+	});
+</script>

@@ -1,0 +1,282 @@
+---
+const cards = [
+  {
+    title: "A pocket with a purpose",
+    desc: "Use pockets for anything: weekly allowances, school transport, or just everyday spending.",
+    image: "https://images.ctfassets.net/l65m9bcr2nac/6I0cZnsHjIZC9lSdc4lai8/4d69325defcaab22803e2c9d08d1a0a9/A-pocket-with-a-purpose.webp",
+    iconPath: "M1.837 2.929V4.39h17.538v1.462H1.837v7.307a.735.735 0 0 0 .73.731h16.077a.735.735 0 0 0 .731-.73V5.851h1.462v7.307a2.19 2.19 0 0 1-2.193 2.193H2.567a2.19 2.19 0 0 1-2.192-2.193V2.93A2.19 2.19 0 0 1 2.567.736h16.077a2.19 2.19 0 0 1 2.193 2.193V4.39h-1.462V2.93a.735.735 0 0 0-.73-.731H2.566a.734.734 0 0 0-.73.73m1.461 4.384h4.385v1.462H3.298z"
+  },
+  {
+    title: "Build healthy money habits",
+    desc: "Empower your kids to spend and manage money, while you keep an eye on things.",
+    image: "https://images.ctfassets.net/l65m9bcr2nac/5FsDsFmoOHIB6MBiMqNEXX/2305596f440fa49437b440dedb1cf82f/Build-healthy-money-habits.webp",
+    iconPath: "M.154 14C.154 6.364 6.364.154 14 .154S27.847 6.364 27.847 14 21.637 27.846 14 27.846.154 21.636.154 14m2.77 0c0 6.106 4.97 11.077 11.076 11.077S25.077 20.107 25.077 14c0-6.106-4.97-11.077-11.077-11.077C7.894 2.923 2.924 7.893 2.924 14m14.993 3.916A5.54 5.54 0 0 0 19.539 14h2.77a8.308 8.308 0 0 1-16.616 0h2.769a5.538 5.538 0 0 0 9.455 3.916M11.23 8.462H8.462V14h2.77zm5.539 0h2.769V14h-2.77z"
+  },
+  {
+    title: "Backed by built-in guidance",
+    desc: "Link pockets to a virtual card and set spend limits and expiry dates. Your family stays safe and you stay in control.",
+    image: "https://images.ctfassets.net/l65m9bcr2nac/LcNDth4s6cF1Nbus8Bt73/d853426587872f02ab1c9e83ffa637c8/Backed-by-built-in-guidance.webp",
+    iconPath: "M35.077 9.23v27.26l-5.668-2.835-5.409 3.6-5.41-3.6-5.667 2.834V9.231zm3.692 0h-3.692V5.539H9.23v36.924l9.101-4.551L24 41.695l5.668-3.784 9.101 4.55zm-7.384 3.693h-14.77v3.692h14.77zm-14.77 7.385h14.77V24h-14.77z"
+  }
+];
+---
+
+<section class="money-confidence">
+  <div class="container">
+    <div class="header-section reveal-header">
+      <div class="title-col">
+        <h2>MONEY CONFIDENCE,<br> RIGHT IN THEIR POCKET</h2>
+      </div>
+      <div class="desc-col">
+        <p>Give your kids a space to spend and save how they like, so they can learn money skills and get financial independence from the get go.</p>
+      </div>
+    </div>
+
+    <!-- Expanding Cards Gallery -->
+    <div class="cards-gallery reveal-cards">
+      {cards.map((card, index) => (
+        <div class="card" style={`background-image: url(${card.image});`}>
+          <div class="card-content">
+            <div class="icon-title text-header">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="icon">
+                <path fill-rule="evenodd" d={card.iconPath} clip-rule="evenodd"></path>
+              </svg>
+              <h4>{card.title}</h4>
+            </div>
+            
+            <div class="text-body">
+              <p>{card.desc}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .money-confidence {
+    width: 100%;
+    padding: 6rem 1rem;
+    background: #fff;
+    color: #000;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .header-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  @media (min-width: 1024px) {
+    .header-section {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  .title-col h2 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1a1a1a;
+  }
+
+  @media (min-width: 1024px) {
+    .title-col h2 {
+      font-size: 3.5rem;
+      max-width: 650px;
+    }
+  }
+
+  .desc-col p {
+    font-size: 1.125rem;
+    color: #6B7280;
+    line-height: 1.6;
+    max-width: 500px;
+  }
+
+  /* Cards Gallery */
+  .cards-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: auto;
+  }
+
+  @media (min-width: 1024px) {
+    .cards-gallery {
+      flex-direction: row;
+      height: 600px; /* Fixed height for desktop to allow expansion */
+      gap: 1.5rem;
+    }
+  }
+
+  .card {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    min-height: 480px;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    flex: 1;
+  }
+
+  @media (min-width: 1024px) {
+    .card:hover {
+      flex: 3; /* Expand on hover */
+    }
+  }
+
+  /* Card Content Box */
+  .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  /* Inner white box */
+  .card-content .text-header,
+  .card-content .text-body {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-content {
+      /* We actually want the whole block to be the white box in the design, 
+         or just a white box at the bottom. 
+         Based on snippet: `we-bg-white we-h-[170px]` which moves. */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1rem;
+  }
+
+  /* Refined Inner Structure matching the reference */
+  .card-content {
+      padding: 1rem;
+  }
+
+  .card-content > div {
+       background: white;
+       border-radius: 0.5rem;
+       padding: 1.25rem;
+       transition: transform 0.5s ease;
+  }
+
+  /* Mobile view: simple stack */
+  .icon {
+    width: 2rem;
+    height: 2rem;
+    fill: #6200EE; /* Primary Purple */
+    margin-bottom: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .icon-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .icon-title h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #6200EE;
+      margin: 0;
+      line-height: 1.2;
+  }
+
+  .text-body {
+    display: block;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  
+  .text-body p {
+      font-size: 0.9rem;
+      color: #6B7280;
+      margin: 0.5rem 0 0 0;
+  }
+
+  /* Desktop Hover Interactions */
+  @media (min-width: 1024px) {
+      .card-content > div {
+          height: 80px; /* Collapsed height showing only title/icon */
+          overflow: hidden;
+      }
+
+      .card:hover .card-content > div {
+          transform: translateY(-10px);
+          height: auto; /* Allow full height */
+          min-height: 160px;
+      }
+      
+      .card:hover .text-body {
+          max-height: 200px;
+          opacity: 1;
+      }
+      
+      .icon-title {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+      }
+  }
+
+  /* Animations */
+  .reveal-header, .reveal-cards {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    gsap.to('.reveal-header', {
+      scrollTrigger: {
+        trigger: '.reveal-header',
+        start: "top 80%"
+      },
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease: "power3.out"
+    });
+
+    gsap.from('.card', {
+      scrollTrigger: {
+        trigger: '.reveal-cards',
+        start: "top 75%"
+      },
+      y: 50,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: "power2.out"
+    });
+  });
+</script>

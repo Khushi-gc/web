@@ -1,7 +1,64 @@
 ---
+const comparisonData = [
+  {
+    label: "Focus",
+    standard: {
+      title: "Information",
+      desc: "You learn a skill or subject in isolation."
+    },
+    aveka: {
+      title: "Mobility",
+      desc: "You get the end-to-end support to move your life and career."
+    }
+  },
+  {
+    label: "Financial Plan",
+    standard: {
+      title: "The Cost",
+      desc: "You pay for courses, but the funding is your problem."
+    },
+    aveka: {
+      title: "The Capital",
+      desc: "We help you find the money via loans, scholarships, and grants."
+    }
+  },
+  {
+    label: "Relocation",
+    standard: {
+      title: "DIY",
+      desc: "You handle visas, forex, and accommodation yourself."
+    },
+    aveka: {
+      title: "Integrated",
+      desc: "Expert-led Visa support, Forex, and move-in logistics."
+    }
+  },
+  {
+    label: "Guidance",
+    standard: {
+      title: "Generic",
+      desc: "Standardized help-centers and forums."
+    },
+    aveka: {
+      title: "Personalized",
+      desc: "AI-powered matching + 1-on-1 Academic Counseling."
+    }
+  },
+  {
+    label: "Career Entry",
+    standard: {
+      title: "Passive",
+      desc: "You get a certificate and apply on your own."
+    },
+    aveka: {
+      title: "Active",
+      desc: "Direct access to Global Internships and profile building."
+    }
+  }
+];
 ---
 
-<section class="comparison-section">
+<section class="family-roles">
   <div class="video-bg">
     <video 
       src="https://videos.ctfassets.net/l65m9bcr2nac/6i4jx6aioJXHKCKRd8S236/dae4f1b86e60c43b814a2cb7cd693095/brand-video.mp4" 
@@ -13,175 +70,114 @@
     <div class="overlay"></div>
   </div>
 
-  <div class="content-container">
-    <div class="header-section">
-      <div class="text-content">
-        <h2>Beyond the Classroom: Why an "Ecosystem" is the Key to Mobility</h2>
-        <p>Most platforms provide separated services, but they leave you to figure out the logistics alone. Aveka Prime is a Global Mobility Ecosystem designed to move you from your current location to your target campus or career. We bridge the gap between "Learning" and "Moving" by integrating funding, logistics, and academic counseling into one seamless ecosystem.</p>
-      </div>
+  <div class="container-fluid relative z-10 text-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="header-split">
+                <div class="max-w-2xl reveal-text">
+                    <h2 class="display-title">
+                        Beyond the Classroom: <br />
+                        <span class="text-sub">Why an "Ecosystem" is the Key to Mobility</span>
+                    </h2>
+                    <p class="description">
+                        Most platforms provide separated services, but they leave you to figure out the logistics alone. Aveka Prime is a Global Mobility Ecosystem designed to move you from your current location to your target campus or career. We bridge the gap between "Learning" and "Moving" by integrating funding, logistics, and academic counseling into one seamless ecosystem.
+                    </p>
+                </div>
+                <div class="quote-box-wrapper reveal-text">
+                   <!-- Quote box removed/merged as requested content didn't explicitly separate it, but desc covers it. Keeping wrapper if needed or removing if strictly text only. 
+                        The prompt implies the text "We bridge..." is part of the main block description now, but it was in a quote box before. 
+                        I will put the last sentence in the quote box for emphasis as it matches the previous layout's intent. -->
+                    <div class="quote-box">
+                        <p class="quote">
+                            "We bridge the gap between 'Learning' and 'Moving' by integrating funding, logistics, and academic counseling into one seamless ecosystem."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="comparison-table reveal-table">
+                <div class="table-layout">
+                    <!-- Labels Column -->
+                    <div class="col-labels bg-purple-light">
+                        <div class="table-cell header-cell">
+                            <span class="label-header">The Goal</span>
+                        </div>
+                        {
+                            comparisonData.map((item) => (
+                                <div class="table-cell label-cell">
+                                    <span class="label-text">
+                                        {item.label}
+                                    </span>
+                                </div>
+                            ))
+                        }
+                    </div>
+
+                    <!-- Content Columns -->
+                    <div class="col-content">
+                        <!-- Standard Platforms -->
+                        <div class="col-standard">
+                            <div class="table-cell header-cell centered">
+                                <span class="col-header-text">Standard Study Platforms</span>
+                            </div>
+                            {
+                                comparisonData.map((item) => (
+                                    <div class="table-cell content-cell group-hover-gray">
+                                        <div class="cell-head">
+                                            <span class="icon cross">✕</span>
+                                            <span class="cell-title title-red">
+                                                {item.standard.title}
+                                            </span>
+                                        </div>
+                                        <p class="cell-desc">
+                                            {item.standard.desc}
+                                        </p>
+                                    </div>
+                                ))
+                            }
+                        </div>
+
+                        <!-- Aveka Ecosystem -->
+                        <div class="col-aveka">
+                            <div class="table-cell header-cell centered">
+                                <span class="col-header-text">The Aveka Ecosystem</span>
+                            </div>
+                            {
+                                comparisonData.map((item) => (
+                                    <div class="table-cell content-cell group-hover-purple">
+                                        <div class="cell-head">
+                                            <span class="icon check">✓</span>
+                                            <span class="cell-title title-purple">
+                                                {item.aveka.title}
+                                            </span>
+                                        </div>
+                                        <p class="cell-desc highlight">
+                                            {item.aveka.desc}
+                                        </p>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- Desktop Table View -->
-    <div class="comparison-table desktop-only">
-      <div class="table-header">
-        <div class="col-category">
-          <h3>The Goal</h3>
-        </div>
-        <div class="col-standard">
-          <h3>Standard Study Platforms</h3>
-        </div>
-        <div class="col-prime">
-          <h3>The Aveka Ecosystem</h3>
-        </div>
-      </div>
-
-      <div class="table-row">
-        <div class="col-category">Focus</div>
-        <div class="col-standard">
-            <strong>Information.</strong> You learn a skill or subject in isolation.
-        </div>
-        <div class="col-prime">
-            <strong>Mobility.</strong> You get the end-to-end support to move your life and career.
-        </div>
-      </div>
-
-      <div class="table-row">
-        <div class="col-category">Financial Plan</div>
-        <div class="col-standard">
-            <strong>The Cost.</strong> You pay for courses, but the funding is your problem.
-        </div>
-        <div class="col-prime">
-            <strong>The Capital.</strong> We help you find the money via loans, scholarships, and grants.
-        </div>
-      </div>
-
-      <div class="table-row">
-        <div class="col-category">Relocation</div>
-        <div class="col-standard">
-            <strong>DIY.</strong> You handle visas, forex, and accommodation yourself.
-        </div>
-        <div class="col-prime">
-            <strong>Integrated.</strong> Expert-led Visa support, Forex, and move-in logistics.
-        </div>
-      </div>
-
-      <div class="table-row">
-        <div class="col-category">Guidance</div>
-        <div class="col-standard">
-            <strong>Generic.</strong> Standardized help-centers and forums.
-        </div>
-        <div class="col-prime">
-            <strong>Personalized.</strong> AI-powered matching + 1-on-1 Academic Counseling.
-        </div>
-      </div>
-
-      <div class="table-row">
-        <div class="col-category">Career Entry</div>
-        <div class="col-standard">
-            <strong>Passive.</strong> You get a certificate and apply on your own.
-        </div>
-        <div class="col-prime">
-            <strong>Active.</strong> Direct access to Global Internships and profile building.
-        </div>
-      </div>
-    </div>
-
-    <!-- Mobile Card View -->
-    <div class="mobile-cards mobile-only">
-        <!-- We will iterate through categories for mobile to show comparisons clearly -->
-        
-        <div class="comparison-card">
-            <div class="card-header">Focus</div>
-            <div class="card-body">
-                <div class="comparison-item standard">
-                    <h4>Standard Study Platforms</h4>
-                    <p><strong>Information.</strong> You learn a skill or subject in isolation.</p>
-                </div>
-                <div class="comparison-item prime">
-                    <h4>The Aveka Ecosystem</h4>
-                    <p><strong>Mobility.</strong> You get the end-to-end support to move your life and career.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="comparison-card">
-            <div class="card-header">Financial Plan</div>
-            <div class="card-body">
-                <div class="comparison-item standard">
-                    <h4>Standard Study Platforms</h4>
-                    <p><strong>The Cost.</strong> You pay for courses, but the funding is your problem.</p>
-                </div>
-                <div class="comparison-item prime">
-                    <h4>The Aveka Ecosystem</h4>
-                    <p><strong>The Capital.</strong> We help you find the money via loans, scholarships, and grants.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="comparison-card">
-            <div class="card-header">Relocation</div>
-            <div class="card-body">
-                <div class="comparison-item standard">
-                    <h4>Standard Study Platforms</h4>
-                    <p><strong>DIY.</strong> You handle visas, forex, and accommodation yourself.</p>
-                </div>
-                <div class="comparison-item prime">
-                    <h4>The Aveka Ecosystem</h4>
-                    <p><strong>Integrated.</strong> Expert-led Visa support, Forex, and move-in logistics.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="comparison-card">
-            <div class="card-header">Guidance</div>
-            <div class="card-body">
-                <div class="comparison-item standard">
-                    <h4>Standard Study Platforms</h4>
-                    <p><strong>Generic.</strong> Standardized help-centers and forums.</p>
-                </div>
-                <div class="comparison-item prime">
-                    <h4>The Aveka Ecosystem</h4>
-                    <p><strong>Personalized.</strong> AI-powered matching + 1-on-1 Academic Counseling.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="comparison-card">
-            <div class="card-header">Career Entry</div>
-            <div class="card-body">
-                <div class="comparison-item standard">
-                    <h4>Standard Study Platforms</h4>
-                    <p><strong>Passive.</strong> You get a certificate and apply on your own.</p>
-                </div>
-                <div class="comparison-item prime">
-                    <h4>The Aveka Ecosystem</h4>
-                    <p><strong>Active.</strong> Direct access to Global Internships and profile building.</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-  </div>
 </section>
 
 <style>
   :root {
     --primary-purple: #6200EE;
-    --light-purple-bg: #F3E5F5;
-    --table-header-bg: #F5E6FE;
-    --text-dark: #1F2937;
-    --text-light: #6B7280;
-    --border-color: rgba(98, 0, 238, 0.1);
-    --highlight-bg: #eaddff;
-    --white: #ffffff;
+    --text-muted: #6B7280;
+    --border-light: rgba(59, 130, 246, 0.1); /* blue-500/10 */
   }
 
-  .comparison-section {
+  .family-roles {
     position: relative;
     width: 100%;
     color: white;
-    /* overflow: hidden; Removed to allow sticky headers if needed, but keeping simple for now */
     padding-bottom: 4rem;
+    overflow: hidden;
   }
 
   /* Video Background */
@@ -190,10 +186,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 600px;
+    height: 100%;
     z-index: -1;
-    overflow: hidden;
-    background: var(--primary-purple);
   }
 
   .video-bg video {
@@ -208,173 +202,275 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(98, 0, 238, 0.9);
+    background: rgba(10, 10, 10, 0.85); /* Darker overlay for readability */
+    backdrop-filter: blur(5px);
   }
 
-  .content-container {
+  /* Layout Containers */
+  .container-fluid {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .max-w-6xl {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 2rem;
   }
 
-  /* Header Section */
-  .header-section {
-    margin-bottom: 4rem;
-    text-align: center;
+  .header-split {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 5rem;
+    margin-top: 4rem;
   }
 
-  .text-content {
-    max-width: 800px;
-    margin: 0 auto;
+  @media (min-width: 1024px) {
+    .header-split {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
   }
 
-  .text-content h2 {
-    font-size: clamp(2rem, 5vw, 3rem);
+  .max-w-2xl { max-width: 42rem; }
+
+  /* Typography */
+  .display-title {
+    font-size: 2.25rem;
+    line-height: 1.1;
     font-weight: 700;
+    text-transform: uppercase;
     margin-bottom: 1.5rem;
-    line-height: 1.2;
   }
 
-  .text-content p {
+  @media (min-width: 1024px) {
+    .display-title { font-size: 3.75rem; }
+  }
+
+  .text-sub {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .description {
     font-size: 1.125rem;
-    line-height: 1.6;
-    opacity: 0.95;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.625;
+    max-width: 36rem;
   }
 
-  /* Comparison Table (Desktop) */
+  /* Quote Box */
+  .quote-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 20rem;
+    margin-top: 1rem;
+  }
+
+  .quote {
+    font-size: 0.875rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+  }
+
+  /* Comparison Table */
   .comparison-table {
     background: white;
-    border-radius: 16px;
+    border-radius: 1.5rem;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-    color: var(--text-dark);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #1a1a1a;
   }
 
-  .table-header {
+  .table-layout {
     display: flex;
-    background: var(--table-header-bg);
-    border-bottom: 1px solid var(--border-color);
+    flex-direction: column;
   }
 
-  .table-row {
-    display: flex;
-    border-bottom: 1px solid var(--border-color);
+  @media (min-width: 768px) {
+    .table-layout { flex-direction: row; }
   }
 
-  .table-row:last-child {
-    border-bottom: none;
+  .col-labels {
+    width: 100%;
+    background: #eee6fe;
   }
 
-  /* Columns */
-  .col-category {
-    flex: 0 0 20%;
-    padding: 1.5rem;
-    display: flex;
-    align-items: center;
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--primary-purple);
-    border-right: 1px solid var(--border-color);
-    background: #fafafa;
+  @media (min-width: 768px) {
+    .col-labels { width: 33.333333%; }
   }
-  
-  .table-header .col-category {
-      background: transparent;
-      color: var(--primary-purple);
+
+  .col-content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   .col-standard {
-    flex: 1;
-    padding: 1.5rem;
-    font-size: 1rem;
-    color: var(--text-light);
-    border-right: 1px solid var(--border-color);
-    display: flex;
-    align-items: center;
-  }
-
-  .col-prime {
-    flex: 1;
-    padding: 1.5rem;
-    font-size: 1rem;
-    color: var(--text-dark);
-    background: rgba(98, 0, 238, 0.03); /* Subtle highlight */
-    display: flex;
-    align-items: center;
-  }
-
-  .table-header .col-standard,
-  .table-header .col-prime {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--primary-purple);
-      background: transparent;
-  }
-
-  /* Mobile Cards */
-  .mobile-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .comparison-card {
     background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    color: var(--text-dark);
+    border-left: 1px solid var(--border-light);
+  }
+  
+  .col-aveka {
+    background: white;
+    border-left: 1px solid var(--border-light);
   }
 
-  .card-header {
-    background: var(--primary-purple);
-    color: white;
-    padding: 1rem 1.5rem;
-    font-weight: 700;
-    font-size: 1.25rem;
-  }
-
-  .card-body {
-    padding: 1.5rem;
+  /* Cells */
+  .table-cell {
+    padding: 0 2rem;
     display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .table-cell:last-child {
+    border-bottom: none;
+  }
+
+  .header-cell {
+    height: 6rem;
+  }
+
+  .label-cell, .content-cell {
+    min-height: 110px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .centered {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .content-cell {
     flex-direction: column;
-    gap: 1.5rem;
+    justify-content: center;
+    align-items: flex-start;
+    transition: background-color 0.2s;
   }
 
-  .comparison-item h4 {
-      font-size: 0.875rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
-      color: var(--text-light);
+  /* Interactions */
+  .group-hover-gray:hover { background-color: #f9fafb; }
+  .group-hover-purple:hover { background-color: rgba(98, 0, 238, 0.05); }
+
+  /* Text & Icons */
+  .label-header {
+    color: var(--primary-purple);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
   }
 
-  .comparison-item.prime h4 {
-      color: var(--primary-purple);
+  .label-text {
+    color: #1a1a1a;
+    font-weight: 700;
+    font-size: 1.125rem;
   }
 
-  .comparison-item p {
-      font-size: 1rem;
-      line-height: 1.5;
-      margin: 0;
+  .col-header-text {
+    color: #1a1a1a;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
   }
 
+  .cell-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.625rem;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .cross {
+    background: #fce7f3; /* pink-100 */
+    color: #dc2626; /* red-600 */
+  }
+
+  .check {
+    background: #f3e8ff; /* purple-100 */
+    color: var(--primary-purple);
+  }
+
+  .cell-title {
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+
+  .title-red { color: #ef4444; }
+  .title-purple { color: var(--primary-purple); }
+
+  .cell-desc {
+    font-size: 0.75rem; /* ~11px */
+    color: var(--text-muted);
+    line-height: 1.25;
+    margin: 0;
+  }
+  
+  .highlight {
+    font-weight: 500;
+  }
+  
   /* Utilities */
-  .desktop-only { display: block; }
-  .mobile-only { display: none; }
-
-  /* Responsive */
-  @media (max-width: 900px) {
-    .desktop-only { display: none; }
-    .mobile-only { display: flex; }
-    
-    .video-bg {
-        height: 100%;
-        min-height: 500px;
-    }
-
-    .content-container {
-        padding: 3rem 1.5rem;
-    }
+  .reveal-text, .reveal-table {
+    opacity: 0; 
+    transform: translateY(20px);
+    /* JS animation target */
   }
 </style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Header text reveal
+    gsap.utils.toArray('.reveal-text').forEach((el: any, i) => {
+        gsap.to(el, {
+            scrollTrigger: {
+                trigger: el,
+                start: "top 80%",
+            },
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            delay: i * 0.2,
+            ease: "power3.out"
+        });
+    });
+
+    // Table specific animation
+     gsap.to('.reveal-table', {
+        scrollTrigger: {
+            trigger: '.reveal-table',
+            start: "top 85%",
+        },
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power2.out"
+    });
+  });
+</script>

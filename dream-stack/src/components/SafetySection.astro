@@ -1,0 +1,193 @@
+---
+const cards = [
+  {
+    title: "Ironclad encryption",
+    desc: "Keep your financial information safeguarded during every online transaction with advanced encryption and bank-vault security.",
+    iconPath: "M81.23 22.22c4.062 0 7.385-3.324 7.385-7.385 0-4.062-3.323-7.385-7.384-7.385-2.77 0-4.985 1.477-6.277 3.692h-7.939C68.677 4.865 74.4.065 81.231.065 89.354.065 96 6.712 96 14.835s-6.646 14.769-14.77 14.769c-6.83 0-12.738-4.8-14.215-11.077h7.939c1.108 2.215 3.508 3.692 6.277 3.692M14.77 44.372c6.83 0 12.554 4.8 14.215 11.077h-7.938c-1.293-2.215-3.693-3.692-6.277-3.692-4.062 0-7.385 3.323-7.385 7.384 0 4.062 3.323 7.385 7.385 7.385 2.769 0 4.984-1.477 6.277-3.692h7.937c.37-1.108.554-2.4.554-3.693 0-1.292-.184-2.584-.554-3.692H62.77c4.061 0 7.384-3.323 7.384-7.385s-3.323-7.384-7.384-7.384H33.23c-8.123 0-14.769-6.646-14.769-14.77s6.646-14.769 14.77-14.769h33.784c-.37 1.293-.554 2.4-.554 3.693 0 1.292.185 2.4.554 3.692H33.23c-4.061 0-7.384 3.323-7.384 7.385s3.323 7.384 7.384 7.384H62.77c8.123 0 14.77 6.646 14.77 14.77 0 8.122-6.647 14.769-14.77 14.769H28.985c-1.662 6.277-7.384 11.077-14.215 11.077C6.647 73.912 0 67.265 0 59.142s6.647-14.769 14.77-14.769",
+    viewBox: "0 0 96 74"
+  },
+  {
+    title: "Backed by key entities",
+    desc: "Wio Bank PJSC is regulated by the Central Bank of the UAE, ensuring compliance with the highest standards of financial integrity and consumer protection.",
+    iconPath: "M60.316 18.89A29.4 29.4 0 0 1 66.538 37c0 16.283-13.256 29.539-29.539 29.539S7.461 53.283 7.461 37 20.716 7.462 36.999 7.462a29.4 29.4 0 0 1 18.11 6.221l-5.279 5.262a22.172 22.172 0 1 0 5.225 5.224za30.2 30.2 0 0 0-5.206-5.206l5.243-5.261A36.78 36.78 0 0 0 37 .077C16.636.077.076 16.637.076 37S16.636 73.923 37 73.923 73.922 57.363 73.922 37a36.78 36.78 0 0 0-8.344-23.353l8.344-8.345L68.698.077l-8.345 8.345a39 39 0 0 1 5.225 5.224zM51.77 37a14.787 14.787 0 1 1-7.274-12.72l-7.496 7.495V37h5.225l7.495-7.495A14.75 14.75 0 0 1 51.77 37",
+    viewBox: "0 0 74 74"
+  }
+];
+---
+
+<section class="safety-section">
+  <div class="container">
+    <div class="header-section">
+      <h2 class="section-title">A DEDICATED TEAM TO<br> ENSURE YOUR SAFETY</h2>
+      <div class="section-desc">
+        <p>Round-the-clock support ensuring your funds are always secure.</p>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+      {cards.map((card, index) => (
+        <div class="safety-card" data-index={index}>
+          <div class="card-icon-wrapper">
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox={card.viewBox} class="card-icon">
+                <path fill-rule="evenodd" d={card.iconPath} clip-rule="evenodd"></path>
+             </svg>
+          </div>
+          <div class="card-text">
+            <h3>{card.title}</h3>
+            <p>{card.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .safety-section {
+    padding: 6rem 1rem;
+    background: white;
+    color: #1a1a1a;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .header-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 0.5px solid rgba(0,0,0,0.1);
+  }
+
+  @media (min-width: 1024px) {
+    .header-section {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    max-width: 650px;
+  }
+
+  @media (min-width: 1024px) {
+    .section-title {
+        font-size: 3rem; 
+    }
+  }
+
+  .section-desc p {
+    font-size: 1.125rem;
+    color: #6B7280;
+    max-width: 400px;
+    line-height: 1.5;
+  }
+
+  /* Cards */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .cards-grid {
+      grid-template-columns: repeat(2, 1fr); /* Only 2 cards requested */
+    }
+  }
+
+  .safety-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px;
+  }
+
+  .safety-card:hover {
+     border-color: transparent;
+     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-icon-wrapper {
+    margin-bottom: 2rem;
+  }
+
+  .card-icon {
+    width: 6rem;
+    height: 6rem;
+    fill: #6200EE; /* Default Purple */
+    transition: fill 0.3s ease;
+  }
+
+  .card-text h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+    transition: color 0.3s ease;
+  }
+
+  .card-text p {
+    font-size: 1rem;
+    color: #6B7280;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+  }
+
+  /* Active State */
+  .safety-card.active {
+    background: #6200EE;
+    border-color: #6200EE;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(98, 0, 238, 0.3);
+  }
+
+  .safety-card.active .card-icon {
+    fill: white;
+  }
+
+  .safety-card.active .card-text h3,
+  .safety-card.active .card-text p {
+    color: white;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.safety-card');
+    
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            // Include toggle behavior: if active, remove active. If not, set active.
+            // Requirement: "after clicking any one card it should look like second image"
+            // Usually this means exclusive selection or simple toggle.
+            // Let's implement exclusive selection (accordion style) for a cleaner UI,
+            // or just simple toggle. 
+            // Design pattern "tabs" usually implies one active. 
+            
+            // Remove active from all others
+            cards.forEach(c => c.classList.remove('active'));
+            
+            // Add active to clicked
+            card.classList.add('active');
+        });
+    });
+  });
+</script>

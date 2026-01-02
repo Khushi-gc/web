@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import FamilyRoles from '../components/FamilyRoles.astro';
 ---
 
 <Layout>
@@ -42,7 +43,9 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</section>
 
-		<section class="showcase">
+		<FamilyRoles />
+
+		<section class="showcase container">
 			<h2>Performance Meets Art</h2>
 			<p>Don't compromise on speed or aesthetics.</p>
 		</section>
@@ -51,6 +54,11 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
 	main {
+		width: 100%;
+		overflow-x: hidden;
+	}
+
+	.container {
 		width: 100%;
 		max-width: 1400px;
 		margin: 0 auto;
@@ -146,7 +154,7 @@ import Layout from '../layouts/Layout.astro';
 
 	/* Features Section */
 	.features {
-		padding: 10rem 0;
+		padding: 10rem 2rem;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 2rem;

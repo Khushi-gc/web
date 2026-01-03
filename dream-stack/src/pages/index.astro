@@ -1,15 +1,23 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import FamilyRoles from '../components/FamilyRoles.astro';
-import MoneyConfidence from '../components/MoneyConfidence.astro';
-import SafetySection from '../components/SafetySection.astro';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import FamilyRoles from "../components/FamilyRoles.astro";
+import MoneyConfidence from "../components/MoneyConfidence.astro";
+import SafetySection from "../components/SafetySection.astro";
+import MyHub from "../components/myhub.astro";
+import SuccessStories from "../components/SuccessStories.astro";
+import Partners from "../components/Partners.astro";
 ---
 
 <Layout>
 	<main>
+		<Hero />
 		<FamilyRoles />
+		<MyHub />
 		<MoneyConfidence />
+		<SuccessStories />
 		<SafetySection />
+		<Partners />
 	</main>
 </Layout>
 

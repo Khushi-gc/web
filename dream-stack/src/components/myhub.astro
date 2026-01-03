@@ -1,0 +1,412 @@
+---
+
+---
+
+<section class="ecosystem-hub">
+    <div class="bg-overlay"></div>
+    <div class="bg-image-container">
+        <video
+            src="/hub-bg.mp4"
+            class="bg-video"
+            id="hubBg"
+            autoplay
+            muted
+            loop
+            playsinline></video>
+    </div>
+
+    <div class="container">
+        <div class="content-grid">
+            <div class="text-content">
+                <h2 class="title" id="hubTitle">
+                    The "My Space" Hub: <br />
+                    <span class="accent-text">Your Ecosystem Controller</span>
+                </h2>
+                <div class="brain-desc" id="brainDesc">
+                    To make the "Ecosystem" tangible, we describe the dashboard
+                    as the brain of the operation.
+                </div>
+            </div>
+
+            <div class="action-content">
+                <div class="description-box">
+                    <p class="tagline" id="hubTagline">
+                        "One Profile. Infinite Possibilities."
+                    </p>
+                    <p class="description" id="hubDesc">
+                        Your Aveka profile isn't just a login; it’s a living
+                        document. As you complete a Test Prep module, your
+                        University Matches update. When you secure a Loan, your
+                        Visa Support kicks in.
+                    </p>
+                    <div class="sync-badge" id="syncBadge">
+                        <div class="badge-icon">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                    stroke="currentColor"
+                                    stroke-width="2"></path>
+                                <path
+                                    d="M12 6V12L16 14"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"></path>
+                            </svg>
+                        </div>
+                        <span
+                            >Everything is synchronized to save you time and
+                            money.</span
+                        >
+                    </div>
+                </div>
+
+                <div class="cta-wrapper">
+                    <a href="/dashboard" class="explore-btn" id="hubBtn">
+                        <span>Explore Dashboard</span>
+                        <div class="arrow">
+                            <svg
+                                viewBox="0 0 16 16"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M1 8H15M15 8L8 1M15 8L8 15"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Decorative elements -->
+    <div class="glow-element glow-1"></div>
+    <div class="glow-element glow-2"></div>
+</section>
+
+<style>
+    .ecosystem-hub {
+        position: relative;
+        width: 100%;
+        min-height: 85vh;
+        /* background-color: #ffffff; Removed to let video show */
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        padding: 8rem 0;
+        font-family: "Inter", sans-serif;
+    }
+
+    .bg-image-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .bg-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 1;
+        /* filter: saturate(0.5) brightness(1.2); Removed filters */
+    }
+
+    .bg-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.5); /* Reduced opacity */
+        z-index: 2;
+    }
+
+    .container {
+        position: relative;
+        max-width: 1440px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 4rem;
+        z-index: 3;
+    }
+
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .title {
+        font-size: clamp(2.2rem, 4vw, 3.8rem);
+        font-weight: 800;
+        line-height: 1.1;
+        color: #1a1a1a;
+        margin: 0 0 1.5rem 0;
+        letter-spacing: -0.01em;
+    }
+
+    .accent-text {
+        background: linear-gradient(90deg, #9e6cff 0%, #7c4dff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+    }
+
+    .brain-desc {
+        font-size: 1.1rem;
+        color: #6b7280;
+        max-width: 500px;
+        line-height: 1.6;
+        border-left: 2px solid #6200ee;
+        padding-left: 1.5rem;
+    }
+
+    .action-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        background: #f9fafb;
+        backdrop-filter: blur(10px);
+        padding: 3rem;
+        border-radius: 24px;
+        border: 1px solid #e5e7eb;
+    }
+
+    .description-box {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .tagline {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin: 0;
+    }
+
+    .description {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #6b7280;
+        margin: 0;
+    }
+
+    .sync-badge {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: rgba(98, 0, 238, 0.1);
+        border: 1px solid rgba(98, 0, 238, 0.2);
+        padding: 0.75rem 1.25rem;
+        border-radius: 12px;
+        width: fit-content;
+        color: #6200ee;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    .badge-icon {
+        width: 20px;
+        height: 20px;
+        color: #6200ee;
+    }
+
+    .explore-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 1.5rem;
+        background: #6200ee;
+        color: white;
+        padding: 1.25rem 2.5rem;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .explore-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(98, 0, 238, 0.3);
+        background: #7c4dff;
+    }
+
+    .arrow {
+        width: 20px;
+        height: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .explore-btn:hover .arrow {
+        transform: translateX(5px);
+    }
+
+    /* Glow effects */
+    .glow-element {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        filter: blur(150px);
+        z-index: 1;
+        opacity: 0.2;
+    }
+
+    .glow-1 {
+        top: -200px;
+        right: -100px;
+        background: #6200ee;
+    }
+
+    .glow-2 {
+        bottom: -200px;
+        left: -100px;
+        background: #3b82f6;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .content-grid {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+        .container {
+            padding: 0 2rem;
+        }
+        .action-content {
+            padding: 2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .ecosystem-hub {
+            padding: 5rem 0;
+        }
+        .title {
+            font-size: 2.5rem;
+        }
+        .description {
+            font-size: 1rem;
+        }
+    }
+</style>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const section = document.querySelector(".ecosystem-hub");
+
+        // Create timeline
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: section,
+                start: "top 70%",
+                end: "bottom center",
+                toggleActions: "play none none none",
+            },
+        });
+
+        tl.from("#hubTitle", {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power4.out",
+        })
+            .from(
+                "#brainDesc",
+                {
+                    x: -20,
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: "power3.out",
+                },
+                "-=0.6",
+            )
+            .from(
+                ".action-content",
+                {
+                    scale: 0.95,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "expo.out",
+                },
+                "-=0.5",
+            )
+            .from(
+                "#hubTagline",
+                {
+                    y: 20,
+                    opacity: 0,
+                    duration: 0.6,
+                },
+                "-=0.4",
+            )
+            .from(
+                "#hubDesc",
+                {
+                    y: 20,
+                    opacity: 0,
+                    duration: 0.6,
+                },
+                "-=0.3",
+            )
+            .from(
+                "#syncBadge",
+                {
+                    scale: 0.8,
+                    opacity: 0,
+                    duration: 0.6,
+                    ease: "back.out(1.7)",
+                },
+                "-=0.2",
+            )
+            .from(
+                "#hubBtn",
+                {
+                    y: 20,
+                    opacity: 0,
+                    duration: 0.6,
+                },
+                "-=0.1",
+            );
+
+        // Parallax effect for background
+        gsap.to("#hubBg", {
+            y: 80,
+            scale: 1.1,
+            scrollTrigger: {
+                trigger: section,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+            },
+        });
+
+        // Pulse effect for badge
+        gsap.to(".sync-badge", {
+            boxShadow: "0 0 20px rgba(158, 108, 255, 0.4)",
+            duration: 2,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+        });
+    });
+</script>

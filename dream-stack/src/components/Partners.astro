@@ -1,0 +1,367 @@
+---
+// Import lender logos
+import auxilo from "../assets/images/lenders/auxilo.png";
+import axisBank from "../assets/images/lenders/axis-bank.png";
+import bankBaroda from "../assets/images/lenders/Bank-baroda.png";
+import credila from "../assets/images/lenders/credila.gif";
+import iciciBank from "../assets/images/lenders/icici-bank.png";
+import idfc from "../assets/images/lenders/IDFC.jpg";
+import incred from "../assets/images/lenders/incred.png";
+import kuhoo from "../assets/images/lenders/Kuhoologo.jpeg";
+import mpower from "../assets/images/lenders/MPOWER_Logo.webp";
+import prodigy from "../assets/images/lenders/prodigy.png";
+import propelld from "../assets/images/lenders/propelldlogo.jpeg";
+import avanse from "../assets/images/lenders/avanse.png";
+import pnb from "../assets/images/lenders/Punjab_National_Bank.png";
+import sbi from "../assets/images/lenders/SBI.png";
+import tataCapital from "../assets/images/lenders/tata-capital.png";
+import unionBank from "../assets/images/lenders/union-bank-of-india-logo.png";
+import yesBank from "../assets/images/lenders/Yes_Bank.png";
+
+// Import university logos
+import uni1 from "../assets/images/uni-1.png";
+import uni2 from "../assets/images/uni-2.png";
+import uni3 from "../assets/images/uni-3.png";
+import uni4 from "../assets/images/uni-4.jpg";
+import uni5 from "../assets/images/uni-5.png";
+import uni6 from "../assets/images/uni-6.jpg";
+import uni7 from "../assets/images/uni-7.png";
+import uni8 from "../assets/images/uni-8.png";
+import uni9 from "../assets/images/uni-9.png";
+import uni10 from "../assets/images/uni-10.png";
+import uni11 from "../assets/images/uni-11.png";
+import uni12 from "../assets/images/uni-12.png";
+import uni13 from "../assets/images/uni-13.jpg";
+import uni14 from "../assets/images/uni-14.jpg";
+import uni15 from "../assets/images/uni-15.jpg";
+
+const lenders = [
+    { src: auxilo, alt: "Auxilo" },
+    { src: axisBank, alt: "Axis Bank" },
+    { src: bankBaroda, alt: "Bank of Baroda" },
+    { src: credila, alt: "Credila" },
+    { src: iciciBank, alt: "ICICI Bank" },
+    { src: idfc, alt: "IDFC" },
+    { src: incred, alt: "InCred" },
+    { src: kuhoo, alt: "Kuhoo" },
+    { src: mpower, alt: "MPOWER Financing" },
+    { src: prodigy, alt: "Prodigy Finance" },
+    { src: propelld, alt: "Propelld" },
+    { src: avanse, alt: "Avanse" },
+    { src: pnb, alt: "Punjab National Bank" },
+    { src: sbi, alt: "State Bank of India" },
+    { src: tataCapital, alt: "Tata Capital" },
+    { src: unionBank, alt: "Union Bank of India" },
+    { src: yesBank, alt: "Yes Bank" },
+];
+
+const universities = [
+    { src: uni1, alt: "University Partner" },
+    { src: uni2, alt: "University Partner" },
+    { src: uni3, alt: "University Partner" },
+    { src: uni4, alt: "University Partner" },
+    { src: uni5, alt: "University Partner" },
+    { src: uni6, alt: "University Partner" },
+    { src: uni7, alt: "University Partner" },
+    { src: uni8, alt: "University Partner" },
+    { src: uni9, alt: "University Partner" },
+    { src: uni10, alt: "University Partner" },
+    { src: uni11, alt: "University Partner" },
+    { src: uni12, alt: "University Partner" },
+    { src: uni13, alt: "University Partner" },
+    { src: uni14, alt: "University Partner" },
+    { src: uni15, alt: "University Partner" },
+];
+---
+
+<section class="partners-section">
+    <!-- Global Lenders Section -->
+    <div class="container pb-100">
+        <div class="row">
+            <div class="col-center">
+                <div class="text-center">
+                    <h2 class="heading-text">Our Global Lenders</h2>
+                    <p class="subtext">
+                        Backed by a trusted network of global financial
+                        institutions, we connect students with the most
+                        competitive and student-friendly loan options worldwide.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="marquee-wrapper">
+            <div class="logo-marquee">
+                <div class="marquee-content" id="lendersMarquee">
+                    {
+                        lenders.map((logo) => (
+                            <div class="logo-item">
+                                <img src={logo.src.src} alt={logo.alt} />
+                            </div>
+                        ))
+                    }
+                    <!-- Duplicate for seamless loop -->
+                    {
+                        lenders.map((logo) => (
+                            <div class="logo-item">
+                                <img src={logo.src.src} alt={logo.alt} />
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- University Partners Section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-center">
+                <div class="text-center">
+                    <h2 class="heading-text">
+                        700+ University & Channel Partners
+                    </h2>
+                    <p class="subtext">
+                        We work directly with universities and education agents
+                        worldwide to offer you guaranteed admission support,
+                        scholarship guidance, and integrated loan approvals for
+                        your chosen program.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="marquee-wrapper">
+            <div class="logo-marquee">
+                <div class="marquee-content reverse" id="universitiesMarquee">
+                    {
+                        universities.map((logo) => (
+                            <div class="logo-item">
+                                <img src={logo.src.src} alt={logo.alt} />
+                            </div>
+                        ))
+                    }
+                    <!-- Duplicate for seamless loop -->
+                    {
+                        universities.map((logo) => (
+                            <div class="logo-item">
+                                <img src={logo.src.src} alt={logo.alt} />
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .partners-section {
+        background: #ffffff;
+        color: #1a1a1a;
+        padding: 6rem 0;
+        overflow: hidden;
+    }
+
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .pb-100 {
+        padding-bottom: 6rem;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3rem;
+    }
+
+    .col-center {
+        max-width: 800px;
+        width: 100%;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .heading-text {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: #1a1a1a;
+        line-height: 1.2;
+    }
+
+    .subtext {
+        font-size: 1.125rem;
+        line-height: 1.7;
+        color: #6b7280;
+        margin-bottom: 0;
+    }
+
+    /* Marquee Styles */
+    .marquee-wrapper {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        margin-top: 3rem;
+    }
+
+    /* Gradient fade edges */
+    .marquee-wrapper::before,
+    .marquee-wrapper::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 150px;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .marquee-wrapper::before {
+        left: 0;
+        background: linear-gradient(to right, #ffffff 0%, transparent 100%);
+    }
+
+    .marquee-wrapper::after {
+        right: 0;
+        background: linear-gradient(to left, #ffffff 0%, transparent 100%);
+    }
+
+    .logo-marquee {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .marquee-content {
+        display: flex;
+        gap: 4rem;
+        animation: scroll 40s linear infinite;
+        width: fit-content;
+    }
+
+    .marquee-content.reverse {
+        animation: scrollReverse 40s linear infinite;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    @keyframes scrollReverse {
+        0% {
+            transform: translateX(-50%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    .marquee-content:hover {
+        animation-play-state: paused;
+    }
+
+    .logo-item {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem 2rem;
+        background: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        min-width: 180px;
+        height: 100px;
+    }
+
+    .logo-item:hover {
+        background: #ffffff;
+        border-color: #6200ee;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-item img {
+        max-width: 140px;
+        max-height: 60px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        filter: grayscale(100%);
+        opacity: 0.6;
+        transition: all 0.3s ease;
+    }
+
+    .logo-item:hover img {
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .partners-section {
+            padding: 4rem 0;
+        }
+
+        .pb-100 {
+            padding-bottom: 4rem;
+        }
+
+        .heading-text {
+            font-size: 1.75rem;
+        }
+
+        .subtext {
+            font-size: 1rem;
+        }
+
+        .marquee-content {
+            gap: 2rem;
+            animation-duration: 30s;
+        }
+
+        .logo-item {
+            min-width: 140px;
+            height: 80px;
+            padding: 1rem 1.5rem;
+        }
+
+        .logo-item img {
+            max-width: 100px;
+            max-height: 50px;
+        }
+
+        .marquee-wrapper::before,
+        .marquee-wrapper::after {
+            width: 80px;
+        }
+    }
+</style>
+
+<script>
+    // Optional: Add pause on hover for better UX
+    document.addEventListener("DOMContentLoaded", () => {
+        const marquees = document.querySelectorAll(".marquee-content");
+
+        marquees.forEach((marquee) => {
+            marquee.addEventListener("mouseenter", () => {
+                (marquee as HTMLElement).style.animationPlayState = "paused";
+            });
+
+            marquee.addEventListener("mouseleave", () => {
+                (marquee as HTMLElement).style.animationPlayState = "running";
+            });
+        });
+    });
+</script>

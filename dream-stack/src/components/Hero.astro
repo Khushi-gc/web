@@ -1,0 +1,548 @@
+---
+
+---
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="title-top">
+                <h1>THE AVEKA<br />ECOSYSTEM</h1>
+            </div>
+
+            <div class="visual-center">
+                <div class="oval-mask">
+                    <img
+                        src="https://images.ctfassets.net/l65m9bcr2nac/316VlExshv3JGLKWpUjSwy/a4cb516e4b79e53a74092fbdd953b69d/b_bnr_1.webp"
+                        alt="Aveka Builder"
+                        class="main-image"
+                    />
+                </div>
+
+                <!-- Floating Cards (Rebranded Visuals) -->
+
+                <div class="floating-card visa-card" id="visaCard">
+                    <img
+                        src="https://images.ctfassets.net/l65m9bcr2nac/4jQhhIW2SM7MgmAMFAM7M/a9fb1a84f18d20bfc18771d13e7bfb25/b_bnr_r1.webp"
+                        alt="Aveka Card"
+                    />
+                </div>
+
+                <div class="floating-card video-card" id="videoCard">
+                    <div class="video-preview-wrapper">
+                        <video
+                            src="https://videos.ctfassets.net/l65m9bcr2nac/3p8dsGUXNeKdvtr7MBl0Sc/70836878c3f34c77b268b39e4624660b/Wio_business.mp4"
+                            autoplay
+                            muted
+                            loop
+                            playsinline></video>
+                    </div>
+                    <div class="video-info">
+                        <h3>Success. Like<br />never before</h3>
+                        <div class="play-action">
+                            <span>Watch Story</span>
+                            <div class="play-icon">
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path d="M8 5V19L19 12L8 5Z" fill="white"
+                                    ></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="title-bottom">
+                <h1>BUILD YOUR<br />PERFECT PATH</h1>
+            </div>
+        </div>
+
+        <!-- Hero Line Area (Flipping Text) -->
+        <div class="hero-line-container">
+            <div class="flipping-wrapper">
+                <span class="word-flip">Mobility</span>
+                <span class="made-easy">made easy</span>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="bottom-bar">
+            <p class="subtitle">
+                Stop juggling multiple platforms. Plan, fund, and launch your
+                international career from one integrated workspace.
+            </p>
+            <div class="cta">
+                <span>Join <strong>Aveka</strong> — Free Access</span>
+                <div class="arrow-circle">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero {
+        background-color: #0a1128;
+        min-height: 100vh;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        font-family: "Inter", sans-serif;
+        padding-top: 140px;
+        box-sizing: border-box;
+    }
+
+    .container {
+        max-width: 1440px;
+        margin: 0 auto;
+        width: 100%;
+        min-height: calc(100vh - 140px);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 0 4rem;
+    }
+
+    .hero-content {
+        flex: 1;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title-top {
+        position: absolute;
+        top: 8%;
+        left: 4rem;
+        z-index: 10;
+    }
+
+    .title-bottom {
+        position: absolute;
+        bottom: 18%;
+        right: 4rem;
+        z-index: 10;
+        text-align: right;
+    }
+
+    h1 {
+        font-size: min(6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 0.82;
+        margin: 0;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+    }
+
+    .visual-center {
+        position: relative;
+        width: min(38vw, 520px);
+        height: min(75vh, 720px);
+        z-index: 5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .oval-mask {
+        width: 100%;
+        height: 100%;
+        border-radius: 999px;
+        overflow: hidden;
+        background: #1a1a1a;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .main-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Floating Cards */
+    .floating-card {
+        position: absolute;
+        border-radius: 12px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        z-index: 15;
+        background: white;
+    }
+
+    .usd-card {
+        width: 180px;
+        height: 110px;
+        bottom: 25%;
+        left: -25%;
+        padding: 14px;
+        background: white;
+        color: black;
+    }
+
+    .usd-card .card-header {
+        display: flex;
+        justify-content: space-between;
+        font-size: 11px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 12px;
+    }
+
+    .usd-card .card-header .dots {
+        color: #7c4dff;
+        letter-spacing: 1px;
+    }
+
+    .usd-card .card-visual {
+        display: flex;
+        height: 44px;
+        gap: 3px;
+    }
+
+    .bar-purple {
+        flex: 1.5;
+        background: #6200ee;
+        border-radius: 4px;
+    }
+    .bar-light-purple {
+        flex: 1;
+        background: #9e6cff;
+        border-radius: 4px;
+    }
+
+    .visa-card {
+        width: 140px;
+        top: 20%;
+        right: -20%;
+        background: none;
+        box-shadow: none;
+    }
+
+    .visa-card img {
+        width: 100%;
+        display: block;
+        border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .video-card {
+        width: 280px;
+        bottom: 5%;
+        left: -45%;
+        background: white;
+        display: flex;
+        padding: 10px;
+        gap: 15px;
+        color: black;
+    }
+
+    .video-preview-wrapper {
+        width: 110px;
+        height: 130px;
+        border-radius: 10px;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    .video-preview-wrapper video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .video-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 5px 0;
+    }
+
+    .video-info h3 {
+        font-size: 1.35rem;
+        font-weight: 800;
+        margin: 0;
+        line-height: 1.1;
+        color: #1a1a1a;
+    }
+
+    .play-action {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        font-weight: 700;
+        color: #6200ee;
+    }
+
+    .play-icon {
+        width: 30px;
+        height: 30px;
+        background: #6200ee;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        box-shadow: 0 4px 10px rgba(98, 0, 238, 0.3);
+    }
+
+    .play-icon svg {
+        width: 14px;
+        height: 14px;
+        margin-left: 2px;
+    }
+
+    /* Hero Line (Flipping Text) */
+    .hero-line-container {
+        position: absolute;
+        bottom: 180px;
+        left: 4rem;
+        z-index: 25;
+    }
+
+    .flipping-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-size: 2rem;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    .word-flip {
+        color: #9e6cff; /* Purple accent */
+        min-width: 120px;
+        display: inline-block;
+    }
+
+    .made-easy {
+        opacity: 0.8;
+    }
+
+    /* Bottom Bar */
+    .bottom-bar {
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(10, 17, 40, 0.95);
+        backdrop-filter: blur(20px);
+        z-index: 30;
+        padding: 0 1rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 480px;
+        line-height: 1.5;
+    }
+
+    .cta {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        cursor: pointer;
+        transition: opacity 0.3s;
+    }
+
+    .cta:hover {
+        opacity: 0.8;
+    }
+
+    .cta span {
+        font-size: 0.95rem;
+        color: white;
+    }
+
+    .cta strong {
+        color: white;
+    }
+
+    .arrow-circle {
+        width: 36px;
+        height: 36px;
+        border: 1.5px solid rgba(255, 255, 255, 0.4);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s;
+    }
+
+    .cta:hover .arrow-circle {
+        transform: translateX(5px);
+        border-color: white;
+    }
+
+    .arrow-circle svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .container {
+            padding: 0 2rem;
+        }
+        h1 {
+            font-size: 5rem;
+        }
+        .visual-center {
+            width: 300px;
+            height: 400px;
+        }
+        .oval-mask {
+            border-radius: 150px;
+        }
+        .video-card {
+            left: -10%;
+            width: 220px;
+        }
+        .visa-card {
+            right: -5%;
+        }
+        .usd-card {
+            left: -5%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .title-top,
+        .title-bottom {
+            position: relative;
+            top: auto;
+            bottom: auto;
+            left: auto;
+            right: auto;
+            text-align: center;
+        }
+        .hero-content {
+            flex-direction: column;
+            padding-top: 4rem;
+        }
+        h1 {
+            font-size: 3.5rem;
+            text-align: center;
+        }
+        .visual-center {
+            margin: 2rem 0;
+            width: 250px;
+            height: 350px;
+        }
+        .oval-mask {
+            border-radius: 125px;
+        }
+        .floating-card {
+            transform: scale(0.8);
+        }
+        .bottom-bar {
+            flex-direction: column;
+            height: auto;
+            padding: 2rem 0;
+            gap: 1rem;
+            text-align: center;
+        }
+    }
+</style>
+
+<script>
+    import { gsap } from "gsap";
+
+    const floatAnimation = (selector, duration, y) => {
+        gsap.to(selector, {
+            y: y,
+            duration: duration,
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut",
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // Initial Reveal
+        gsap.from(".title-top h1", {
+            x: -100,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power4.out",
+        });
+        gsap.from(".title-bottom h1", {
+            x: 100,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power4.out",
+            delay: 0.2,
+        });
+        gsap.from(".oval-mask", {
+            scale: 0.8,
+            opacity: 0,
+            duration: 1.5,
+            ease: "expo.out",
+        });
+
+        gsap.from(".floating-card", {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "back.out(1.7)",
+            delay: 0.5,
+        });
+
+        // Word Flip Animation
+        const words = [
+            "Mobility",
+            "Funding",
+            "Recruitment",
+            "Visa",
+            "Scholarship",
+            "Internship",
+            "Up-Skilling",
+        ];
+        let currentIndex = 0;
+        const wordElement = document.querySelector(".word-flip");
+
+        function flipWord() {
+            currentIndex = (currentIndex + 1) % words.length;
+
+            gsap.to(wordElement, {
+                y: -20,
+                opacity: 0,
+                duration: 0.4,
+                onComplete: () => {
+                    wordElement.textContent = words[currentIndex];
+                    gsap.fromTo(
+                        wordElement,
+                        { y: 20, opacity: 0 },
+                        { y: 0, opacity: 1, duration: 0.4 },
+                    );
+                },
+            });
+        }
+
+        setInterval(flipWord, 2500);
+
+        // Floating Effect
+        floatAnimation("#usdCard", 3, 15);
+        floatAnimation("#visaCard", 2.5, -10);
+        floatAnimation("#videoCard", 4, 12);
+    });
+</script>

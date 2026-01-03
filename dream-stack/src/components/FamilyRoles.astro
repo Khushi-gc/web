@@ -4,171 +4,173 @@ const comparisonData = [
     label: "Focus",
     standard: {
       title: "Information",
-      desc: "You learn a skill or subject in isolation."
+      desc: "You learn a skill or subject in isolation.",
     },
     aveka: {
       title: "Mobility",
-      desc: "You get the end-to-end support to move your life and career."
-    }
+      desc: "You get the end-to-end support to move your life and career.",
+    },
   },
   {
     label: "Financial Plan",
     standard: {
       title: "The Cost",
-      desc: "You pay for courses, but the funding is your problem."
+      desc: "You pay for courses, but the funding is your problem.",
     },
     aveka: {
       title: "The Capital",
-      desc: "We help you find the money via loans, scholarships, and grants."
-    }
+      desc: "We help you find the money via loans, scholarships, and grants.",
+    },
   },
   {
     label: "Relocation",
     standard: {
       title: "DIY",
-      desc: "You handle visas, forex, and accommodation yourself."
+      desc: "You handle visas, forex, and accommodation yourself.",
     },
     aveka: {
       title: "Integrated",
-      desc: "Expert-led Visa support, Forex, and move-in logistics."
-    }
+      desc: "Expert-led Visa support, Forex, and move-in logistics.",
+    },
   },
   {
     label: "Guidance",
     standard: {
       title: "Generic",
-      desc: "Standardized help-centers and forums."
+      desc: "Standardized help-centers and forums.",
     },
     aveka: {
       title: "Personalized",
-      desc: "AI-powered matching + 1-on-1 Academic Counseling."
-    }
+      desc: "AI-powered matching + 1-on-1 Academic Counseling.",
+    },
   },
   {
     label: "Career Entry",
     standard: {
       title: "Passive",
-      desc: "You get a certificate and apply on your own."
+      desc: "You get a certificate and apply on your own.",
     },
     aveka: {
       title: "Active",
-      desc: "Direct access to Global Internships and profile building."
-    }
-  }
+      desc: "Direct access to Global Internships and profile building.",
+    },
+  },
 ];
 ---
 
 <section class="family-roles">
   <div class="video-bg">
-    <video 
-      src="https://videos.ctfassets.net/l65m9bcr2nac/6i4jx6aioJXHKCKRd8S236/dae4f1b86e60c43b814a2cb7cd693095/brand-video.mp4" 
-      autoplay 
-      muted 
-      loop 
-      playsinline>
+    <video
+      src="https://videos.ctfassets.net/l65m9bcr2nac/6i4jx6aioJXHKCKRd8S236/dae4f1b86e60c43b814a2cb7cd693095/brand-video.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+    >
     </video>
     <div class="overlay"></div>
   </div>
 
   <div class="container-fluid relative z-10 text-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="header-split">
-                <div class="max-w-2xl reveal-text">
-                    <h2 class="display-title">
-                        Beyond the Classroom: <br />
-                        <span class="text-sub">Why an "Ecosystem" is the Key to Mobility</span>
-                    </h2>
-                    <p class="description">
-                        Most platforms provide separated services, but they leave you to figure out the logistics alone. Aveka Prime is a Global Mobility Ecosystem designed to move you from your current location to your target campus or career. 
-                    </p>
-                </div>
-                <div class="quote-box-wrapper reveal-text">
-                   <!-- Quote box removed/merged as requested content didn't explicitly separate it, but desc covers it. Keeping wrapper if needed or removing if strictly text only. 
+    <div class="max-w-6xl mx-auto">
+      <div class="header-split">
+        <div class="max-w-2xl reveal-text">
+          <h2 class="display-title">
+            Beyond the Classroom: <br />
+            <span class="text-sub"
+              >Why an "Ecosystem" is the Key to Mobility</span
+            >
+          </h2>
+          <p class="description">
+            Most platforms provide separated services, but they leave you to
+            figure out the logistics alone. Aveka Prime is a Global Mobility
+            Ecosystem designed to move you from your current location to your
+            target campus or career.
+          </p>
+        </div>
+        <div class="quote-box-wrapper reveal-text">
+          <!-- Quote box removed/merged as requested content didn't explicitly separate it, but desc covers it. Keeping wrapper if needed or removing if strictly text only. 
                         The prompt implies the text "We bridge..." is part of the main block description now, but it was in a quote box before. 
                         I will put the last sentence in the quote box for emphasis as it matches the previous layout's intent. -->
-                    <div class="quote-box">
-                        <p class="quote">
-                            "We bridge the gap between 'Learning' and 'Moving' by integrating funding, logistics, and academic counseling into one seamless ecosystem."
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Comparison Table -->
-            <div class="comparison-table reveal-table">
-                <div class="table-layout">
-                    <!-- Labels Column -->
-                    <div class="col-labels bg-purple-light">
-                        <div class="table-cell header-cell">
-                            <span class="label-header">The Goal</span>
-                        </div>
-                        {
-                            comparisonData.map((item) => (
-                                <div class="table-cell label-cell">
-                                    <span class="label-text">
-                                        {item.label}
-                                    </span>
-                                </div>
-                            ))
-                        }
-                    </div>
-
-                    <!-- Content Columns -->
-                    <div class="col-content">
-                        <!-- Standard Platforms -->
-                        <div class="col-standard">
-                            <div class="table-cell header-cell centered">
-                                <span class="col-header-text">Standard Study Platforms</span>
-                            </div>
-                            {
-                                comparisonData.map((item) => (
-                                    <div class="table-cell content-cell group-hover-gray">
-                                        <div class="cell-head">
-                                            <span class="icon cross">✕</span>
-                                            <span class="cell-title title-red">
-                                                {item.standard.title}
-                                            </span>
-                                        </div>
-                                        <p class="cell-desc">
-                                            {item.standard.desc}
-                                        </p>
-                                    </div>
-                                ))
-                            }
-                        </div>
-
-                        <!-- Aveka Ecosystem -->
-                        <div class="col-aveka">
-                            <div class="table-cell header-cell centered">
-                                <span class="col-header-text">The Aveka Ecosystem</span>
-                            </div>
-                            {
-                                comparisonData.map((item) => (
-                                    <div class="table-cell content-cell group-hover-purple">
-                                        <div class="cell-head">
-                                            <span class="icon check">✓</span>
-                                            <span class="cell-title title-purple">
-                                                {item.aveka.title}
-                                            </span>
-                                        </div>
-                                        <p class="cell-desc highlight">
-                                            {item.aveka.desc}
-                                        </p>
-                                    </div>
-                                ))
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <div class="quote-box">
+            <p class="quote">
+              "We bridge the gap between 'Learning' and 'Moving' by integrating
+              funding, logistics, and academic counseling into one seamless
+              ecosystem."
+            </p>
+          </div>
         </div>
+      </div>
+
+      <!-- Comparison Table -->
+      <div class="comparison-table reveal-table">
+        <div class="table-layout">
+          <!-- Labels Column -->
+          <div class="col-labels bg-purple-light">
+            <div class="table-cell header-cell">
+              <span class="label-header">The Goal</span>
+            </div>
+            {
+              comparisonData.map((item) => (
+                <div class="table-cell label-cell">
+                  <span class="label-text">{item.label}</span>
+                </div>
+              ))
+            }
+          </div>
+
+          <!-- Content Columns -->
+          <div class="col-content">
+            <!-- Standard Platforms -->
+            <div class="col-standard">
+              <div class="table-cell header-cell centered">
+                <span class="col-header-text">Standard Study Platforms</span>
+              </div>
+              {
+                comparisonData.map((item) => (
+                  <div class="table-cell content-cell group-hover-gray">
+                    <div class="cell-head">
+                      <span class="icon cross">✕</span>
+                      <span class="cell-title title-red">
+                        {item.standard.title}
+                      </span>
+                    </div>
+                    <p class="cell-desc">{item.standard.desc}</p>
+                  </div>
+                ))
+              }
+            </div>
+
+            <!-- Aveka Ecosystem -->
+            <div class="col-aveka">
+              <div class="table-cell header-cell centered">
+                <span class="col-header-text">The Aveka Ecosystem</span>
+              </div>
+              {
+                comparisonData.map((item) => (
+                  <div class="table-cell content-cell group-hover-purple">
+                    <div class="cell-head">
+                      <span class="icon check">✓</span>
+                      <span class="cell-title title-purple">
+                        {item.aveka.title}
+                      </span>
+                    </div>
+                    <p class="cell-desc highlight">{item.aveka.desc}</p>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <style>
   :root {
-    --primary-purple: #6200EE;
-    --text-muted: #6B7280;
+    --primary-purple: #6200ee;
+    --text-muted: #6b7280;
     --border-light: rgba(59, 130, 246, 0.1); /* blue-500/10 */
   }
 
@@ -202,7 +204,7 @@ const comparisonData = [
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(10, 10, 10, 0.85); /* Darker overlay for readability */
+    background: rgba(98, 0, 238, 0.9); /* Purple overlay */
     backdrop-filter: blur(5px);
   }
 
@@ -227,13 +229,15 @@ const comparisonData = [
 
   @media (min-width: 1024px) {
     .header-split {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
     }
   }
 
-  .max-w-2xl { max-width: 42rem; }
+  .max-w-2xl {
+    max-width: 42rem;
+  }
 
   /* Typography */
   .display-title {
@@ -245,7 +249,9 @@ const comparisonData = [
   }
 
   @media (min-width: 1024px) {
-    .display-title { font-size: 3.75rem; }
+    .display-title {
+      font-size: 3.75rem;
+    }
   }
 
   .text-sub {
@@ -293,7 +299,9 @@ const comparisonData = [
   }
 
   @media (min-width: 768px) {
-    .table-layout { flex-direction: row; }
+    .table-layout {
+      flex-direction: row;
+    }
   }
 
   .col-labels {
@@ -302,7 +310,9 @@ const comparisonData = [
   }
 
   @media (min-width: 768px) {
-    .col-labels { width: 33.333333%; }
+    .col-labels {
+      width: 33.333333%;
+    }
   }
 
   .col-content {
@@ -315,7 +325,7 @@ const comparisonData = [
     background: white;
     border-left: 1px solid var(--border-light);
   }
-  
+
   .col-aveka {
     background: white;
     border-left: 1px solid var(--border-light);
@@ -337,7 +347,8 @@ const comparisonData = [
     height: 6rem;
   }
 
-  .label-cell, .content-cell {
+  .label-cell,
+  .content-cell {
     min-height: 110px;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -356,8 +367,12 @@ const comparisonData = [
   }
 
   /* Interactions */
-  .group-hover-gray:hover { background-color: #f9fafb; }
-  .group-hover-purple:hover { background-color: rgba(98, 0, 238, 0.05); }
+  .group-hover-gray:hover {
+    background-color: #f9fafb;
+  }
+  .group-hover-purple:hover {
+    background-color: rgba(98, 0, 238, 0.05);
+  }
 
   /* Text & Icons */
   .label-header {
@@ -417,8 +432,12 @@ const comparisonData = [
     font-size: 0.875rem;
   }
 
-  .title-red { color: #ef4444; }
-  .title-purple { color: var(--primary-purple); }
+  .title-red {
+    color: #ef4444;
+  }
+  .title-purple {
+    color: var(--primary-purple);
+  }
 
   .cell-desc {
     font-size: 0.75rem; /* ~11px */
@@ -426,14 +445,15 @@ const comparisonData = [
     line-height: 1.25;
     margin: 0;
   }
-  
+
   .highlight {
     font-weight: 500;
   }
-  
+
   /* Utilities */
-  .reveal-text, .reveal-table {
-    opacity: 0; 
+  .reveal-text,
+  .reveal-table {
+    opacity: 0;
     transform: translateY(20px);
     /* JS animation target */
   }
@@ -442,35 +462,35 @@ const comparisonData = [
 <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
-  
+
   gsap.registerPlugin(ScrollTrigger);
 
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
     // Header text reveal
-    gsap.utils.toArray('.reveal-text').forEach((el: any, i) => {
-        gsap.to(el, {
-            scrollTrigger: {
-                trigger: el,
-                start: "top 80%",
-            },
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            delay: i * 0.2,
-            ease: "power3.out"
-        });
-    });
-
-    // Table specific animation
-     gsap.to('.reveal-table', {
+    gsap.utils.toArray(".reveal-text").forEach((el: any, i) => {
+      gsap.to(el, {
         scrollTrigger: {
-            trigger: '.reveal-table',
-            start: "top 85%",
+          trigger: el,
+          start: "top 80%",
         },
         y: 0,
         opacity: 1,
-        duration: 1.2,
-        ease: "power2.out"
+        duration: 1,
+        delay: i * 0.2,
+        ease: "power3.out",
+      });
+    });
+
+    // Table specific animation
+    gsap.to(".reveal-table", {
+      scrollTrigger: {
+        trigger: ".reveal-table",
+        start: "top 85%",
+      },
+      y: 0,
+      opacity: 1,
+      duration: 1.2,
+      ease: "power2.out",
     });
   });
 </script>

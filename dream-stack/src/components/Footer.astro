@@ -1,0 +1,449 @@
+<footer class="site-footer">
+    <div class="bottom-cta-area">
+        <div class="mesh-pattern"></div>
+        <div class="glow-container">
+            <div class="glow-top"></div>
+            <div class="glow-right"></div>
+        </div>
+
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-heading">
+                    Discover how Aveka transforms <br /> case management
+                </h2>
+                <p class="cta-subtext">
+                    See how Aveka helps decision-makers work faster, stay
+                    organised, and deliver fair, informed outcomes — without
+                    changing your existing systems.
+                </p>
+                <div class="btn-wrap">
+                    <a href="#demo" class="demo-button">Book a free demo</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="watermark-outer">
+                    <div class="watermark-wrap">
+                        <img
+                            src="/aveka-watermark.png"
+                            alt="aveka.ai"
+                            id="footerWatermark"
+                            class="watermark-image"
+                        />
+                    </div>
+                    <div class="footer-separator"></div>
+                </div>
+
+                <div class="bottom-grid">
+                    <div class="col-left">
+                        <p class="copyright">
+                            © 2025 Aveka AI. All rights reserved.
+                        </p>
+                    </div>
+
+                    <div class="col-center">
+                        <nav class="nav-links">
+                            <a href="#features">Features</a>
+                            <a href="#customers">Customers</a>
+                            <a href="#security">Security</a>
+                            <a href="#faq">FAQ</a>
+                            <a href="#about">About</a>
+                        </nav>
+                    </div>
+
+                    <div class="col-right">
+                        <div class="contact-group">
+                            <a href="mailto:info@aveka.ai" class="contact-link">
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    class="icon-lime"
+                                >
+                                    <path
+                                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                                    ></path>
+                                </svg>
+                                <span>info@aveka.ai</span>
+                            </a>
+                            <a href="#" class="contact-link">
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    class="icon-lime"
+                                >
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                                    ></path>
+                                </svg>
+                                <span>Linkedin</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+    .site-footer {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        background: #6200ee;
+        color: #fff;
+        font-family: "Inter", sans-serif;
+        overflow: hidden;
+    }
+
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 4rem;
+        position: relative;
+    }
+
+    /* Bottom Area - Per Screenshot */
+    .bottom-cta-area {
+        position: relative;
+        padding: 0rem 0 4rem 0;
+        background: radial-gradient(
+            circle at 50% 120%,
+            #7c4dff 0%,
+            #6200ee 85%
+        );
+        text-align: center;
+        color: #fff;
+    }
+
+    /* Mesh/Dot Pattern - Enhanced */
+    .mesh-pattern {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+            rgba(255, 255, 255, 0.08) 1.2px,
+            transparent 1.2px
+        );
+        background-size: 32px 32px;
+        opacity: 0.35;
+        mask-image: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0) 80%
+        );
+        pointer-events: none;
+    }
+
+    /* Glow effects */
+    .glow-container {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+    }
+    .glow-top {
+        position: absolute;
+        top: -10%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 40%;
+        background: radial-gradient(
+            circle,
+            rgba(124, 77, 255, 0.4),
+            transparent 70%
+        );
+        filter: blur(100px);
+    }
+    .glow-right {
+        position: absolute;
+        top: 30%;
+        right: -10%;
+        width: 40%;
+        height: 50%;
+        background: radial-gradient(
+            circle,
+            rgba(158, 108, 255, 0.3),
+            transparent 70%
+        );
+        filter: blur(80px);
+    }
+
+    .cta-content {
+        max-width: 880px;
+        margin: 0 auto 12rem auto;
+        position: relative;
+        z-index: 10;
+    }
+
+    .cta-heading {
+        font-family: "PT Serif", serif;
+        font-size: clamp(2.5rem, 4.5vw, 3.8rem);
+        font-weight: 400;
+        line-height: 1.15;
+        margin-bottom: 1.5rem;
+        color: #fff;
+        letter-spacing: -0.01em;
+    }
+
+    .cta-subtext {
+        font-size: 1.15rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.6);
+        max-width: 680px;
+        margin: 0 auto 2.5rem auto;
+        letter-spacing: 0.01em;
+    }
+
+    .demo-button {
+        display: inline-block;
+        background: #d4f77c; /* Lime green per shot */
+        color: #053335;
+        padding: 1rem 2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.05rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .demo-button:hover {
+        background: #e1ff99;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(212, 247, 124, 0.2);
+    }
+
+    /* Modified Watermark Alignment */
+    .watermark-outer {
+        position: relative;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .watermark-wrap {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        pointer-events: none;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .watermark-image {
+        width: clamp(300px, 85%, 1200px);
+        height: auto;
+        opacity: 0.08;
+        display: block;
+        margin-bottom: -5.5rem; /* Precise line alignment for larger logo */
+    }
+
+    .footer-bottom {
+        position: relative;
+        z-index: 20;
+        margin-top: auto;
+    }
+
+    .footer-separator {
+        width: 100%;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.1);
+        position: relative;
+        z-index: 2;
+    }
+
+    .bottom-grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1.5rem;
+        padding-bottom: 1rem;
+    }
+
+    .copyright {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.85); /* Whiter text like screenshot */
+        margin: 0;
+        font-weight: 500;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2.25rem;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1rem;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: #fff;
+    }
+
+    .contact-group {
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        text-decoration: none;
+        color: #fff;
+        font-size: 0.925rem;
+        font-weight: 500;
+        transition: opacity 0.3s ease;
+    }
+
+    .contact-link:hover {
+        opacity: 0.8;
+    }
+
+    .icon-lime {
+        width: 18px;
+        height: 18px;
+        color: #d4f77c;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1100px) {
+        .container {
+            padding: 0 2rem;
+        }
+        .bottom-grid {
+            flex-direction: column;
+            gap: 2.5rem;
+            text-align: center;
+        }
+        .col-left,
+        .col-right {
+            order: 2;
+        }
+        .col-center {
+            order: 3;
+        }
+        .nav-links {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        .contact-group {
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+        .watermark-text {
+            font-size: 15vw;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .letter-title {
+            font-size: 2.25rem;
+        }
+        .founder-header {
+            gap: 1.5rem;
+            flex-direction: column;
+        }
+        .founder-image-wrapper {
+            width: 180px;
+            height: 110px;
+        }
+        .cta-heading {
+            font-size: 2.2rem;
+        }
+        .bottom-cta-area {
+            padding-top: 6rem;
+        }
+    }
+</style>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    function initFooter() {
+        // Parallax Watermark - subtle to maintain line alignment
+        gsap.to("#footerWatermark", {
+            y: -40,
+            opacity: 0.07,
+            scrollTrigger: {
+                trigger: ".footer-bottom",
+                start: "top bottom",
+                end: "bottom center",
+                scrub: 2,
+            },
+        });
+
+        // Animate Content Pieces
+        const ctaTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".cta-content",
+                start: "top 85%",
+            },
+        });
+
+        ctaTl
+            .from(".cta-heading", {
+                y: 40,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out",
+            })
+            .from(
+                ".cta-subtext",
+                { y: 20, opacity: 0, duration: 0.8, ease: "power3.out" },
+                "-=0.6",
+            )
+            .from(
+                ".demo-button",
+                {
+                    scale: 0.9,
+                    opacity: 0,
+                    duration: 0.6,
+                    ease: "back.out(1.7)",
+                },
+                "-=0.4",
+            );
+
+        // Founder Section Reveal
+        gsap.from(".founder-note p", {
+            opacity: 0,
+            y: 20,
+            stagger: 0.15,
+            duration: 1,
+            scrollTrigger: {
+                trigger: "#founderNote",
+                start: "top 75%",
+            },
+        });
+
+        // Signature Draw
+        gsap.from(".sig-path", {
+            strokeDasharray: 1000,
+            strokeDashoffset: 1000,
+            duration: 2.5,
+            ease: "sine.inOut",
+            scrollTrigger: {
+                trigger: ".founder-footer",
+                start: "top 85%",
+            },
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", initFooter);
+</script>

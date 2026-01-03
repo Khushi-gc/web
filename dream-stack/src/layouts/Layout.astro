@@ -1,3 +1,8 @@
+---
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -6,12 +11,17 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Dream Stack | Astro + GSAP + Lenis</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
+		<Navbar />
 		<slot />
+		<Footer />
 	</body>
 </html>
 
@@ -23,7 +33,7 @@
 	}
 
 	html {
-		font-family: 'Inter', system-ui, sans-serif;
+		font-family: "Inter", system-ui, sans-serif;
 		background: var(--bg-color);
 		color: var(--text-color);
 		scroll-behavior: initial; /* Let Lenis handle scrolling */
@@ -39,7 +49,8 @@
 	}
 
 	/* Lenis recommended styles */
-	html.lenis, html.lenis body {
+	html.lenis,
+	html.lenis body {
 		height: auto;
 	}
 
@@ -61,13 +72,16 @@
 </style>
 
 <script>
-	import Lenis from 'lenis';
+	import Lenis from "lenis";
 
 	const lenis = new Lenis({
 		duration: 1.2,
 		easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
 	});
 
+	/**
+	 * @param {number} time
+	 */
 	function raf(time) {
 		lenis.raf(time);
 		requestAnimationFrame(raf);

@@ -1,5 +1,22 @@
 ---
+import { Image } from "astro:assets";
+import mobilityImg from "../assets/images/card1.webp"; // Fallback for Mobility
+import fundingImg from "../assets/images/coins-scale-stack-table.jpg";
+import recruitmentImg from "../assets/images/hr-representatives-positively-greeting-female-job-candidate.jpg";
+import visaImg from "../assets/images/visa-application-composition-with-europe-america-flag.jpg";
+import scholarshipImg from "../assets/images/portrait-three-smiling-graduate-friends-graduation-robes-university-campus-with-diploma (1).jpg";
+import internshipImg from "../assets/images/multi-ethnic-group-young-men-women-studying-indoors.jpg";
+import upSkillingImg from "../assets/images/development-knowledge-study-education-concept.jpg";
 
+const items = [
+    { text: "Mobility", image: mobilityImg },
+    { text: "Funding", image: fundingImg },
+    { text: "Recruitment", image: recruitmentImg },
+    { text: "Visa", image: visaImg },
+    { text: "Scholarship", image: scholarshipImg },
+    { text: "Internship", image: internshipImg },
+    { text: "Up-Skilling", image: upSkillingImg },
+];
 ---
 
 <section class="hero">
@@ -11,15 +28,21 @@
 
             <div class="visual-center">
                 <div class="oval-mask">
-                    <img
-                        src="https://images.ctfassets.net/l65m9bcr2nac/316VlExshv3JGLKWpUjSwy/a4cb516e4b79e53a74092fbdd953b69d/b_bnr_1.webp"
-                        alt="Aveka Builder"
-                        class="main-image"
-                    />
+                    <div class="image-flip-container">
+                        {
+                            items.map((item, index) => (
+                                <Image
+                                    src={item.image}
+                                    alt={item.text}
+                                    class={`flip-image ${index === 0 ? "active" : ""}`}
+                                    data-index={index}
+                                />
+                            ))
+                        }
+                    </div>
                 </div>
 
-                <!-- Floating Cards (Rebranded Visuals) -->
-
+                <!-- Floating Cards -->
                 <div class="floating-card visa-card" id="visaCard">
                     <img
                         src="https://images.ctfassets.net/l65m9bcr2nac/4jQhhIW2SM7MgmAMFAM7M/a9fb1a84f18d20bfc18771d13e7bfb25/b_bnr_r1.webp"
@@ -63,7 +86,9 @@
         <!-- Hero Line Area (Flipping Text) -->
         <div class="hero-line-container">
             <div class="flipping-wrapper">
-                <span class="word-flip">Mobility</span>
+                <div class="word-flip-container">
+                    <span class="word-flip">Mobility</span>
+                </div>
                 <span class="made-easy">made easy</span>
             </div>
         </div>
@@ -157,6 +182,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        perspective: 1000px;
     }
 
     .oval-mask {
@@ -166,12 +192,29 @@
         overflow: hidden;
         background: #1a1a1a;
         border: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
     }
 
-    .main-image {
+    .image-flip-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+    }
+
+    .flip-image {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .flip-image.active {
+        opacity: 1;
     }
 
     /* Floating Cards */
@@ -182,47 +225,6 @@
         overflow: hidden;
         z-index: 15;
         background: white;
-    }
-
-    .usd-card {
-        width: 180px;
-        height: 110px;
-        bottom: 25%;
-        left: -25%;
-        padding: 14px;
-        background: white;
-        color: black;
-    }
-
-    .usd-card .card-header {
-        display: flex;
-        justify-content: space-between;
-        font-size: 11px;
-        font-weight: 600;
-        color: #333;
-        margin-bottom: 12px;
-    }
-
-    .usd-card .card-header .dots {
-        color: #7c4dff;
-        letter-spacing: 1px;
-    }
-
-    .usd-card .card-visual {
-        display: flex;
-        height: 44px;
-        gap: 3px;
-    }
-
-    .bar-purple {
-        flex: 1.5;
-        background: #6200ee;
-        border-radius: 4px;
-    }
-    .bar-light-purple {
-        flex: 1;
-        background: #9e6cff;
-        border-radius: 4px;
     }
 
     .visa-card {
@@ -311,28 +313,40 @@
     /* Hero Line (Flipping Text) */
     .hero-line-container {
         position: absolute;
-        bottom: 180px;
-        left: 4rem;
+        bottom: 150px;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 25;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .flipping-wrapper {
         display: flex;
         align-items: center;
         gap: 0.8rem;
-        font-size: 2rem;
-        font-weight: 600;
+        font-size: 2.5rem;
+        font-weight: 700;
         color: #fff;
+    }
+
+    .word-flip-container {
+        height: 3rem;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        min-width: 200px;
     }
 
     .word-flip {
         color: #9e6cff; /* Purple accent */
-        min-width: 120px;
-        display: inline-block;
     }
 
     .made-easy {
         opacity: 0.8;
+        white-space: nowrap;
     }
 
     /* Bottom Bar */
@@ -403,24 +417,17 @@
             padding: 0 2rem;
         }
         h1 {
-            font-size: 5rem;
+            font-size: 4rem;
         }
         .visual-center {
             width: 300px;
-            height: 400px;
+            height: 480px;
         }
         .oval-mask {
             border-radius: 150px;
         }
-        .video-card {
-            left: -10%;
-            width: 220px;
-        }
-        .visa-card {
-            right: -5%;
-        }
-        .usd-card {
-            left: -5%;
+        .flipping-wrapper {
+            font-size: 2rem;
         }
     }
 
@@ -436,28 +443,37 @@
         }
         .hero-content {
             flex-direction: column;
-            padding-top: 4rem;
+            padding-top: 2rem;
         }
         h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             text-align: center;
         }
         .visual-center {
             margin: 2rem 0;
-            width: 250px;
-            height: 350px;
+            width: 220px;
+            height: 320px;
         }
         .oval-mask {
-            border-radius: 125px;
+            border-radius: 110px;
         }
-        .floating-card {
-            transform: scale(0.8);
+        .hero-line-container {
+            bottom: 180px;
+        }
+        .flipping-wrapper {
+            flex-direction: column;
+            gap: 0;
+            font-size: 1.8rem;
+        }
+        .word-flip-container {
+            justify-content: center;
+            min-width: unset;
         }
         .bottom-bar {
             flex-direction: column;
             height: auto;
             padding: 2rem 0;
-            gap: 1rem;
+            gap: 1.5rem;
             text-align: center;
         }
     }
@@ -466,7 +482,11 @@
 <script>
     import { gsap } from "gsap";
 
-    const floatAnimation = (selector, duration, y) => {
+    const floatAnimation = (
+        selector: string | Element,
+        duration: number,
+        y: number | string,
+    ) => {
         gsap.to(selector, {
             y: y,
             duration: duration,
@@ -507,8 +527,8 @@
             delay: 0.5,
         });
 
-        // Word Flip Animation
-        const words = [
+        // Sync Flip Animation
+        const items = [
             "Mobility",
             "Funding",
             "Recruitment",
@@ -518,30 +538,71 @@
             "Up-Skilling",
         ];
         let currentIndex = 0;
-        const wordElement = document.querySelector(".word-flip");
+        const wordElement = document.querySelector(".word-flip") as HTMLElement;
+        const images = document.querySelectorAll(".flip-image");
+        const mask = document.querySelector(".oval-mask");
 
-        function flipWord() {
-            currentIndex = (currentIndex + 1) % words.length;
+        if (!wordElement || images.length === 0) return;
 
+        function flipEverything() {
+            const nextIndex = (currentIndex + 1) % items.length;
+            const currentImg = images[currentIndex];
+            const nextImg = images[nextIndex];
+
+            // 1. Flip Text
             gsap.to(wordElement, {
-                y: -20,
+                y: -40,
                 opacity: 0,
-                duration: 0.4,
+                rotateX: 90,
+                duration: 0.5,
+                ease: "power2.in",
                 onComplete: () => {
-                    wordElement.textContent = words[currentIndex];
+                    wordElement.textContent = items[nextIndex];
                     gsap.fromTo(
                         wordElement,
-                        { y: 20, opacity: 0 },
-                        { y: 0, opacity: 1, duration: 0.4 },
+                        { y: 40, opacity: 0, rotateX: -90 },
+                        {
+                            y: 0,
+                            opacity: 1,
+                            rotateX: 0,
+                            duration: 0.5,
+                            ease: "power2.out",
+                        },
                     );
                 },
             });
+
+            // 2. Image Animation (Inside Static Mask)
+            gsap.to(currentImg, {
+                y: "-100%",
+                opacity: 0,
+                duration: 0.6,
+                ease: "power2.inOut",
+                onComplete: () => {
+                    currentImg.classList.remove("active");
+                },
+            });
+
+            gsap.fromTo(
+                nextImg,
+                { y: "100%", opacity: 0 },
+                {
+                    y: "0%",
+                    opacity: 1,
+                    duration: 0.6,
+                    ease: "power2.out",
+                    onStart: () => {
+                        nextImg.classList.add("active");
+                    },
+                },
+            );
+
+            currentIndex = nextIndex;
         }
 
-        setInterval(flipWord, 2500);
+        setInterval(flipEverything, 3500);
 
         // Floating Effect
-        floatAnimation("#usdCard", 3, 15);
         floatAnimation("#visaCard", 2.5, -10);
         floatAnimation("#videoCard", 4, 12);
     });

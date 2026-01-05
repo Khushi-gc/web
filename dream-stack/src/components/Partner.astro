@@ -1,4 +1,7 @@
 ---
+// Import background
+import bgDoodle from "../assets/images/aveka-doodle.png";
+
 // Import lender logos
 import auxilo from "../assets/images/lenders/auxilo.png";
 import axisBank from "../assets/images/lenders/axis-bank.png";
@@ -74,7 +77,10 @@ const universities = [
 ];
 ---
 
-<section class="partners-section">
+<section
+    class="partners-section"
+    style={{ "--bg-doodle": `url('${bgDoodle.src}')` }}
+>
     <!-- Global Lenders Section -->
     <div class="container pb-100">
         <div class="row">
@@ -161,9 +167,24 @@ const universities = [
         color: #1a1a1a;
         padding: 6rem 0;
         overflow: hidden;
+        position: relative;
+    }
+
+    .partners-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: var(--bg-doodle);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.8;
+        pointer-events: none;
     }
 
     .container {
+        position: relative;
+        z-index: 1;
         max-width: 1400px;
         margin: 0 auto;
         padding: 0 2rem;
@@ -312,6 +333,10 @@ const universities = [
     @media (max-width: 768px) {
         .partners-section {
             padding: 4rem 0;
+        }
+
+        .container {
+            padding: 0 1.5rem;
         }
 
         .pb-100 {

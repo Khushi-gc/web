@@ -99,63 +99,46 @@ const comparisonData = [
 
       <!-- Comparison Table -->
       <div class="comparison-table reveal-table">
-        <div class="table-layout">
-          <!-- Labels Column -->
-          <div class="col-labels bg-purple-light">
-            <div class="table-cell header-cell">
-              <span class="label-header">The Goal</span>
-            </div>
-            {
-              comparisonData.map((item) => (
-                <div class="table-cell label-cell">
+        <div class="comparison-grid">
+          <!-- Headers (Desktop Only for Labels) -->
+          <div class="grid-header label-header">The Goal</div>
+          <div class="grid-header standard-header">
+            Standard Study Platforms
+          </div>
+          <div class="grid-header aveka-header">The Aveka Ecosystem</div>
+
+          <!-- Content Rows -->
+          {
+            comparisonData.map((item) => (
+              <>
+                <div class="grid-cell label-cell">
                   <span class="label-text">{item.label}</span>
                 </div>
-              ))
-            }
-          </div>
 
-          <!-- Content Columns -->
-          <div class="col-content">
-            <!-- Standard Platforms -->
-            <div class="col-standard">
-              <div class="table-cell header-cell centered">
-                <span class="col-header-text">Standard Study Platforms</span>
-              </div>
-              {
-                comparisonData.map((item) => (
-                  <div class="table-cell content-cell group-hover-gray">
-                    <div class="cell-head">
-                      <span class="icon cross">✕</span>
-                      <span class="cell-title title-red">
-                        {item.standard.title}
-                      </span>
-                    </div>
-                    <p class="cell-desc">{item.standard.desc}</p>
+                <div class="grid-cell content-cell standard-cell group-hover-gray">
+                  <div class="mobile-label">Standard</div>
+                  <div class="cell-head">
+                    <span class="icon cross">✕</span>
+                    <span class="cell-title title-red">
+                      {item.standard.title}
+                    </span>
                   </div>
-                ))
-              }
-            </div>
+                  <p class="cell-desc">{item.standard.desc}</p>
+                </div>
 
-            <!-- Aveka Ecosystem -->
-            <div class="col-aveka">
-              <div class="table-cell header-cell centered">
-                <span class="col-header-text">The Aveka Ecosystem</span>
-              </div>
-              {
-                comparisonData.map((item) => (
-                  <div class="table-cell content-cell group-hover-purple">
-                    <div class="cell-head">
-                      <span class="icon check">✓</span>
-                      <span class="cell-title title-purple">
-                        {item.aveka.title}
-                      </span>
-                    </div>
-                    <p class="cell-desc highlight">{item.aveka.desc}</p>
+                <div class="grid-cell content-cell aveka-cell group-hover-purple">
+                  <div class="mobile-label">Aveka</div>
+                  <div class="cell-head">
+                    <span class="icon check">✓</span>
+                    <span class="cell-title title-purple">
+                      {item.aveka.title}
+                    </span>
                   </div>
-                ))
-              }
-            </div>
-          </div>
+                  <p class="cell-desc highlight">{item.aveka.desc}</p>
+                </div>
+              </>
+            ))
+          }
         </div>
       </div>
     </div>
@@ -206,7 +189,14 @@ const comparisonData = [
   /* Layout Containers */
   .container-fluid {
     width: 100%;
-    padding: 2rem;
+    padding: 0.5rem 0.5rem; /* Reduced horizontal padding on mobile */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+
+  @media (min-width: 768px) {
+    .container-fluid {
+      padding: 2rem;
+    }
   }
 
   .max-w-6xl {
@@ -261,24 +251,48 @@ const comparisonData = [
   }
 
   /* Quote Box */
+  /* Quote Box */
   .quote-box {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(12px);
-    padding: 1.5rem;
+    padding: 1rem; /* Further reduced padding on mobile */
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    max-width: 20rem;
-    margin-top: 1rem;
+    max-width: 100%; /* Full width on mobile */
+    width: 100%;
+    height: auto; /* Let it size to content */
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+
+  @media (min-width: 768px) {
+    .quote-box {
+      max-width: 26rem;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
   }
 
   .quote {
-    font-size: 0.875rem;
+    font-size: 0.95rem; /* Smaller on mobile */
     font-style: italic;
     color: rgba(255, 255, 255, 0.9);
     margin: 0;
+    line-height: 1.5;
+    word-wrap: break-word; /* Allow long words to break */
+    overflow-wrap: break-word; /* Modern property */
+    hyphens: auto; /* Enable hyphenation */
   }
 
-  /* Comparison Table */
+  @media (min-width: 768px) {
+    .quote {
+      font-size: 1.25rem;
+    }
+  }
+
+  /* Comparison Grid Refactor */
   .comparison-table {
     background: white;
     border-radius: 1.5rem;
@@ -288,80 +302,118 @@ const comparisonData = [
     color: #1a1a1a;
   }
 
-  .table-layout {
-    display: flex;
-    flex-direction: column;
-  }
-
-  @media (min-width: 768px) {
-    .table-layout {
-      flex-direction: row;
-    }
-  }
-
-  .col-labels {
-    width: 100%;
-    background: #eee6fe;
-  }
-
-  @media (min-width: 768px) {
-    .col-labels {
-      width: 33.333333%;
-    }
-  }
-
-  .col-content {
-    flex: 1;
+  .comparison-grid {
     display: grid;
+    /* Mobile First: Label full width, then 2 cols for comparison */
     grid-template-columns: 1fr 1fr;
+    width: 100%;
   }
 
-  .col-standard {
-    background: white;
-    border-left: 1px solid var(--border-light);
+  @media (min-width: 768px) {
+    .comparison-grid {
+      /* Desktop: Label, Standard, Aveka columns */
+      grid-template-columns: 1fr 1.25fr 1.25fr;
+    }
   }
 
-  .col-aveka {
-    background: white;
-    border-left: 1px solid var(--border-light);
+  /* Header Cells */
+  .grid-header {
+    background: #fcfcfc;
+    padding: 1.5rem 2rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--primary-purple);
+    border-bottom: 2px solid var(--border-light);
+    display: none; /* Hidden on mobile by default */
+  }
+
+  .standard-header {
+    color: #1a1a1a;
+  }
+  .aveka-header {
+    color: #1a1a1a;
+  }
+
+  @media (min-width: 768px) {
+    .grid-header {
+      display: flex;
+      align-items: center;
+    }
+    .label-header {
+      justify-content: flex-start;
+    }
+    .standard-header,
+    .aveka-header {
+      justify-content: center;
+    }
   }
 
   /* Cells */
-  .table-cell {
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
+  .grid-cell {
+    padding: 1rem;
     border-bottom: 1px solid var(--border-light);
-  }
-
-  .table-cell:last-child {
-    border-bottom: none;
-  }
-
-  .header-cell {
-    height: 6rem;
-  }
-
-  .label-cell,
-  .content-cell {
-    min-height: 110px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-
-  .centered {
-    justify-content: center;
-    text-align: center;
-  }
-
-  .content-cell {
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    transition: background-color 0.2s;
   }
 
-  /* Interactions */
+  @media (min-width: 768px) {
+    .grid-cell {
+      padding: 1.5rem 2rem;
+    }
+  }
+
+  /* Label Cell */
+  .label-cell {
+    background: #eee6fe;
+    grid-column: 1 / -1; /* Span full row on mobile */
+    align-items: center;
+    border-bottom: none; /* Connect visually with content below */
+  }
+
+  @media (min-width: 768px) {
+    .label-cell {
+      grid-column: auto;
+      background: #eee6fe; /* Keep branding */
+      align-items: flex-start;
+      border-bottom: 1px solid var(--border-light);
+    }
+  }
+
+  .label-text {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #1a1a1a;
+  }
+
+  /* Content Cells */
+  .content-cell {
+    position: relative;
+    /* Mobile: 2 cols side by side implies height matching which grid handles */
+  }
+
+  .standard-cell {
+    border-right: 1px solid var(--border-light);
+  }
+
+  /* Mobile Labels inside cells */
+  .mobile-label {
+    display: block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: #9ca3af;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  @media (min-width: 768px) {
+    .mobile-label {
+      display: none;
+    }
+  }
+
   .group-hover-gray:hover {
     background-color: #f9fafb;
   }
@@ -369,35 +421,12 @@ const comparisonData = [
     background-color: rgba(98, 0, 238, 0.05);
   }
 
-  /* Text & Icons */
-  .label-header {
-    color: var(--primary-purple);
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-  }
-
-  .label-text {
-    color: #1a1a1a;
-    font-weight: 700;
-    font-size: 1.125rem;
-  }
-
-  .col-header-text {
-    color: #1a1a1a;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
-  }
-
+  /* Cell Content */
   .cell-head {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     margin-bottom: 0.5rem;
-    width: 100%;
   }
 
   .icon {
@@ -413,12 +442,11 @@ const comparisonData = [
   }
 
   .cross {
-    background: #fce7f3; /* pink-100 */
-    color: #dc2626; /* red-600 */
+    background: #fce7f3;
+    color: #dc2626;
   }
-
   .check {
-    background: #f3e8ff; /* purple-100 */
+    background: #f3e8ff;
     color: var(--primary-purple);
   }
 
@@ -435,9 +463,9 @@ const comparisonData = [
   }
 
   .cell-desc {
-    font-size: 0.75rem; /* ~11px */
+    font-size: 0.85rem;
     color: var(--text-muted);
-    line-height: 1.25;
+    line-height: 1.4;
     margin: 0;
   }
 
@@ -450,7 +478,6 @@ const comparisonData = [
   .reveal-table {
     opacity: 0;
     transform: translateY(20px);
-    /* JS animation target */
   }
 </style>
 

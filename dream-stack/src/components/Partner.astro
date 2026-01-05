@@ -1,6 +1,5 @@
 ---
 // Import background
-import bgDoodle from "../assets/images/aveka-doodle.png";
 
 // Import lender logos
 import auxilo from "../assets/images/lenders/auxilo.png";
@@ -37,7 +36,6 @@ import uni12 from "../assets/images/uni-12.png";
 import uni13 from "../assets/images/uni-13.jpg";
 import uni14 from "../assets/images/uni-14.jpg";
 import uni15 from "../assets/images/uni-15.jpg";
-import avekaDoodle from "../assets/images/aveka-doodle.png";
 
 const lenders = [
     { src: auxilo, alt: "Auxilo" },
@@ -196,10 +194,12 @@ const universities = [
 
     .heading-text {
         font-size: clamp(2rem, 4vw, 3rem);
-        font-weight: 700;
+        font-weight: 800;
         margin-bottom: 1.5rem;
         color: #1a1a1a;
         line-height: 1.2;
+        letter-spacing: -0.01em;
+        font-family: "Inter", sans-serif;
     }
 
     .subtext {
@@ -293,7 +293,7 @@ const universities = [
 
     .logo-item:hover {
         background: #ffffff;
-        border-color: #6200ee;
+        border-color: #660ef0;
         transform: translateY(-5px);
         box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
     }
@@ -304,14 +304,11 @@ const universities = [
         width: auto;
         height: auto;
         object-fit: contain;
-        filter: grayscale(100%);
-        opacity: 0.6;
         transition: all 0.3s ease;
     }
 
     .logo-item:hover img {
-        filter: grayscale(0%);
-        opacity: 1;
+        transform: scale(1.05);
     }
 
     /* Responsive */

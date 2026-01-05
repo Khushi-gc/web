@@ -214,8 +214,19 @@ const cards = [
        background: #f3f4f6;
        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
        border: 1px solid #e5e7eb;
-       transition: flex 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+       transition: flex 0.7s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease, opacity 0.5s ease;
        perspective: none; /* Disable flip perspective on desktop */
+    }
+
+    /* Dim siblings on hover */
+    .cards-wrapper:hover .card:not(:hover) {
+        filter: grayscale(1);
+        opacity: 0.6;
+    }
+    
+    .cards-wrapper:hover .card:not(:hover) .text-content h4 {
+        transform: scale(0.85);
+        color: #888;
     }
 
     .card:hover {
@@ -425,7 +436,7 @@ const cards = [
   .icon :global(svg) {
     width: 2.5rem;
     height: 2.5rem;
-    fill: #6200ee; /* Brand Purple */
+    fill: #660ef0; /* Brand Purple */
   }
 
   /* Text Content */
@@ -434,12 +445,14 @@ const cards = [
     font-weight: 700;
     color: #1a1a1a;
     margin: 0;
+    transition: transform 0.5s ease, color 0.5s ease;
+    transform-origin: left;
   }
   
   .mobile-tap-hint {
       margin-top: 0.5rem;
       font-size: 0.85rem;
-      color: #6200ee;
+      color: #660ef0;
       font-weight: 600;
       opacity: 0.8;
   }
@@ -544,4 +557,4 @@ const cards = [
     });
   });
 </script>
-```
+

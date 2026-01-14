@@ -393,6 +393,11 @@ const comparisonData = [
     border-bottom: none; /* Connect visually with content below */
   }
 
+  /* Fix: Ensure label spans full width on mobile */
+  .label-cell {
+    grid-column: 1 / -1;
+  }
+
   @media (min-width: 768px) {
     .label-cell {
       grid-column: auto;

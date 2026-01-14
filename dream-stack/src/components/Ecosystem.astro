@@ -216,20 +216,24 @@ const cards = [
     overflow: hidden;
   }
 
-  .safety-card:hover {
+  .safety-card:hover,
+  .safety-card.active {
     background: #660ef0;
     transform: translateY(-10px);
     box-shadow: 0 25px 50px -12px rgba(102, 14, 240, 0.4);
     border-color: #660ef0;
   }
 
-  .safety-card:hover .card-icon {
+  .safety-card:hover .card-icon,
+  .safety-card.active .card-icon {
     fill: white;
     transform: scale(1.1) rotate(5deg);
   }
 
   .safety-card:hover .card-text h3,
-  .safety-card:hover .card-text p {
+  .safety-card:hover .card-text p,
+  .safety-card.active .card-text h3,
+  .safety-card.active .card-text p {
     color: white;
   }
 
@@ -259,22 +263,7 @@ const cards = [
     transition: color 0.3s ease;
   }
 
-  /* Active State */
-  .safety-card.active {
-    background: #660ef0;
-    border-color: #660ef0;
-    transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(102, 14, 240, 0.3);
-  }
-
-  .safety-card.active .card-icon {
-    fill: white;
-  }
-
-  .safety-card.active .card-text h3,
-  .safety-card.active .card-text p {
-    color: white;
-  }
+  /* Active State - Merged above but keeping explicit rule if overrides needed (none needed) */
 
   /* Doodles */
   .doodle {
@@ -299,7 +288,8 @@ const cards = [
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
   }
 
-  .safety-card:hover .doodle {
+  .safety-card:hover .doodle,
+  .safety-card.active .doodle {
     opacity: 0.25;
     transform: rotate(var(--rotate)) scale(1.5);
     animation: doodle-float 4s ease-in-out infinite;

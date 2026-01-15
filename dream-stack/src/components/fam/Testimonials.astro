@@ -7,59 +7,64 @@ import kofiImg from "../../assets/images/card3.webp";
 <section class="section container">
     <div class="text-center mb-5">
         <h2 class="heading-md">
-            Over a <span class="text-orange">million</span> happy stories
+            Choose Your <span class="text-orange">Aveka Plan</span>
         </h2>
+        <p class="section-desc">
+            Flexible packages designed for every stage of your journey.
+        </p>
     </div>
 
-    <div class="testimonials-scroll">
+    <div class="pricing-grid">
         <!-- Card 1 -->
-        <div class="testimonial-card">
-            <div
-                class="profile-img"
-                style={`background-image: url(${aaravImg.src});`}
-            >
-            </div>
-            <div class="content">
-                <h4 class="quote">Master’s degree in Germany 🇩🇪</h4>
-                <p class="desc">
-                    "Secured blocked account funding and enrolled in a
-                    tuition-free university."
-                </p>
-                <p class="author">Aarav (India)</p>
-            </div>
+        <div class="pricing-card">
+            <h3 class="plan-name">Discovery</h3>
+            <div class="plan-price">Free</div>
+            <p class="plan-subtitle">For potential students</p>
+
+            <ul class="plan-features">
+                <li><span>✓</span> University Search</li>
+                <li><span>✓</span> Basic Scholarship List</li>
+                <li><span>✓</span> Community Access</li>
+            </ul>
+
+            <a href="#" class="btn btn-primary btn-full-width">Get Started</a>
         </div>
 
         <!-- Card 2 -->
-        <div class="testimonial-card">
-            <div
-                class="profile-img"
-                style={`background-image: url(${camilaImg.src});`}
-            >
+        <div class="pricing-card popular">
+            <div class="popular-tag">Most Popular</div>
+            <h3 class="plan-name">Application</h3>
+            <div class="plan-price">
+                $299<span class="period">/one-time</span>
             </div>
-            <div class="content">
-                <h4 class="quote">Certified Specialist 🇧🇷</h4>
-                <p class="desc">
-                    "Using Aveka, I upskilled and landed a role at an
-                    international firm."
-                </p>
-                <p class="author">Camila (Brazil)</p>
-            </div>
+            <p class="plan-subtitle">Serious applicants</p>
+
+            <ul class="plan-features">
+                <li><span>✓</span> Document Review</li>
+                <li><span>✓</span> Visa Consultation</li>
+                <li><span>✓</span> Loan Assistance</li>
+                <li><span>✓</span> Be a "Featured" Candidate</li>
+            </ul>
+
+            <a href="#" class="btn btn-primary btn-full-width">Select Plan</a>
         </div>
 
         <!-- Card 3 -->
-        <div class="testimonial-card">
-            <div
-                class="profile-img"
-                style={`background-image: url(${kofiImg.src});`}
-            >
+        <div class="pricing-card">
+            <h3 class="plan-name">Relocation</h3>
+            <div class="plan-price">
+                $499<span class="period">/one-time</span>
             </div>
-            <div class="content">
-                <h4 class="quote">Scholarship Hunter 🇬🇭</h4>
-                <p class="desc">
-                    "$12k grants + loan secured. Bachelor's 80% covered."
-                </p>
-                <p class="author">Kofi (Ghana)</p>
-            </div>
+            <p class="plan-subtitle">End-to-end support</p>
+
+            <ul class="plan-features">
+                <li><span>✓</span> Housing Support</li>
+                <li><span>✓</span> Bank Account Setup</li>
+                <li><span>✓</span> Pick-up Service</li>
+                <li><span>✓</span> Local Buddy</li>
+            </ul>
+
+            <a href="#" class="btn btn-outline btn-full-width">Select Plan</a>
         </div>
     </div>
 </section>
@@ -72,69 +77,131 @@ import kofiImg from "../../assets/images/card3.webp";
         margin-bottom: 3rem;
     }
 
-    .testimonials-scroll {
-        display: flex;
-        gap: 1.5rem;
-        overflow-x: auto;
-        padding-bottom: 2rem;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
+    .pricing-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        align-items: center; /* helps center vertically if needed */
     }
 
-    .testimonial-card {
-        flex: 0 0 300px;
-        background: #111;
+    .pricing-card {
+        background: white;
         border-radius: 20px;
-        overflow: hidden;
-        scroll-snap-align: center;
-        border: 1px solid #222;
-        display: flex;
-        flex-direction: column;
+        padding: 2.5rem 2rem;
+        border: 1px solid #eee;
+        position: relative;
+        transition:
+            transform 0.3s,
+            box-shadow 0.3s;
     }
 
-    .profile-img {
-        height: 200px;
-        background-size: cover;
-        background-position: center;
+    .pricing-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     }
 
-    .content {
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
+    /* Highlight the middle card */
+    .pricing-card.popular {
+        border: 2px solid var(--fam-orange);
+        box-shadow: 0 10px 30px rgba(161, 0, 255, 0.1);
+        transform: scale(1.05); /* Make it slightly larger */
+        z-index: 1;
     }
 
-    .quote {
+    .pricing-card.popular:hover {
+        transform: scale(1.05) translateY(-10px);
+    }
+
+    .popular-tag {
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--fam-orange);
+        color: white;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .plan-name {
         font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        color: var(--fam-text-primary);
-    }
-
-    .desc {
+        font-weight: 700;
         color: var(--fam-text-secondary);
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
-        line-height: 1.5;
-        flex-grow: 1;
+        margin-bottom: 0.5rem;
     }
 
-    .author {
+    .plan-price {
+        font-size: 2.5rem;
+        font-weight: 800;
         color: var(--fam-text-primary);
-        font-weight: 600;
-        margin-top: auto;
+        margin-bottom: 0.2rem;
     }
 
-    @media (min-width: 768px) {
-        .testimonials-scroll {
-            justify-content: center;
-            flex-wrap: wrap; /* Or use carousel for desktop if strict match required, but wrap is safer for static */
-            overflow-x: visible;
-        }
+    .period {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #999;
+    }
 
-        .testimonial-card {
-            flex: 0 0 30%;
+    .plan-subtitle {
+        color: var(--fam-text-secondary);
+        margin-bottom: 2rem;
+        font-size: 0.95rem;
+    }
+
+    .plan-features {
+        list-style: none;
+        margin-bottom: 2.5rem;
+        text-align: left;
+    }
+
+    .plan-features li {
+        margin-bottom: 0.8rem;
+        display: flex;
+        gap: 0.8rem;
+        align-items: center;
+        color: var(--fam-text-primary);
+    }
+
+    .plan-features li span {
+        color: var(--fam-orange);
+        font-weight: 800;
+    }
+
+    .btn-full-width {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Button variants adjustments for this component */
+    .btn-outline {
+        border: 2px solid var(--fam-orange);
+        color: var(--fam-orange);
+        background: transparent;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8rem 2rem;
+        border-radius: 9999px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+
+    .btn-outline:hover {
+        background: var(--fam-orange);
+        color: white;
+    }
+
+    @media (min-width: 960px) {
+        .pricing-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
         }
     }
 </style>

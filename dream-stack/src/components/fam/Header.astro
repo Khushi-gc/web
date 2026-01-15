@@ -5,8 +5,8 @@
 <header class="header">
     <div class="container header-container">
         <a href="/" class="logo-link" aria-label="Aveka Home">
-             <!-- Using text logo as per original Aveka Navbar -->
-             <span class="logo-text">AVEKA.AI</span>
+            <!-- Using text logo as per original Aveka Navbar -->
+            <span class="logo-text">AVEKA.AI</span>
         </a>
 
         <nav class="nav-desktop">
@@ -22,6 +22,19 @@
     </div>
 </header>
 
+<script>
+    const header = document.querySelector(".header");
+    if (header) {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+    }
+</script>
+
 <style>
     .header {
         position: fixed;
@@ -30,25 +43,39 @@
         width: 100%;
         z-index: 100;
         padding: 1.5rem 0;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(10px);
-        transition: padding 0.3s;
+        background: transparent; /* Transparent initially */
+        transition: all 0.3s ease;
+        border-bottom: 1px solid transparent;
     }
-    
+
+    /* Scrolled State: White Background */
+    .header.scrolled {
+        padding: 0.75rem 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
     .header-container {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
-    
+
     .logo-text {
         font-size: 1.5rem;
         font-weight: 800;
-        color: white;
+        color: #ffffff; /* White logo initially */
         letter-spacing: -0.02em;
         text-transform: uppercase;
+        transition: color 0.3s;
     }
-    
+
+    .header.scrolled .logo-text {
+        color: var(--fam-orange); /* Purple logo on scroll */
+    }
+
     .logo-link {
         text-decoration: none;
         display: flex;
@@ -60,23 +87,47 @@
         gap: 2rem;
         align-items: center;
     }
-    
+
     .nav-item {
-        color: rgba(255, 255, 255, 0.8);
+        color: rgba(255, 255, 255, 0.9); /* White text initially */
         text-decoration: none;
         font-weight: 500;
         font-size: 0.95rem;
-        transition: color 0.2s;
+        transition: color 0.3s;
     }
+
+    .nav-item:hover {
+        color: #ffffff;
+        opacity: 1;
+    }
+
+    .header.scrolled .nav-item {
+        color: var(--fam-text-primary); /* Dark text on scroll */
+    }
+
+    .header.scrolled .nav-item:hover {
+        color: var(--fam-orange);
     }
 
     .nav-mobile {
         display: block;
     }
 
+    /* Button Adaptation */
     .btn-sm {
         padding: 0.5rem 1.25rem;
         font-size: 0.9rem;
+    }
+
+    /* Force button to look good on purple initially */
+    .header:not(.scrolled) .btn-primary {
+        background-color: #ffffff;
+        color: var(--fam-orange);
+    }
+
+    .header:not(.scrolled) .btn-primary:hover {
+        background-color: rgba(255, 255, 255, 0.9);
+        transform: translateY(-2px);
     }
 
     @media (min-width: 768px) {
@@ -94,6 +145,10 @@
 
         .header {
             padding: 1.5rem 0;
+        }
+
+        .header.scrolled {
+            padding: 1rem 0;
         }
     }
 </style>

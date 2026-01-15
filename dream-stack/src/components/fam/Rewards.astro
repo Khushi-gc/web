@@ -1,130 +1,347 @@
 ---
-import hubImg from "../../assets/images/hr-representatives-positively-greeting-female-job-candidate.jpg";
-// Using an image representing 'success' or 'profile'
+import user1 from "../../assets/images/uni-1.png";
+import user2 from "../../assets/images/uni-2.png";
+import user3 from "../../assets/images/uni-3.png";
+import user4 from "../../assets/images/uni-4.jpg";
 ---
 
-<section class="section section-rewards">
-    <div class="container">
-        <div class="header-center">
-            <h2 class="heading-md">
-                The <span class="text-orange">"My Space"</span> Hub:<br />
-                Your Ecosystem Controller
+<section class="section container">
+    <div class="targeting-layout">
+        <div class="info-col">
+            <h2 class="heading-lg">
+                <span class="text-orange">Targeting</span> Options <br />
+                You Will Love
             </h2>
-            <p class="text-grey subtitle">
-                One Profile. Infinite Possibilities. As you complete a module,
-                your entire dashboard updates to accelerate your success.
-            </p>
+
+            <div class="highlight-card">
+                <div class="card-icon">📍</div>
+                <h3 class="card-title">Target Locations</h3>
+                <p class="card-desc">
+                    Target users in specific locations to either build a local
+                    or global reputation. Connect with users engaging with
+                    relevant industry hashtags. Interact with active Instagram
+                    Story users, a feature that attracts substantial attention.
+                </p>
+            </div>
+
+            <ul class="options-list">
+                <li>
+                    <span class="list-icon">👥</span>
+                    <span class="list-text">Friends & Family</span>
+                </li>
+                <li>
+                    <span class="list-icon">🔍</span>
+                    <span class="list-text">Tracking Leading Industries</span>
+                </li>
+            </ul>
         </div>
 
-        <div class="rewards-grid">
-            <div class="perks-col">
-                <h3 class="heading-sm">Synchronized Success</h3>
-                <div class="divider"></div>
-                <div class="perks-list">
-                    <div class="perk-item">
-                        <span style="font-size: 2rem;">🎯</span>
-                        <span
-                            ><strong>Dynamic Profile:</strong> Updates with every
-                            milestone</span
+        <div class="visuals-col">
+            <div class="bento-grid">
+                <!-- Map Card -->
+                <div class="bento-item map-card">
+                    <svg
+                        class="world-map"
+                        viewBox="0 0 800 400"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill="#2b6cb0"
+                            d="M150,120 Q180,90 220,110 T280,140 T350,100 T420,130 T500,100 T600,120 T700,150 V300 H150 Z"
+                        ></path>
+                        <!-- Abstract Continents -->
+                        <path
+                            fill="#2b6cb0"
+                            d="M50,150 Q80,120 120,150 T180,200 V300 H50 Z"
+                        ></path>
+                        <!-- Americasish -->
+                        <path
+                            fill="#2b6cb0"
+                            d="M550,200 Q600,180 650,220 T700,280 V350 H550 Z"
+                        ></path>
+                        <!-- Ausish -->
+
+                        <!-- Pins -->
+                        <g class="map-pin" transform="translate(200, 130)">
+                            <path
+                                fill="#e53e3e"
+                                d="M0,0 q5,-10 10,0 q-5,10 -10,0"
+                                transform="scale(1.5)"></path>
+                            <circle fill="white" cx="7.5" cy="5" r="2"></circle>
+                        </g>
+                        <g class="map-pin" transform="translate(400, 150)">
+                            <path
+                                fill="#e53e3e"
+                                d="M0,0 q5,-10 10,0 q-5,10 -10,0"
+                                transform="scale(1.5)"></path>
+                            <circle fill="white" cx="7.5" cy="5" r="2"></circle>
+                        </g>
+                        <g class="map-pin" transform="translate(600, 140)">
+                            <path
+                                fill="#e53e3e"
+                                d="M0,0 q5,-10 10,0 q-5,10 -10,0"
+                                transform="scale(1.5)"></path>
+                            <circle fill="white" cx="7.5" cy="5" r="2"></circle>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- Network Card -->
+                <div class="bento-item network-card">
+                    <div class="network-web">
+                        <div
+                            class="avatar center-avatar"
+                            style={`background-image: url(${user1.src})`}
                         >
-                    </div>
-                    <div class="perk-item">
-                        <span style="font-size: 2rem;">🔄</span>
-                        <span
-                            ><strong>Auto-Sync:</strong> Loans trigger Visa support
-                            automatically</span
+                        </div>
+                        <div
+                            class="avatar orb-1"
+                            style={`background-image: url(${user2.src})`}
                         >
-                    </div>
-                    <div class="perk-item">
-                        <span style="font-size: 2rem;">🚀</span>
-                        <span
-                            ><strong>Career Ready:</strong> Internships matched to
-                            your skills</span
+                        </div>
+                        <div
+                            class="avatar orb-2"
+                            style={`background-image: url(${user3.src})`}
                         >
+                        </div>
+                        <div
+                            class="avatar orb-3"
+                            style={`background-image: url(${user4.src})`}
+                        >
+                        </div>
+                        <div
+                            class="avatar orb-4"
+                            style={`background-image: url(${user1.src})`}
+                        >
+                        </div>
+
+                        <!-- Lines are drawn via CSS or SVG usually, using simple borders for now or invisible -->
                     </div>
                 </div>
-            </div>
-            <div class="image-col">
-                <img
-                    src={hubImg.src}
-                    alt="Aveka Dashboard"
-                    class="phone-img"
-                    style="border-radius: 20px;"
-                />
+
+                <!-- Social Card -->
+                <div class="bento-item social-card">
+                    <div class="social-grid">
+                        <span class="s-icon in">in</span>
+                        <span class="s-icon tw">🐦</span>
+                        <span class="s-icon go">G</span>
+                        <span class="s-icon yt">▶</span>
+                        <span class="s-icon fb">f</span>
+                        <span class="s-icon ap">🍎</span>
+                        <span class="s-icon wa">📞</span>
+                        <span class="s-icon ms">⊞</span>
+                        <span class="s-icon pi">P</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <style>
-    .section-rewards {
-        position: relative;
-        background: linear-gradient(180deg, #111 0%, #000 100%);
+    .targeting-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        align-items: flex-start;
+        padding: 5rem 0;
+        background-color: #fff0f5; /* Light pink background matching reference */
     }
 
-    .header-center {
-        text-align: center;
+    /* Left Column Styles */
+    .heading-lg {
+        font-size: 2.8rem;
+        line-height: 1.2;
         margin-bottom: 3rem;
+        color: #1a1a1a;
+        font-weight: 700;
     }
 
-    .subtitle {
-        margin-top: 1rem;
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
+    .text-orange {
+        color: #e06c75;
     }
 
-    .rewards-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 3rem;
-    }
-
-    .perks-col {
-        background: rgba(255, 255, 255, 0.05);
-        padding: 2rem;
+    .highlight-card {
+        background: white;
         border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        margin-bottom: 2.5rem;
     }
 
-    .divider {
-        height: 1px;
-        background: rgba(255, 255, 255, 0.1);
-        margin: 1rem 0 2rem;
+    .card-icon {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #4a5568;
     }
 
-    .perks-list {
+    .card-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #1a1a1a;
+    }
+
+    .card-desc {
+        color: #718096;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .options-list {
+        list-style: none;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
-    }
-
-    .perk-item {
-        display: flex;
-        align-items: center;
         gap: 1.5rem;
     }
 
-    .image-col {
+    .options-list li {
         display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        font-size: 1.1rem;
+    }
+
+    .list-icon {
+        color: #718096;
+        font-size: 1.2rem;
+    }
+
+    /* Right Column (Bento Grid) Styles */
+    .bento-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .bento-item {
+        border-radius: 24px;
+        overflow: hidden;
+        min-height: 200px;
+        position: relative;
+    }
+
+    /* Map Card */
+    .map-card {
+        background-color: #e6f0ff; /* Light blue bg */
+        grid-column: 1 / -1;
+        height: 250px;
+        display: flex;
+        align-items: center;
         justify-content: center;
     }
 
-    .phone-img {
-        max-width: 100%;
-        height: auto;
-        max-height: 500px;
+    .world-map {
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
     }
 
-    @media (min-width: 768px) {
-        .rewards-grid {
-            flex-direction: row;
-            align-items: center;
-            gap: 4rem;
+    /* Network Card */
+    .network-card {
+        background-color: #ffe4e1; /* Light peach/orange */
+        height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .network-web {
+        position: relative;
+        width: 150px;
+        height: 150px;
+    }
+
+    .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        border: 2px solid white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .center-avatar {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        z-index: 2;
+    }
+    .orb-1 {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .orb-2 {
+        top: 40%;
+        left: 90%;
+    }
+    .orb-3 {
+        bottom: 0;
+        left: 70%;
+    }
+    .orb-4 {
+        bottom: 20%;
+        left: 0;
+    }
+
+    /* Social Card */
+    .social-card {
+        background-color: #e6e6fa; /* Light purple */
+        height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .social-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .s-icon {
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: #555;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        font-size: 1rem;
+    }
+
+    .in {
+        color: #0077b5;
+    }
+    .tw {
+        color: #1da1f2;
+    }
+    .fb {
+        color: #1877f2;
+    }
+    .yt {
+        color: #ff0000;
+    }
+
+    @media (min-width: 960px) {
+        .targeting-layout {
+            grid-template-columns: 1fr 1.2fr;
+            padding: 8rem 0;
+            gap: 6rem;
         }
 
-        .perks-col,
-        .image-col {
-            flex: 1;
+        .bento-grid {
+            grid-template-columns: 1fr 1fr;
         }
     }
 </style>

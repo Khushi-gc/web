@@ -1,12 +1,16 @@
 :root {
-    --fam-orange: #fbaf03;
-    --fam-orange-hover: #e59f00;
-    --fam-black: #000000;
-    --fam-dark-grey: #1c1c1c;
-    --fam-light-grey: #e8e7e8;
+    /* New Theme: Aveka (Purple/Light) */
+    --fam-orange: #a100ff; /* Primary Purple */
+    --fam-orange-hover: #6811f7; /* Darker Purple for hover */
+    --fam-accent-orange: #ff5500; /* Secondary Accent Orange from palette */
+    
+    --fam-black: #fbfafc; /* Main Background (Off-White) */
+    --fam-dark-grey: #ffffff; /* Button Text (White) */
+    --fam-light-grey: #f0f0f0; /* Subtle grey */
     --fam-white: #ffffff;
-    --fam-text-primary: #ededed;
-    --fam-text-secondary: #a0a0a0;
+    
+    --fam-text-primary: #1c1c1c; /* Main Text (Dark) */
+    --fam-text-secondary: #666666; /* Secondary Text (Grey) */
     
     --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
 }

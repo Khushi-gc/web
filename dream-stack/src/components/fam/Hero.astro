@@ -1,290 +1,296 @@
 ---
-
+import heroImage from "../../assets/images/aveka-doodle.png"; // Fallback/Placeholder
 ---
 
 <section class="hero-section">
-    <div class="video-container">
-        <!-- Mobile Video (Default) -->
-        <video autoplay muted loop playsinline class="bg-video mobile-video">
-            <source
-                src="/assets/images/images/pages/index/HomeScreenMobVisual.mp4"
-                type="video/mp4"
-            />
-        </video>
-        <!-- Desktop Video (Hidden on mobile) -->
-        <video autoplay muted loop playsinline class="bg-video desktop-video">
-            <source
-                src="/assets/images/images/pages/index/HomeScreenPCVisual.mp4"
-                type="video/mp4"
-            />
-        </video>
-        <div class="overlay"></div>
-    </div>
-
     <div class="container hero-content">
-        <div class="hero-text-wrapper">
-            <img
-                src="/assets/images/images/pages/index/FamXBanner.png"
-                alt="FamX"
-                class="hero-banner-img"
-            />
-            <h1 class="hero-title">
-                spending account<br />
-                <span class="hero-subtitle">for</span>
-                <span class="text-orange rotating-text">
-                    THE AVEKA<br />
-                    <span class="hero-subtitle">ECOSYSTEM</span>
-                </span>
-
-                <h2 class="sub-heading-rotating">
-                    BUILD YOUR <span class="text-orange rotating-text">
-                        <span class="word">PERFECT PATH</span>
-                        <span class="word">FUTURE</span>
-                        <span class="word">CAREER</span>
-                    </span>
-                </h2>
+        <div class="grid-layout">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="highlight">The Aveka Ecosystem</span>
+                </h1>
 
                 <p class="hero-desc">
                     Stop juggling multiple platforms. Plan, fund, and launch
                     your international career from one integrated workspace.
                 </p>
 
-                <a href="#" class="btn btn-primary btn-lg hero-cta"
-                    >Join Aveka — Free Access</a
-                >
-            </h1>
-
-            <div class="trust-markers">
-                <div class="trust-item">
-                    <span class="trust-number">13k+</span>
-                    <span class="trust-label">Students Guided</span>
+                <div class="cta-wrapper">
+                    <a href="#" class="btn btn-white">Get Started</a>
+                    <div class="trust-pill">
+                        <span class="trust-icon">🛡️</span>
+                        <span>Trusted by 13k+ Students</span>
+                    </div>
                 </div>
-                <div class="divider"></div>
-                <div class="trust-item">
-                    <span class="trust-number">$72M+</span>
-                    <span class="trust-label">Loans Facilitated</span>
+            </div>
+
+            <div class="hero-visual">
+                <div class="visual-container">
+                    <!-- Replace with the actual 3D Phone illustration -->
+                    <img
+                        src={heroImage.src}
+                        alt="Aveka App Interface"
+                        class="hero-img floating"
+                    />
+
+                    <!-- Decorative Elements matching reference -->
+                    <div class="floating-card card-1">
+                        <div class="icon-box">❤️</div>
+                        <div class="text-box">
+                            <div class="line sm"></div>
+                            <div class="line lg"></div>
+                        </div>
+                    </div>
+
+                    <div class="floating-card card-2">
+                        <div class="icon-box">🔔</div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <style>
-        .hero-section {
-            position: relative;
-            height: 100vh; /* Full viewport height */
-            min-height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-            padding-top: 60px; /* Offset for fixed header */
-            color: white;
-        }
+    <!-- Curved Bottom Shape -->
+    <div class="custom-shape-divider-bottom-1678901234">
+        <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+        >
+            <path
+                d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                opacity=".25"
+                class="shape-fill"></path>
+            <path
+                d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                opacity=".5"
+                class="shape-fill"></path>
+            <path
+                d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+</section>
 
-        .video-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
+<style>
+    .hero-section {
+        position: relative;
+        /* Gradient Background similar to reference */
+        background: linear-gradient(135deg, #a100ff 0%, #6c1bf0 100%);
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        padding-top: 80px; /* Header offset */
+        overflow: hidden;
+        color: #ffffff;
+    }
 
-        .bg-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    .container {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        z-index: 10;
+    }
 
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 0.3) 0%,
-                rgba(0, 0, 0, 0.6) 100%
-            );
-        }
+    .grid-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
 
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 3rem;
-            max-width: 800px;
-        }
+    .hero-text {
+        max-width: 600px;
+    }
 
-        .hero-text-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
+    .hero-title {
+        font-size: 3rem;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+    }
+
+    .highlight {
+        color: #ffd700; /* Gold/Yellow highlight for contrast */
+        /* Or keep it white but different weight */
+    }
+
+    .hero-desc {
+        font-size: 1.125rem;
+        line-height: 1.6;
+        margin-bottom: 2.5rem;
+        opacity: 0.9;
+        max-width: 480px;
+    }
+
+    .cta-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .btn-white {
+        background: #ffffff;
+        color: #6c1bf0;
+        padding: 0.8rem 2.2rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .btn-white:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .trust-pill {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+        backdrop-filter: blur(5px);
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    /* Visual Side */
+    .hero-visual {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    .visual-container {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        /* Placeholder styling if image is missing transparency */
+    }
+
+    .hero-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+    }
+
+    /* Animations */
+    .floating {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    /* Decorative Floating Cards matching reference style */
+    .floating-card {
+        position: absolute;
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        animation: float 5s ease-in-out infinite;
+        z-index: 2;
+    }
+
+    .card-1 {
+        top: 20%;
+        right: -10px;
+        animation-delay: 1s;
+    }
+
+    .card-2 {
+        bottom: 20%;
+        left: -20px;
+        animation-delay: 2s;
+    }
+
+    .icon-box {
+        width: 32px;
+        height: 32px;
+        background: #f0f0f0;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+    }
+
+    .text-box {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .line {
+        height: 4px;
+        background: #e0e0e0;
+        border-radius: 2px;
+    }
+    .line.sm {
+        width: 30px;
+    }
+    .line.lg {
+        width: 50px;
+    }
+
+    /* Bottom Curve */
+    .custom-shape-divider-bottom-1678901234 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+    }
+
+    .custom-shape-divider-bottom-1678901234 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 80px;
+    }
+
+    .custom-shape-divider-bottom-1678901234 .shape-fill {
+        fill: #ffffff; /* Or whatever the section below is color */
+    }
+    /* Assuming next section is white or light grey. Adjust if needed. */
+
+    /* Responsive */
+    @media (min-width: 960px) {
+        .grid-layout {
+            grid-template-columns: 1fr 1fr;
         }
 
         .hero-title {
-            font-size: 3rem;
-            font-weight: 900;
-            line-height: 0.9;
-            text-transform: uppercase;
-            margin: 0;
+            font-size: 4rem;
         }
 
-        .hero-subtitle {
-            font-size: 2.5rem;
-            color: rgba(255, 255, 255, 0.9);
+        .custom-shape-divider-bottom-1678901234 svg {
+            height: 150px;
         }
-
-        .sub-heading-rotating {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0;
-        }
-
-        .rotating-text {
-            display: inline-flex;
-            flex-direction: column;
-            height: 1.2em;
-            overflow: hidden;
-            vertical-align: bottom;
-            text-align: left;
-        }
-
-        .word {
-            animation: rotateWords 6s infinite;
-            display: block;
-            height: 100%;
-        }
-
-        @keyframes rotateWords {
-            0%,
-            20% {
-                transform: translateY(0);
-            }
-            33%,
-            53% {
-                transform: translateY(-100%);
-            }
-            66%,
-            86% {
-                transform: translateY(-200%);
-            }
-            100% {
-                transform: translateY(0);
-            } /* Loop back to start logic needed or correct percentages */
-        }
-
-        /* Better loop: 3 words */
-        /* 0-33: word 1 */
-        /* 33-66: word 2 */
-        /* 66-100: word 3 */
-        /* This generic keyframe logic is tricky without JS or precise steps. 
-       Let's stick to simple CSS animation for now or just static if it fails. 
-       Actually, standard "slide up" animation:
-       0% { transform: translateY(0); }
-       30% { transform: translateY(0); }
-       33% { transform: translateY(-1.2em); }
-       63% { transform: translateY(-1.2em); }
-       66% { transform: translateY(-2.4em); }
-       96% { transform: translateY(-2.4em); }
-       100% { transform: translateY(0); }
-    */
-
-        .hero-desc {
-            font-size: 1.1rem;
-            line-height: 1.5;
-            max-width: 600px;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 1rem;
-        }
-
-        .hero-cta {
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
-            border-radius: 100px;
-        }
-
-        .trust-markers {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            padding: 1rem 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .divider {
-            width: 1px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .trust-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center on mobile */
-        }
-
-        .trust-number {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: white;
-        }
-
-        .trust-label {
-            font-size: 0.8rem;
-            height: 26px;
-        } /* UPI logo usually thicker */
-
-        @media (min-width: 768px) {
-            .mobile-video {
-                display: none;
-            }
-            .desktop-video {
-                display: block;
-            }
-
-            .hero-banner-img {
-                width: 220px;
-            }
-            .hero-title {
-                font-size: 4rem;
-            }
-
-            .trust-markers {
-                flex-direction: row;
-                justify-content: center;
-                gap: 2rem;
-            }
-
-            .powered-by {
-                flex-direction: row;
-                gap: 1rem;
-                border-left: 1px solid rgba(255, 255, 255, 0.2);
-                padding-left: 1rem;
-                height: 3rem;
-            }
-        }
-    </style>
-
-    <script>
-        // Simple word rotation
-        const words = document.querySelectorAll(".word");
-        let currentIndex = 0;
-
-        if (words.length > 0) {
-            setInterval(() => {
-                words[currentIndex].style.display = "none";
-                currentIndex = (currentIndex + 1) % words.length;
-                words[currentIndex].style.display = "inline";
-            }, 2000);
-        }
-    </script>
-</section>
+    }
+</style>

@@ -56,14 +56,14 @@
     .footer {
         position: relative;
         background-color: transparent;
-        padding: 0 0 6rem;
+        padding: 0 0 1rem;
         font-family: var(--font-primary);
     }
 
     .footer::before {
         content: "";
         position: absolute;
-        top: 140px;
+        top: 100px;
         left: 0;
         width: 100%;
         height: 100%;
@@ -72,8 +72,8 @@
     }
 
     .mb-cta {
-        transform: translateY(-50px);
-        margin-bottom: 3rem;
+        transform: translateY(-40px);
+        margin-bottom: 2rem;
     }
 
     .cta-banner {
@@ -82,13 +82,15 @@
             #ff8c61 0%,
             #a100ff 100%
         ); /* Orange-ish to Purple */
-        border-radius: 30px;
-        padding: 5rem 2rem;
+        border-radius: 20px;
+        padding: 3rem 1.5rem;
         text-align: center;
         color: white;
-        box-shadow: 0 20px 50px rgba(161, 0, 255, 0.2);
+        box-shadow: 0 15px 40px rgba(161, 0, 255, 0.15);
         position: relative;
         overflow: hidden;
+        max-width: 800px;
+        margin: 0 auto;
     }
 
     /* Doodle lines placeholder (CSS radial gradients or simple borders could mimic lines) */
@@ -105,19 +107,19 @@
     }
 
     .cta-title {
-        font-size: 2.8rem;
+        font-size: 2rem;
         font-weight: 700;
-        margin-bottom: 2.5rem;
+        margin-bottom: 2rem;
         line-height: 1.2;
     }
 
     .btn-white {
         background: white;
         color: #a100ff;
-        padding: 1rem 3rem;
-        border-radius: 12px; /* Slightly squarer than pill */
+        padding: 0.8rem 2.5rem;
+        border-radius: 12px;
         font-weight: 700;
-        font-size: 1.1rem;
+        font-size: 1rem;
         text-decoration: none;
         display: inline-block;
         transition: transform 0.2s;
@@ -137,7 +139,7 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        padding-top: 1rem;
+        padding-top: 0.5rem;
     }
 
     .brand-section {
@@ -222,7 +224,7 @@
         }
 
         .cta-banner {
-            padding: 6rem 3rem;
+            padding: 3rem 3rem;
         }
 
         .footer-nav {

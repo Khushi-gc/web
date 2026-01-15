@@ -1,94 +1,304 @@
 ---
-// Using placeholders or if actual logos are available in a loop, simpler to hardcode a few representative ones if mapping is complex,
-// OR import the folder contents. For static autonomy, I will use a generic grid approach or try to import a few if I recall names.
-// The original Partner.astro imported individual images. I'll import a few key ones or just use text placeholders?
-// User said "fit in the content". I'll try to import a few key lenders/unis if I can guestimate paths or just use generic alt text if strict matching is hard without reading all file names.
-// I listed directory `lenders` and `uni`.
-// `src/assets/images/lenders/auxilo.png`, `icici-bank.png`, etc.
-// `src/assets/images/uni/uni-1.png`, etc.
-
+// Import lender logos
 import auxilo from "../../assets/images/lenders/auxilo.png";
-import icici from "../../assets/images/lenders/icici-bank.png";
+import axisBank from "../../assets/images/lenders/axis-bank.png";
+import bankBaroda from "../../assets/images/lenders/Bank-baroda.png";
+import credila from "../../assets/images/lenders/credila.gif";
+import iciciBank from "../../assets/images/lenders/icici-bank.png";
+import idfc from "../../assets/images/lenders/IDFC.jpg";
+import incred from "../../assets/images/lenders/incred.png";
+import kuhoo from "../../assets/images/lenders/Kuhoologo.jpeg";
+import mpower from "../../assets/images/lenders/MPOWER_Logo.webp";
+import prodigy from "../../assets/images/lenders/prodigy.png";
+import propelld from "../../assets/images/lenders/propelldlogo.jpeg";
+import avanse from "../../assets/images/lenders/avanse.png";
+import pnb from "../../assets/images/lenders/Punjab_National_Bank.png";
 import sbi from "../../assets/images/lenders/SBI.png";
+import tataCapital from "../../assets/images/lenders/tata-capital.png";
+import unionBank from "../../assets/images/lenders/union-bank-of-india-logo.png";
+import yesBank from "../../assets/images/lenders/Yes_Bank.png";
+
+// Import university logos
 import uni1 from "../../assets/images/uni-1.png";
 import uni2 from "../../assets/images/uni-2.png";
 import uni3 from "../../assets/images/uni-3.png";
+import uni4 from "../../assets/images/uni-4.jpg";
+import uni5 from "../../assets/images/uni-5.png";
+import uni6 from "../../assets/images/uni-6.jpg";
+import uni7 from "../../assets/images/uni-7.png";
+import uni8 from "../../assets/images/uni-8.png";
+import uni9 from "../../assets/images/uni-9.png";
+import uni10 from "../../assets/images/uni-10.png";
+import uni11 from "../../assets/images/uni-11.png";
+import uni12 from "../../assets/images/uni-12.png";
+import uni13 from "../../assets/images/uni-13.jpg";
+import uni14 from "../../assets/images/uni-14.jpg";
+import uni15 from "../../assets/images/uni-15.jpg";
 
-const partners = [
+const lenders = [
     { src: auxilo, alt: "Auxilo" },
-    { src: icici, alt: "ICICI" },
-    { src: sbi, alt: "SBI" },
-    { src: uni1, alt: "University 1" },
-    { src: uni2, alt: "University 2" },
-    { src: uni3, alt: "University 3" },
+    { src: axisBank, alt: "Axis Bank" },
+    { src: bankBaroda, alt: "Bank of Baroda" },
+    { src: credila, alt: "Credila" },
+    { src: iciciBank, alt: "ICICI Bank" },
+    { src: idfc, alt: "IDFC" },
+    { src: incred, alt: "InCred" },
+    { src: kuhoo, alt: "Kuhoo" },
+    { src: mpower, alt: "MPOWER Financing" },
+    { src: prodigy, alt: "Prodigy Finance" },
+    { src: propelld, alt: "Propelld" },
+    { src: avanse, alt: "Avanse" },
+    { src: pnb, alt: "Punjab National Bank" },
+    { src: sbi, alt: "State Bank of India" },
+    { src: tataCapital, alt: "Tata Capital" },
+    { src: unionBank, alt: "Union Bank of India" },
+    { src: yesBank, alt: "Yes Bank" },
+];
+
+const universities = [
+    { src: uni1, alt: "University Partner" },
+    { src: uni2, alt: "University Partner" },
+    { src: uni3, alt: "University Partner" },
+    { src: uni4, alt: "University Partner" },
+    { src: uni5, alt: "University Partner" },
+    { src: uni6, alt: "University Partner" },
+    { src: uni7, alt: "University Partner" },
+    { src: uni8, alt: "University Partner" },
+    { src: uni9, alt: "University Partner" },
+    { src: uni10, alt: "University Partner" },
+    { src: uni11, alt: "University Partner" },
+    { src: uni12, alt: "University Partner" },
+    { src: uni13, alt: "University Partner" },
+    { src: uni14, alt: "University Partner" },
+    { src: uni15, alt: "University Partner" },
 ];
 ---
 
 <section class="section container">
-    <div class="text-center mb-5">
-        <h2 class="heading-md">
-            We are <span class="text-orange">trusted</span> by <br />
-            Global Lenders & Universities
-        </h2>
+    <!-- Global Lenders Section -->
+    <div class="partner-group">
+        <div class="text-center mb-5">
+            <h2 class="heading-md">
+                Our <span class="text-orange">Global Lenders</span>
+            </h2>
+            <p class="section-desc">
+                Backed by a trusted network of global financial institutions, we
+                connect students with the most competitive loan options.
+            </p>
+        </div>
+
+        <div class="marquee-wrapper">
+            <div class="logo-marquee">
+                <div class="marquee-content" id="lendersMarquee">
+                    {
+                        lenders.map((logo) => (
+                            <div class="logo-item">
+                                <img src={logo.src.src} alt={logo.alt} />
+                            </div>
+                        ))
+                    }
+                    <!-- Duplicate for loop -->
+                    {
+                        lenders.map((logo) => (
+                            <div class="logo-item">
+                                <img src={logo.src.src} alt={logo.alt} />
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="partners-grid">
-        {
-            partners.map((p) => (
-                <div class="partner-logo">
-                    <img src={p.src.src} alt={p.alt} />
+    <!-- University Partners Section -->
+    <div class="partner-group mt-large">
+        <div class="text-center mb-5">
+            <h2 class="heading-md">
+                700+ University & <br />
+                <span class="text-orange">Channel Partners</span>
+            </h2>
+            <p class="section-desc">
+                Direct work with universities worldwide to offer guaranteed
+                admission support and scholarship guidance.
+            </p>
+        </div>
+
+        <div class="marquee-wrapper">
+            <div class="logo-marquee">
+                <div class="marquee-content reverse" id="universitiesMarquee">
+                    {
+                        universities.map((logo) => (
+                            <div class="logo-item">
+                                <img src={logo.src.src} alt={logo.alt} />
+                            </div>
+                        ))
+                    }
+                    <!-- Duplicate for loop -->
+                    {
+                        universities.map((logo) => (
+                            <div class="logo-item">
+                                <img src={logo.src.src} alt={logo.alt} />
+                            </div>
+                        ))
+                    }
                 </div>
-            ))
-        }
-        <!-- Add more if needed or duplicate for grid fill -->
-        {
-            partners.map((p) => (
-                <div class="partner-logo">
-                    <img src={p.src.src} alt={p.alt} />
-                </div>
-            ))
-        }
+            </div>
+        </div>
     </div>
 </section>
 
 <style>
+    .partner-group {
+        margin-bottom: 2rem;
+        position: relative;
+    }
+
+    .mt-large {
+        margin-top: 6rem;
+    }
+
     .text-center {
         text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
     }
+
     .mb-5 {
         margin-bottom: 3rem;
     }
 
-    .partners-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-        justify-items: center;
-        align-items: center;
+    .section-desc {
+        color: var(--fam-text-secondary);
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-top: 1rem;
     }
 
-    .partner-logo {
+    /* Marquee Styles */
+    .marquee-wrapper {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        padding: 1rem 0;
+        mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 10%,
+            black 90%,
+            transparent
+        );
+        -webkit-mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 10%,
+            black 90%,
+            transparent
+        );
+    }
+
+    .logo-marquee {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .marquee-content {
         display: flex;
-        justify-content: center;
-        width: 100%;
-        max-width: 150px;
+        flex-direction: row; /* Enforce row */
+        flex-wrap: nowrap; /* Enforce no wrap */
+        gap: 2rem;
+        animation: scroll 40s linear infinite;
+        width: max-content; /* Ensure container is wide enough */
     }
 
-    .partner-logo img {
-        width: 100%;
-        height: auto;
-        opacity: 0.7;
-        transition: opacity 0.2s;
+    .marquee-content.reverse {
+        animation: scrollReverse 40s linear infinite;
     }
 
-    .partner-logo:hover img {
-        opacity: 1;
-    }
-
-    @media (min-width: 768px) {
-        .partners-grid {
-            grid-template-columns: repeat(4, 1fr);
-            gap: 4rem;
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
         }
     }
+
+    @keyframes scrollReverse {
+        0% {
+            transform: translateX(-50%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    .marquee-content:hover {
+        animation-play-state: paused;
+    }
+
+    .logo-item {
+        flex: 0 0 auto; /* Do not shrink or grow */
+        width: 180px; /* Fixed width */
+        height: 100px; /* Fixed height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        background: var(--fam-light-grey);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 16px;
+        transition: all 0.3s ease;
+        margin-right: 0; /* managed by gap */
+    }
+
+    .logo-item:hover {
+        background: #ffffff;
+        border-color: var(--fam-orange);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        z-index: 10;
+    }
+
+    .logo-item img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        filter: grayscale(0%);
+        opacity: 1;
+        transition: all 0.3s ease;
+        display: block; /* Remove inline behaviors */
+    }
+
+    .logo-item:hover img {
+        transform: scale(1.05);
+    }
+
+    /* Responsive */
+    @media (min-width: 768px) {
+        .marquee-content {
+            gap: 4rem;
+        }
+
+        /* Adjust animation speed for larger screens if needed */
+    }
 </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const marquees = document.querySelectorAll(".marquee-content");
+
+        marquees.forEach((marquee) => {
+            if (marquee instanceof HTMLElement) {
+                marquee.addEventListener("mouseenter", () => {
+                    marquee.style.animationPlayState = "paused";
+                });
+
+                marquee.addEventListener("mouseleave", () => {
+                    marquee.style.animationPlayState = "running";
+                });
+            }
+        });
+    });
+</script>

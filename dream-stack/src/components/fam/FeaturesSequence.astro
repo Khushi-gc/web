@@ -1,5 +1,5 @@
 ---
-import feature1Img from "../../assets/images/aveka-doodle.png"; // Placeholder for UI
+import feature1Img from "../../assets/images/confidence_card2.jpg"; // Placeholder for UI
 import feature2Img from "../../assets/images/development-knowledge-study-education-concept.jpg";
 import feature3Img from "../../assets/images/coins-scale-stack-table.jpg";
 ---
@@ -222,6 +222,64 @@ import feature3Img from "../../assets/images/coins-scale-stack-table.jpg";
         }
         .reverse .media-col {
             order: 2;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .features-sequence {
+            padding-top: 10rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .header-center {
+            margin-bottom: 4rem;
+        }
+
+        .feature-row {
+            gap: 2rem;
+        }
+
+        .feature-title {
+            font-size: 1.75rem; /* Smaller title on mobile */
+            text-align: center; /* Center align for consistency */
+        }
+
+        .feature-desc {
+            font-size: 0.95rem;
+            text-align: center;
+            padding: 0 0.5rem; /* Add horizontal breathing room */
+        }
+
+        .text-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image-card {
+            margin: 0 1rem; /* Ensure image cards don't touch edges */
+        }
+
+        /* Ensure consistent order: Image first, Text second */
+        .media-col {
+            order: 1;
+        }
+        .text-col {
+            order: 2;
+        }
+
+        .ui-1 {
+            right: 0;
+            bottom: 20px;
+        }
+        .ui-2 {
+            left: 0;
+            top: 20px;
+        }
+        .ui-3 {
+            left: 0;
+            bottom: 20px;
         }
     }
 </style>

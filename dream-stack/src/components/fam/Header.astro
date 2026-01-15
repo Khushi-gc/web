@@ -1,0 +1,99 @@
+---
+
+---
+
+<header class="header">
+    <div class="container header-container">
+        <a href="/" class="logo-link" aria-label="Aveka Home">
+             <!-- Using text logo as per original Aveka Navbar -->
+             <span class="logo-text">AVEKA.AI</span>
+        </a>
+
+        <nav class="nav-desktop">
+            <a href="/" class="nav-item">Home</a>
+            <a href="#university" class="nav-item">Aveka for University</a>
+            <a href="#login" class="nav-item">Log In</a>
+            <a href="#" class="btn btn-primary btn-sm">Book a demo</a>
+        </nav>
+
+        <div class="nav-mobile">
+            <a href="#" class="btn btn-primary btn-sm">Book a demo</a>
+        </div>
+    </div>
+</header>
+
+<style>
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        padding: 1.5rem 0;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+        transition: padding 0.3s;
+    }
+    
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .logo-text {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: white;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+    }
+    
+    .logo-link {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-desktop {
+        display: none;
+        gap: 2rem;
+        align-items: center;
+    }
+    
+    .nav-item {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: color 0.2s;
+    }
+    }
+
+    .nav-mobile {
+        display: block;
+    }
+
+    .btn-sm {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.9rem;
+    }
+
+    @media (min-width: 768px) {
+        .logo {
+            height: 32px;
+        }
+
+        .nav-desktop {
+            display: flex;
+        }
+
+        .nav-mobile {
+            display: none;
+        }
+
+        .header {
+            padding: 1.5rem 0;
+        }
+    }
+</style>

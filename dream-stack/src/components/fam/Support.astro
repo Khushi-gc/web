@@ -1,0 +1,69 @@
+---
+
+---
+
+<section class="section container">
+    <div class="split-layout">
+        <div class="image-col">
+            <img
+                src="/assets/images/images/pages/index/supportChatGif.gif"
+                alt="Support Chat"
+                class="support-img"
+            />
+        </div>
+
+        <div class="text-col">
+            <h2 class="heading-md">
+                Our support team is<br />
+                <span class="text-orange">active 24x7</span>
+            </h2>
+            <p class="text-grey mb-4">
+                Feel free to chat with our support team whenever you need more
+                clarity
+            </p>
+            <button class="btn btn-primary">Contact Us</button>
+        </div>
+    </div>
+</section>
+
+<style>
+    .split-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .text-col {
+        text-align: center;
+    }
+
+    .support-img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 20px;
+    }
+
+    .mb-4 {
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .split-layout {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        .text-col {
+            text-align: left;
+            flex: 1;
+        }
+
+        .image-col {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+    }
+</style>

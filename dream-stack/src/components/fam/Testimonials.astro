@@ -1,0 +1,140 @@
+---
+import aaravImg from "../../assets/images/card1.webp"; // Using mapped images
+import camilaImg from "../../assets/images/card2.webp";
+import kofiImg from "../../assets/images/card3.webp";
+---
+
+<section class="section container">
+    <div class="text-center mb-5">
+        <h2 class="heading-md">
+            Over a <span class="text-orange">million</span> happy stories
+        </h2>
+    </div>
+
+    <div class="testimonials-scroll">
+        <!-- Card 1 -->
+        <div class="testimonial-card">
+            <div
+                class="profile-img"
+                style={`background-image: url(${aaravImg.src});`}
+            >
+            </div>
+            <div class="content">
+                <h4 class="quote">Master’s degree in Germany 🇩🇪</h4>
+                <p class="desc">
+                    "Secured blocked account funding and enrolled in a
+                    tuition-free university."
+                </p>
+                <p class="author">Aarav (India)</p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="testimonial-card">
+            <div
+                class="profile-img"
+                style={`background-image: url(${camilaImg.src});`}
+            >
+            </div>
+            <div class="content">
+                <h4 class="quote">Certified Specialist 🇧🇷</h4>
+                <p class="desc">
+                    "Using Aveka, I upskilled and landed a role at an
+                    international firm."
+                </p>
+                <p class="author">Camila (Brazil)</p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="testimonial-card">
+            <div
+                class="profile-img"
+                style={`background-image: url(${kofiImg.src});`}
+            >
+            </div>
+            <div class="content">
+                <h4 class="quote">Scholarship Hunter 🇬🇭</h4>
+                <p class="desc">
+                    "$12k grants + loan secured. Bachelor's 80% covered."
+                </p>
+                <p class="author">Kofi (Ghana)</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .text-center {
+        text-align: center;
+    }
+    .mb-5 {
+        margin-bottom: 3rem;
+    }
+
+    .testimonials-scroll {
+        display: flex;
+        gap: 1.5rem;
+        overflow-x: auto;
+        padding-bottom: 2rem;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .testimonial-card {
+        flex: 0 0 300px;
+        background: #111;
+        border-radius: 20px;
+        overflow: hidden;
+        scroll-snap-align: center;
+        border: 1px solid #222;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile-img {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .content {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .quote {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--fam-text-primary);
+    }
+
+    .desc {
+        color: var(--fam-text-secondary);
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+        flex-grow: 1;
+    }
+
+    .author {
+        color: var(--fam-text-primary);
+        font-weight: 600;
+        margin-top: auto;
+    }
+
+    @media (min-width: 768px) {
+        .testimonials-scroll {
+            justify-content: center;
+            flex-wrap: wrap; /* Or use carousel for desktop if strict match required, but wrap is safer for static */
+            overflow-x: visible;
+        }
+
+        .testimonial-card {
+            flex: 0 0 30%;
+        }
+    }
+</style>

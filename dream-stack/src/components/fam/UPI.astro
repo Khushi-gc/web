@@ -1,0 +1,148 @@
+---
+import journeyImg from "../../assets/images/development-knowledge-study-education-concept.jpg";
+// Using a relevant image for "Journey" / "Education"
+---
+
+<section class="section container">
+    <div class="split-layout">
+        <div class="image-col">
+            <img
+                src={journeyImg.src}
+                alt="Empowering Your Journey"
+                class="upi-img desktop-only"
+            />
+            <img
+                src={journeyImg.src}
+                alt="Empowering Your Journey"
+                class="upi-img mobile-only"
+            />
+        </div>
+        <div class="text-col">
+            <h2 class="heading-md">
+                Empowering Your <span class="text-orange">Journey</span>
+            </h2>
+            <p class="section-desc">
+                From funding to specialized counseling, Aveka provides the
+                targeted resources you need to achieve your global ambitions.
+            </p>
+            <ul class="feature-list">
+                <li>
+                    <strong>Purpose-Built Loans:</strong>
+                    <span class="sub-desc"
+                        >$72M+ in student-specific loans facilitated.</span
+                    >
+                </li>
+                <li>
+                    <strong>Academic Counseling:</strong>
+                    <span class="sub-desc"
+                        >13,000+ students guided to their ideal campus.</span
+                    >
+                </li>
+                <li>
+                    <strong>Test Preparation:</strong>
+                    <span class="sub-desc"
+                        >Adaptive learning specifically for entrance exams.</span
+                    >
+                </li>
+            </ul>
+            <a href="#" class="btn btn-primary btn-cta">Explore Dashboard</a>
+        </div>
+    </div>
+
+    <!-- Mobile Features similar to original UPI component styling -->
+    <div class="mobile-features mobile-only">
+        <p>Choose personalized QR themes to match your style</p>
+    </div>
+    <div class="feature-item">
+        <img
+            src="/assets/images/images/pages/index/recharge.svg"
+            alt="Recharge"
+        />
+        <p>Recharge, pay bills, shop online, and more</p>
+    </div>
+</section>
+
+<style>
+    .split-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .upi-img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .feature-list {
+        list-style: none;
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .feature-list li {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+        position: relative;
+        font-size: 1.1rem;
+        color: var(--fam-text-secondary);
+    }
+
+    .feature-list li::before {
+        content: "•";
+        color: var(--fam-orange);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+    }
+
+    .mobile-features {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .feature-item {
+        text-align: center;
+    }
+
+    .feature-item img {
+        height: 120px;
+        margin-bottom: 1rem;
+    }
+
+    .feature-item p {
+        color: var(--fam-text-secondary);
+    }
+
+    .btn-cta {
+        margin-top: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        .split-layout {
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .mobile-only {
+            display: none;
+        }
+        .desktop-only {
+            display: block;
+        }
+
+        .image-col,
+        .text-col {
+            flex: 1;
+        }
+    }
+</style>

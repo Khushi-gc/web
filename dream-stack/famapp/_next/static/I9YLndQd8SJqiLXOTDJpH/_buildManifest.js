@@ -1,0 +1,31 @@
+self.__BUILD_MANIFEST = {
+  "/": ["static/chunks/4572177ee3509624.js"],
+  "/404": ["static/chunks/2cd02bfce7ef3002.js"],
+  "/_error": ["static/chunks/8acdd0f51318c6fa.js"],
+  "/about": ["static/chunks/f2d15a4c775e7784.js"],
+  "/account-closure": ["static/chunks/4fbb0d331dd2c5d8.js"],
+  "/careers": ["static/chunks/9231af2b79fbbead.js"],
+  "/contact": ["static/chunks/c17ddcfbfa37578b.js"],
+  "/jobs": ["static/chunks/d85b1a63c8f6b2d7.js"],
+  "/report-vulnerability": ["static/chunks/ef03788253ee670a.js"],
+  "/report-vulnerability/report": ["static/chunks/fd8d2f554ddac337.js"],
+  __rewrites: {
+    afterFiles: [],
+    beforeFiles: [],
+    fallback: [],
+  },
+  sortedPages: [
+    "/",
+    "/404",
+    "/_app",
+    "/_error",
+    "/about",
+    "/account-closure",
+    "/careers",
+    "/contact",
+    "/jobs",
+    "/report-vulnerability",
+    "/report-vulnerability/report",
+  ],
+};
+self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB();

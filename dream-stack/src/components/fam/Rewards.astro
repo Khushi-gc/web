@@ -1,0 +1,130 @@
+---
+import hubImg from "../../assets/images/hr-representatives-positively-greeting-female-job-candidate.jpg";
+// Using an image representing 'success' or 'profile'
+---
+
+<section class="section section-rewards">
+    <div class="container">
+        <div class="header-center">
+            <h2 class="heading-md">
+                The <span class="text-orange">"My Space"</span> Hub:<br />
+                Your Ecosystem Controller
+            </h2>
+            <p class="text-grey subtitle">
+                One Profile. Infinite Possibilities. As you complete a module,
+                your entire dashboard updates to accelerate your success.
+            </p>
+        </div>
+
+        <div class="rewards-grid">
+            <div class="perks-col">
+                <h3 class="heading-sm">Synchronized Success</h3>
+                <div class="divider"></div>
+                <div class="perks-list">
+                    <div class="perk-item">
+                        <span style="font-size: 2rem;">🎯</span>
+                        <span
+                            ><strong>Dynamic Profile:</strong> Updates with every
+                            milestone</span
+                        >
+                    </div>
+                    <div class="perk-item">
+                        <span style="font-size: 2rem;">🔄</span>
+                        <span
+                            ><strong>Auto-Sync:</strong> Loans trigger Visa support
+                            automatically</span
+                        >
+                    </div>
+                    <div class="perk-item">
+                        <span style="font-size: 2rem;">🚀</span>
+                        <span
+                            ><strong>Career Ready:</strong> Internships matched to
+                            your skills</span
+                        >
+                    </div>
+                </div>
+            </div>
+            <div class="image-col">
+                <img
+                    src={hubImg.src}
+                    alt="Aveka Dashboard"
+                    class="phone-img"
+                    style="border-radius: 20px;"
+                />
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .section-rewards {
+        position: relative;
+        background: linear-gradient(180deg, #111 0%, #000 100%);
+    }
+
+    .header-center {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .subtitle {
+        margin-top: 1rem;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .rewards-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .perks-col {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 20px;
+    }
+
+    .divider {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 1rem 0 2rem;
+    }
+
+    .perks-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .perk-item {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .image-col {
+        display: flex;
+        justify-content: center;
+    }
+
+    .phone-img {
+        max-width: 100%;
+        height: auto;
+        max-height: 500px;
+    }
+
+    @media (min-width: 768px) {
+        .rewards-grid {
+            flex-direction: row;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .perks-col,
+        .image-col {
+            flex: 1;
+        }
+    }
+</style>

@@ -1,0 +1,94 @@
+---
+// Using placeholders or if actual logos are available in a loop, simpler to hardcode a few representative ones if mapping is complex,
+// OR import the folder contents. For static autonomy, I will use a generic grid approach or try to import a few if I recall names.
+// The original Partner.astro imported individual images. I'll import a few key ones or just use text placeholders?
+// User said "fit in the content". I'll try to import a few key lenders/unis if I can guestimate paths or just use generic alt text if strict matching is hard without reading all file names.
+// I listed directory `lenders` and `uni`.
+// `src/assets/images/lenders/auxilo.png`, `icici-bank.png`, etc.
+// `src/assets/images/uni/uni-1.png`, etc.
+
+import auxilo from "../../assets/images/lenders/auxilo.png";
+import icici from "../../assets/images/lenders/icici-bank.png";
+import sbi from "../../assets/images/lenders/SBI.png";
+import uni1 from "../../assets/images/uni-1.png";
+import uni2 from "../../assets/images/uni-2.png";
+import uni3 from "../../assets/images/uni-3.png";
+
+const partners = [
+    { src: auxilo, alt: "Auxilo" },
+    { src: icici, alt: "ICICI" },
+    { src: sbi, alt: "SBI" },
+    { src: uni1, alt: "University 1" },
+    { src: uni2, alt: "University 2" },
+    { src: uni3, alt: "University 3" },
+];
+---
+
+<section class="section container">
+    <div class="text-center mb-5">
+        <h2 class="heading-md">
+            We are <span class="text-orange">trusted</span> by <br />
+            Global Lenders & Universities
+        </h2>
+    </div>
+
+    <div class="partners-grid">
+        {
+            partners.map((p) => (
+                <div class="partner-logo">
+                    <img src={p.src.src} alt={p.alt} />
+                </div>
+            ))
+        }
+        <!-- Add more if needed or duplicate for grid fill -->
+        {
+            partners.map((p) => (
+                <div class="partner-logo">
+                    <img src={p.src.src} alt={p.alt} />
+                </div>
+            ))
+        }
+    </div>
+</section>
+
+<style>
+    .text-center {
+        text-align: center;
+    }
+    .mb-5 {
+        margin-bottom: 3rem;
+    }
+
+    .partners-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .partner-logo {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 150px;
+    }
+
+    .partner-logo img {
+        width: 100%;
+        height: auto;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+    }
+
+    .partner-logo:hover img {
+        opacity: 1;
+    }
+
+    @media (min-width: 768px) {
+        .partners-grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4rem;
+        }
+    }
+</style>

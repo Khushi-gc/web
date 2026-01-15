@@ -1,0 +1,114 @@
+---
+import comparisonImg from "../../assets/images/coins-scale-stack-table.jpg"; // Using a 'finance/funding' related image for Comparison
+---
+
+<section class="section section-dark">
+    <div class="container split-layout-reverse">
+        <div class="image-col">
+            <img src={comparisonImg.src} alt="Comparison" class="card-img" />
+        </div>
+        <div class="text-col">
+            <h2 class="heading-md">
+                Beyond the Classroom: <span class="text-orange"
+                    >The Key to Mobility</span
+                >
+            </h2>
+            <p class="section-desc">
+                Most platforms separated services. Aveka integrates funding,
+                logistics, and counseling into one seamless ecosystem.
+            </p>
+            <div class="comparison-list">
+                <div class="comp-item">
+                    <div class="comp-header">Use Aveka For:</div>
+                    <ul class="feature-list">
+                        <li>
+                            <strong>Mobility:</strong> End-to-end relocation support
+                            vs Isolation
+                        </li>
+                        <li>
+                            <strong>Capital:</strong> Findings loans & grants vs "Cost"
+                            worries
+                        </li>
+                        <li>
+                            <strong>Career:</strong> Active internship entry vs Passive
+                            application
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .section-desc {
+        color: #bbb; /* Light grey for dark mode section */
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        font-size: 1.05rem;
+    }
+
+    .comp-header {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        color: var(--fam-orange);
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+</style>
+
+<style>
+    .section-dark {
+        background-color: #050505;
+    }
+
+    .split-layout-reverse {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .card-img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+
+    .feature-list {
+        list-style: none;
+        margin-top: 1.5rem;
+    }
+
+    .feature-list li {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+        position: relative;
+        font-size: 1.1rem;
+        color: var(--fam-text-secondary);
+    }
+
+    .feature-list li::before {
+        content: "•";
+        color: var(--fam-orange);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+    @media (min-width: 768px) {
+        .split-layout-reverse {
+            flex-direction: row-reverse; /* Image on right on desktop if desired, or adhere to HTML layout */
+            /* HTML has image on LEFT for this section */
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .image-col,
+        .text-col {
+            flex: 1;
+        }
+    }
+</style>

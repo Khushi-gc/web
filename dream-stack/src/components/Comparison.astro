@@ -62,14 +62,15 @@ const comparisonData = [
 
 <section class="family-roles">
   <div class="video-bg">
-    <video src={brandVideo} autoplay muted loop playsinline> </video>
+    <video src={brandVideo} autoplay muted loop playsinline loading="lazy">
+    </video>
     <div class="overlay"></div>
   </div>
 
   <div class="container-fluid relative z-10 text-white">
     <div class="max-w-6xl mx-auto">
-      <div class="header-split">
-        <div class="max-w-2xl reveal-text">
+      <div class="header-split fade-in-section">
+        <div class="max-w-2xl">
           <h2 class="display-title">
             Beyond the Classroom: <br />
             <span class="text-sub"
@@ -83,10 +84,7 @@ const comparisonData = [
             target campus or career.
           </p>
         </div>
-        <div class="quote-box-wrapper reveal-text">
-          <!-- Quote box removed/merged as requested content didn't explicitly separate it, but desc covers it. Keeping wrapper if needed or removing if strictly text only. 
-                        The prompt implies the text "We bridge..." is part of the main block description now, but it was in a quote box before. 
-                        I will put the last sentence in the quote box for emphasis as it matches the previous layout's intent. -->
+        <div class="quote-box-wrapper">
           <div class="quote-box">
             <p class="quote">
               "We bridge the gap between 'Learning' and 'Moving' by integrating
@@ -98,7 +96,7 @@ const comparisonData = [
       </div>
 
       <!-- Comparison Table -->
-      <div class="comparison-table reveal-table">
+      <div class="comparison-table fade-in-section delay-200">
         <div class="comparison-grid">
           <!-- Headers (Desktop Only for Labels) -->
           <div class="grid-header label-header">The Goal</div>
@@ -189,14 +187,8 @@ const comparisonData = [
   /* Layout Containers */
   .container-fluid {
     width: 100%;
-    padding: 0.5rem 0.5rem; /* Reduced horizontal padding on mobile */
-    overflow-x: hidden; /* Prevent horizontal scroll */
-  }
-
-  @media (min-width: 768px) {
-    .container-fluid {
-      padding: 2rem;
-    }
+    padding: 2rem 1rem;
+    overflow-x: hidden;
   }
 
   .max-w-6xl {
@@ -208,16 +200,8 @@ const comparisonData = [
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    margin-bottom: 5rem;
-    margin-top: 4rem;
-  }
-
-  @media (min-width: 1024px) {
-    .header-split {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
+    margin-bottom: 4rem;
+    margin-top: 2rem;
   }
 
   .max-w-2xl {
@@ -235,15 +219,9 @@ const comparisonData = [
     font-family: "Inter", sans-serif;
   }
 
-  @media (min-width: 1024px) {
-    .display-title {
-      font-size: 3.75rem;
-    }
-  }
-
   .text-sub {
     color: rgba(255, 255, 255, 0.8);
-    display: block; /* Ensure it breaks to new line if not already */
+    display: block;
     margin-top: 0.5rem;
   }
 
@@ -252,14 +230,8 @@ const comparisonData = [
     font-weight: 600;
     margin: 0;
     line-height: 1.3;
-    text-transform: none; /* Optional: keep regular case if desired, or inherit */
+    text-transform: none;
     font-family: "Inter", sans-serif;
-  }
-
-  @media (min-width: 1024px) {
-    .text-sub h4 {
-      font-size: 2rem;
-    }
   }
 
   .description {
@@ -270,45 +242,24 @@ const comparisonData = [
   }
 
   /* Quote Box */
-  /* Quote Box */
   .quote-box {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(12px);
-    padding: 1rem; /* Further reduced padding on mobile */
+    padding: 1.5rem;
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    max-width: 100%; /* Full width on mobile */
     width: 100%;
-    height: auto; /* Let it size to content */
+    box-sizing: border-box;
     display: flex;
     align-items: center;
-    margin-top: 2rem;
-    box-sizing: border-box; /* Include padding in width calculation */
-  }
-
-  @media (min-width: 768px) {
-    .quote-box {
-      max-width: 26rem;
-      padding: 2rem;
-      margin-top: 4rem;
-    }
   }
 
   .quote {
-    font-size: 0.95rem; /* Smaller on mobile */
+    font-size: 1rem;
     font-style: italic;
     color: rgba(255, 255, 255, 0.9);
     margin: 0;
     line-height: 1.5;
-    word-wrap: break-word; /* Allow long words to break */
-    overflow-wrap: break-word; /* Modern property */
-    hyphens: auto; /* Enable hyphenation */
-  }
-
-  @media (min-width: 768px) {
-    .quote {
-      font-size: 1.25rem;
-    }
   }
 
   /* Comparison Grid Refactor */
@@ -323,19 +274,11 @@ const comparisonData = [
 
   .comparison-grid {
     display: grid;
-    /* Mobile First: Label full width, then 2 cols for comparison */
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Mobile: 2 cols, standard & aveka */
     width: 100%;
   }
 
-  @media (min-width: 768px) {
-    .comparison-grid {
-      /* Desktop: Label, Standard, Aveka columns */
-      grid-template-columns: 1fr 1.25fr 1.25fr;
-    }
-  }
-
-  /* Header Cells */
+  /* Headers */
   .grid-header {
     background: #fcfcfc;
     padding: 1.5rem 2rem;
@@ -345,29 +288,12 @@ const comparisonData = [
     letter-spacing: 0.05em;
     color: var(--primary-purple);
     border-bottom: 2px solid var(--border-light);
-    display: none; /* Hidden on mobile by default */
+    display: none; /* Hidden on mobile */
   }
 
-  .standard-header {
-    color: #1a1a1a;
-  }
+  .standard-header,
   .aveka-header {
     color: #1a1a1a;
-  }
-
-  @media (min-width: 768px) {
-    .grid-header {
-      display: flex;
-      align-items: center;
-      justify-content: center; /* Center all by default */
-    }
-    .label-header {
-      justify-content: center;
-    }
-    .standard-header,
-    .aveka-header {
-      justify-content: center;
-    }
   }
 
   /* Cells */
@@ -379,54 +305,31 @@ const comparisonData = [
     justify-content: center;
   }
 
-  @media (min-width: 768px) {
-    .grid-cell {
-      padding: 1.5rem 2rem;
-    }
-  }
-
-  /* Cells */
-  .table-cell {
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    border-bottom: none; /* Connect visually with content below */
-  }
-
-  /* Fix: Ensure label spans full width on mobile */
   .label-cell {
-    grid-column: 1 / -1;
-  }
-
-  @media (min-width: 768px) {
-    .label-cell {
-      grid-column: auto;
-      background: #eee6fe; /* Keep branding */
-      align-items: center;
-      border-bottom: 1px solid var(--border-light);
-      border-right: 1px solid var(--border-light); /* Separator */
-      text-align: center;
-    }
+    grid-column: 1 / -1; /* Full width row on mobile */
+    background: #f3f4f6;
+    border-top: 1px solid #e5e7eb;
+    align-items: center;
+    text-align: center;
+    padding: 0.75rem;
   }
 
   .label-text {
     font-weight: 800;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--primary-purple);
+    text-transform: uppercase;
   }
 
-  .header-cell {
-    height: 6rem;
-  }
-
-  .label-cell,
+  /* Content Cells */
   .content-cell {
-    min-height: 80px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    min-height: 120px;
   }
 
-  /* Mobile Labels inside cells */
+  .standard-cell {
+    border-right: 1px solid var(--border-light);
+  }
+
   .mobile-label {
     display: block;
     font-size: 0.65rem;
@@ -436,24 +339,10 @@ const comparisonData = [
     font-weight: 600;
   }
 
-  @media (min-width: 768px) {
-    .mobile-label {
-      display: none;
-    }
-  }
-
-  .group-hover-gray:hover {
-    background-color: #f9fafb;
-  }
-  .group-hover-purple:hover {
-    background-color: rgba(98, 0, 238, 0.05);
-  }
-
-  /* Cell Content */
   .cell-head {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
     margin-bottom: 0.5rem;
   }
 
@@ -480,7 +369,8 @@ const comparisonData = [
 
   .cell-title {
     font-weight: 700;
-    font-size: 0.875rem;
+    font-size: 0.9rem;
+    line-height: 1.2;
   }
 
   .title-red {
@@ -501,46 +391,105 @@ const comparisonData = [
     font-weight: 500;
   }
 
-  /* Utilities */
-  .reveal-text,
-  .reveal-table {
+  /* Fade Animation */
+  .fade-in-section {
     opacity: 0;
     transform: translateY(20px);
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out;
+  }
+  .fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .delay-200 {
+    transition-delay: 0.2s;
+  }
+
+  /* DESKTOP STYLES */
+  @media (min-width: 1024px) {
+    .container-fluid {
+      padding: 2rem;
+    }
+
+    .header-split {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 4rem;
+    }
+
+    .display-title {
+      font-size: 3.75rem;
+    }
+
+    .text-sub h4 {
+      font-size: 2rem;
+    }
+
+    .quote-box {
+      max-width: 26rem;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    .quote {
+      font-size: 1.25rem;
+    }
+
+    .comparison-grid {
+      grid-template-columns: 1fr 1.5fr 1.5fr;
+    }
+
+    .grid-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .label-cell {
+      grid-column: auto;
+      background: #eee6fe;
+      border-top: none;
+      border-right: 1px solid var(--border-light);
+      padding: 1.5rem 2rem;
+      font-size: 1.1rem;
+    }
+
+    .grid-cell {
+      padding: 1.5rem 2rem;
+    }
+
+    .mobile-label {
+      display: none;
+    }
+
+    .group-hover-gray:hover {
+      background-color: #f9fafb;
+    }
+    .group-hover-purple:hover {
+      background-color: rgba(98, 0, 238, 0.05);
+    }
   }
 </style>
 
 <script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
   document.addEventListener("DOMContentLoaded", () => {
-    // Header text reveal
-    gsap.utils.toArray(".reveal-text").forEach((el: any, i) => {
-      gsap.to(el, {
-        scrollTrigger: {
-          trigger: el,
-          start: "top 80%",
-        },
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        delay: i * 0.2,
-        ease: "power3.out",
-      });
-    });
-
-    // Table specific animation
-    gsap.to(".reveal-table", {
-      scrollTrigger: {
-        trigger: ".reveal-table",
-        start: "top 85%",
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
       },
-      y: 0,
-      opacity: 1,
-      duration: 1.2,
-      ease: "power2.out",
-    });
+      { threshold: 0.1 },
+    );
+
+    const elements = document.querySelectorAll(".fade-in-section");
+    elements.forEach((el) => observer.observe(el));
   });
 </script>
+```

@@ -1,24 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
-import Ecosystem from "../components/Ecosystem.astro";
-import Journey from "../components/Journey.astro";
-import Comparison from "../components/Comparison.astro";
-import MyHub from "../components/myhub.astro";
-import Testimonial from "../components/Testimonial.astro";
-import Partner from "../components/Partner.astro";
+import Header from "../components/fam/Header.astro";
+import Hero from "../components/fam/Hero.astro";
+import SpendingAccount from "../components/fam/SpendingAccount.astro";
+import UPI from "../components/fam/UPI.astro";
+import FamCard from "../components/fam/FamCard.astro";
+import Rewards from "../components/fam/Rewards.astro";
+import Testimonials from "../components/fam/Testimonials.astro";
+import Partners from "../components/fam/Partners.astro";
+import Footer from "../components/fam/Footer.astro";
 ---
 
 <Layout>
+	<Header />
 	<main>
 		<Hero />
-		<Ecosystem />
-		<Journey />
-		<Comparison />
-		<MyHub />
-		<Testimonial />
-		<Partner />
+		<SpendingAccount />
+		<UPI />
+		<FamCard />
+		<Rewards />
+		<Testimonials />
+		<Partners />
 	</main>
+	<Footer />
 </Layout>
 
 <style>

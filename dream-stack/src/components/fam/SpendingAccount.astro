@@ -1,0 +1,119 @@
+---
+import ecosystemImg from "../../assets/images/aveka-doodle.png";
+---
+
+<section class="section container">
+    <div class="split-layout">
+        <div class="image-col">
+            <img
+                src={ecosystemImg.src}
+                alt="Aveka Ecosystem"
+                class="feature-img"
+            />
+        </div>
+        <div class="text-col">
+            <h2 class="heading-md">
+                How the Ecosystem <span class="text-orange"
+                    >Optimizes Your Career</span
+                >
+            </h2>
+            <p class="section-desc">
+                In a traditional model, you have to find a loan, then a tutor,
+                then an agent. In the Aveka Ecosystem, these "modules" talk to
+                each other to accelerate your success.
+            </p>
+            <ul class="feature-list">
+                <li>
+                    <strong>Study Abroad:</strong>
+                    <span class="sub-desc"
+                        >Discovery + Scholarships + Loans + Visa Support</span
+                    >
+                </li>
+                <li>
+                    <strong>Global Employment:</strong>
+                    <span class="sub-desc"
+                        >Up-skilling + Internships + Profile Building</span
+                    >
+                </li>
+                <li>
+                    <strong>One Profile:</strong>
+                    <span class="sub-desc"
+                        >Everything synchronized to save you time.</span
+                    >
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<style>
+    .section-desc {
+        color: #888;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        font-size: 1.05rem;
+    }
+
+    .sub-desc {
+        display: block;
+        color: #666;
+        font-size: 0.9rem;
+        margin-top: 0.2rem;
+    }
+
+    /* Inherits .section, .container, .split-layout, .feature-list from global or previous styles if available. 
+       Assuming fam.css handles the layout classes. */
+
+    .split-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .feature-img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .feature-list {
+        list-style: none;
+        margin-top: 1.5rem;
+    }
+
+    .feature-list li {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+        position: relative;
+        font-size: 1.1rem;
+        color: var(--fam-text-secondary);
+    }
+
+    .feature-list li::before {
+        content: "•";
+        color: var(--fam-orange);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+    }
+
+    @media (min-width: 768px) {
+        .split-layout {
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .image-col,
+        .text-col {
+            flex: 1;
+        }
+
+        .feature-img {
+            max-width: 100%;
+        }
+    }
+</style>

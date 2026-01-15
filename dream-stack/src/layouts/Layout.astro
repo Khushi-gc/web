@@ -1,16 +1,30 @@
 ---
-import Footer from "../components/Footer.astro";
-import Navbar from "../components/Navbar.astro";
+import Footer from "../components/fam/Footer.astro";
+import Header from "../components/fam/Header.astro";
+import "../styles/fam.css";
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = "FamApp: Make payments with your own UPI and Card",
+	description = "FamX Spending Account for everyone · Get a customised card & UPI ID · Keep your bank statements clean · Track & keep expenses in check",
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Dream Stack | Astro + GSAP + Lenis</title>
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#f5a623" />
+
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -19,73 +33,8 @@ import Navbar from "../components/Navbar.astro";
 		/>
 	</head>
 	<body>
-		<Navbar />
+		<!-- We will selectively render Header/Footer if passed or default to them -->
+		<!-- For now, we assume every page using this layout wants the Fam header/footer -->
 		<slot />
-		<Footer />
 	</body>
 </html>
-
-<style is:global>
-	:root {
-		--bg-color: #0a0a0a;
-		--text-color: #ededed;
-		--accent: #3b82f6;
-	}
-
-	html {
-		font-family: "Inter", system-ui, sans-serif;
-		background: var(--bg-color);
-		color: var(--text-color);
-		scroll-behavior: initial; /* Let Lenis handle scrolling */
-	}
-
-	body {
-		margin: 0;
-		width: 100%;
-		min-height: 100vh;
-		overflow-x: hidden;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	}
-
-	/* Lenis recommended styles */
-	html.lenis,
-	html.lenis body {
-		height: auto;
-	}
-
-	.lenis.lenis-smooth {
-		scroll-behavior: auto !important;
-	}
-
-	.lenis.lenis-smooth [data-lenis-prevent] {
-		overscroll-behavior: contain;
-	}
-
-	.lenis.lenis-stopped {
-		overflow: hidden;
-	}
-
-	.lenis.lenis-scrolling iframe {
-		pointer-events: none;
-	}
-</style>
-
-<script>
-	import Lenis from "lenis";
-
-	const lenis = new Lenis({
-		duration: 1.2,
-		easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-	});
-
-	/**
-	 * @param {number} time
-	 */
-	function raf(time: number) {
-		lenis.raf(time);
-		requestAnimationFrame(raf);
-	}
-
-	requestAnimationFrame(raf);
-</script>

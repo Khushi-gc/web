@@ -1,0 +1,119 @@
+:root {
+    --fam-orange: #fbaf03;
+    --fam-orange-hover: #e59f00;
+    --fam-black: #000000;
+    --fam-dark-grey: #1c1c1c;
+    --fam-light-grey: #e8e7e8;
+    --fam-white: #ffffff;
+    --fam-text-primary: #ededed;
+    --fam-text-secondary: #a0a0a0;
+    
+    --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: var(--font-primary);
+    background-color: var(--fam-black);
+    color: var(--fam-text-primary);
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base size */
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+/* Typography Utilities */
+.text-orange { color: var(--fam-orange); }
+.text-white { color: var(--fam-white); }
+.text-grey { color: var(--fam-text-secondary); }
+
+.heading-lg {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.heading-md {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+}
+
+.heading-sm {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.text-body {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Layout Utilities */
+.container {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px;
+}
+
+.section {
+    padding: 4rem 0;
+}
+
+/* Button Utilities */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.2s;
+    cursor: pointer;
+    border: none;
+    font-size: 1.125rem;
+}
+
+.btn-primary {
+    background-color: var(--fam-orange);
+    color: var(--fam-dark-grey);
+}
+
+.btn-primary:hover {
+    background-color: var(--fam-orange-hover);
+    transform: translateY(-2px);
+}
+
+.btn-full-mobile {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .btn-full-mobile {
+        width: auto;
+    }
+    
+    .heading-lg {
+        font-size: 3.5rem;
+    }
+    
+    .section {
+        padding: 6rem 0;
+    }
+}

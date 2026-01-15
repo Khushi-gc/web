@@ -1,0 +1,148 @@
+---
+
+---
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="brand-col">
+                <span class="footer-logo">AVEKA.AI</span>
+                <p class="company-desc">
+                    Aveka AI helps you plan, fund, and launch your international
+                    career from one integrated workspace.
+                </p>
+                <div class="copyright-desktop">
+                    &copy; 2025 Aveka AI. All rights reserved.
+                </div>
+            </div>
+
+            <div class="links-col">
+                <h4 class="links-heading">Overview</h4>
+                <ul class="footer-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#customers">Customers</a></li>
+                    <li><a href="#security">Security</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+
+            <div class="contact-col">
+                <h4 class="links-heading">Contact</h4>
+                <a href="mailto:info@aveka.ai" class="contact-link"
+                    >info@aveka.ai</a
+                >
+                <a href="#" class="contact-link">LinkedIn</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright-mobile">
+                &copy; 2025 Aveka AI. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        background-color: #000;
+        color: white;
+        padding: 4rem 0 2rem;
+        border-top: 1px solid #222;
+        font-size: 0.95rem;
+    }
+
+    .footer-top {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .footer-logo {
+        font-size: 1.5rem;
+        font-weight: 800;
+        display: block;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+    }
+
+    .company-desc {
+        color: #888;
+        line-height: 1.6;
+        max-width: 300px;
+        margin-bottom: 2rem;
+    }
+
+    .copyright-desktop {
+        display: none;
+        color: #666;
+        font-size: 0.85rem;
+    }
+
+    .links-heading {
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .footer-links a,
+    .contact-link {
+        color: #888;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .footer-links a:hover,
+    .contact-link:hover {
+        color: var(--fam-orange);
+    }
+
+    .contact-col {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid #222;
+        padding-top: 2rem;
+        text-align: center;
+    }
+
+    .copyright-mobile {
+        color: #666;
+        font-size: 0.85rem;
+    }
+
+    @media (min-width: 768px) {
+        .footer-top {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .brand-col {
+            max-width: 300px;
+        }
+
+        .copyright-desktop {
+            display: block;
+        }
+
+        .footer-bottom {
+            display: none;
+        }
+    }
+</style>

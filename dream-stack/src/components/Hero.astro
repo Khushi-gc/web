@@ -1,703 +1,296 @@
 ---
-import { Image } from "astro:assets";
-import mobilityImg from "../assets/images/card1.webp"; // Fallback for Mobility
-import fundingImg from "../assets/images/coins-scale-stack-table.jpg";
-import recruitmentImg from "../assets/images/hr-representatives-positively-greeting-female-job-candidate.jpg";
-import visaImg from "../assets/images/visa-application-composition-with-europe-america-flag.jpg";
-import scholarshipImg from "../assets/images/portrait-three-smiling-graduate-friends-graduation-robes-university-campus-with-diploma (1).jpg";
-import internshipImg from "../assets/images/multi-ethnic-group-young-men-women-studying-indoors.jpg";
-import upSkillingImg from "../assets/images/development-knowledge-study-education-concept.jpg";
-
-const items = [
-    { text: "Mobility", image: mobilityImg },
-    { text: "Funding", image: fundingImg },
-    { text: "Recruitment", image: recruitmentImg },
-    { text: "Visa", image: visaImg },
-    { text: "Scholarship", image: scholarshipImg },
-    { text: "Internship", image: internshipImg },
-    { text: "Up-Skilling", image: upSkillingImg },
-];
+import heroImage from "../assets/images/confidence_card1.jpg"; // Fallback/Placeholder
 ---
 
-<section class="hero">
-    <div class="container">
-        <!-- Mobile Main Content Wrapper -->
-        <div class="hero-main-mobile">
-            <div class="title-group">
-                <h1>THE AVEKA<br />ECOSYSTEM</h1>
-                <h1 class="highlight-text">BUILD YOUR<br />PERFECT PATH</h1>
-            </div>
+<section class="hero-section">
+    <div class="container hero-content">
+        <div class="grid-layout">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="highlight">The Aveka Ecosystem</span>
+                </h1>
 
-            <p class="subtitle-mobile">
-                Stop juggling multiple platforms. Plan, fund, and launch your
-                international career from one integrated workspace.
-            </p>
+                <p class="hero-desc">
+                    Stop juggling multiple platforms. Plan, fund, and launch
+                    your international career from one integrated workspace.
+                </p>
 
-            <div class="cta-mobile">
-                <span>Join <strong>Aveka</strong> — Free Access</span>
-                <div class="arrow-circle">
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                </div>
-            </div>
-        </div>
-
-        <div class="hero-content-desktop">
-            <div class="title-top">
-                <h1>THE AVEKA<br />ECOSYSTEM</h1>
-            </div>
-
-            <div class="visual-center">
-                <div class="oval-mask">
-                    <div class="image-flip-container">
-                        {
-                            items.map((item, index) => (
-                                <Image
-                                    src={item.image}
-                                    alt={item.text}
-                                    class={`flip-image ${index === 0 ? "active" : ""}`}
-                                    data-index={index}
-                                    loading={index === 0 ? "eager" : "lazy"}
-                                />
-                            ))
-                        }
+                <div class="cta-wrapper">
+                    <a href="#" class="btn btn-white">Get Started</a>
+                    <div class="trust-pill">
+                        <span class="trust-icon">🛡️</span>
+                        <span>Trusted by 13k+ Students</span>
                     </div>
                 </div>
+            </div>
 
-                <!-- Floating Cards (Desktop Only) -->
-                <div class="floating-card video-card" id="videoCard">
-                    <div class="video-preview-wrapper">
-                        <video
-                            src="https://videos.ctfassets.net/l65m9bcr2nac/3p8dsGUXNeKdvtr7MBl0Sc/70836878c3f34c77b268b39e4624660b/Wio_business.mp4"
-                            autoplay
-                            muted
-                            loop
-                            playsinline></video>
-                    </div>
-                    <div class="video-info">
-                        <h3>Success. Like<br />never before</h3>
-                        <div class="play-action">
-                            <span>Watch Story</span>
-                            <div class="play-icon">
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path d="M8 5V19L19 12L8 5Z" fill="white"
-                                    ></path>
-                                </svg>
-                            </div>
+            <div class="hero-visual">
+                <div class="visual-container">
+                    <!-- Replace with the actual 3D Phone illustration -->
+                    <img
+                        src={heroImage.src}
+                        alt="Aveka App Interface"
+                        class="hero-img floating"
+                    />
+
+                    <!-- Decorative Elements matching reference -->
+                    <div class="floating-card card-1">
+                        <div class="icon-box">❤️</div>
+                        <div class="text-box">
+                            <div class="line sm"></div>
+                            <div class="line lg"></div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="title-bottom">
-                <h1>BUILD YOUR<br />PERFECT PATH</h1>
-            </div>
-        </div>
-
-        <!-- Hero Line Area (Flipping Text) -->
-        <div class="hero-line-container">
-            <div class="glass-box">
-                <div class="flipping-wrapper">
-                    <div class="word-flip-container">
-                        <span class="word-flip">Mobility</span>
+                    <div class="floating-card card-2">
+                        <div class="icon-box">🔔</div>
                     </div>
-                    <span class="made-easy">made easy</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Bottom Bar (Desktop) -->
-        <div class="bottom-bar desktop-only">
-            <p class="subtitle">
-                Stop juggling multiple platforms. Plan, fund, and launch your
-                international career from one integrated workspace.
-            </p>
-            <div class="cta">
-                <span>Join <strong>Aveka</strong> — Free Access</span>
-                <div class="arrow-circle">
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Curved Bottom Shape -->
+    <div class="custom-shape-divider-bottom-1678901234">
+        <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+        >
+            <path
+                d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                opacity=".25"
+                class="shape-fill"></path>
+            <path
+                d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                opacity=".5"
+                class="shape-fill"></path>
+            <path
+                d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
 </section>
 
 <style>
-    /* Mobile First Styles */
-    .hero {
-        background-color: #660ef0;
-        min-height: 100vh; /* Full viewport height */
-        min-height: 100svh; /* Small viewport height support */
-        width: 100%;
+    .hero-section {
         position: relative;
-        overflow: hidden;
-        color: white;
+        /* Gradient Background similar to reference */
+        background: linear-gradient(135deg, #a100ff 0%, #6c1bf0 100%);
+        min-height: 85vh;
         display: flex;
-        flex-direction: column;
-        font-family: "Inter", sans-serif;
-        padding-top: 100px;
-        box-sizing: border-box;
+        align-items: center;
+        padding-top: 80px; /* Header offset */
+        overflow: hidden;
+        color: #ffffff;
     }
 
     .container {
         width: 100%;
-        max-width: 1440px;
+        max-width: 1280px;
         margin: 0 auto;
         padding: 0 1.5rem;
-        display: flex;
-        flex-direction: column;
+        z-index: 10;
+    }
+
+    .grid-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
         align-items: center;
-        /* Center content vertically on mobile if possible, or just top */
     }
 
-    /* Mobile Text & Layout */
-    .hero-main-mobile {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-        margin-bottom: 2rem;
-        z-index: 20;
+    .hero-text {
+        max-width: 600px;
     }
 
-    .title-group h1 {
-        font-size: 2.75rem;
-        font-weight: 900;
-        line-height: 0.95;
-        margin: 0 0 0.5rem 0;
-        letter-spacing: -0.04em;
-        text-transform: uppercase;
-    }
-
-    .highlight-text {
-        color: rgba(255, 255, 255, 0.9);
-    }
-
-    .subtitle-mobile {
-        font-size: 1rem;
-        line-height: 1.5;
-        color: rgba(255, 255, 255, 0.85);
-        margin: 1rem 0 2rem 0;
-        max-width: 90%;
-    }
-
-    .cta-mobile {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        background: #fff;
-        color: #660ef0;
-        padding: 0.75rem 1.5rem;
-        border-radius: 100px;
-        font-weight: 600;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: transform 0.2s;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .cta-mobile strong {
+    .hero-title {
+        font-size: 3rem;
         font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
     }
 
-    .cta-mobile .arrow-circle {
-        width: 24px;
-        height: 24px;
-        border: none;
+    .highlight {
+        color: #ffd700; /* Gold/Yellow highlight for contrast */
+        /* Or keep it white but different weight */
+    }
+
+    .hero-desc {
+        font-size: 1.125rem;
+        line-height: 1.6;
+        margin-bottom: 2.5rem;
+        opacity: 0.9;
+        max-width: 480px;
+    }
+
+    .cta-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .btn-white {
+        background: #ffffff;
+        color: #6c1bf0;
+        padding: 0.8rem 2.2rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .btn-white:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .trust-pill {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+        backdrop-filter: blur(5px);
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    /* Visual Side */
+    .hero-visual {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    .visual-container {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        /* Placeholder styling if image is missing transparency */
+    }
+
+    .hero-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+    }
+
+    /* Animations */
+    .floating {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    /* Decorative Floating Cards matching reference style */
+    .floating-card {
+        position: absolute;
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        animation: float 5s ease-in-out infinite;
+        z-index: 2;
+    }
+
+    .card-1 {
+        top: 20%;
+        right: -10px;
+        animation-delay: 1s;
+    }
+
+    .card-2 {
+        bottom: 20%;
+        left: -20px;
+        animation-delay: 2s;
+    }
+
+    .icon-box {
+        width: 32px;
+        height: 32px;
+        background: #f0f0f0;
+        border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-    .cta-mobile svg {
-        width: 18px;
-        height: 18px;
+        font-size: 1.2rem;
     }
 
-    /* Visual Center (Shared but styled differently) */
-    .visual-center {
-        position: relative;
-        width: 100%;
-        max-width: 340px;
-        aspect-ratio: 3/4;
-        margin: 0 auto 2rem auto;
-        z-index: 5;
-        perspective: 1000px;
+    .text-box {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
     }
 
-    .oval-mask {
-        width: 100%;
-        height: 100%;
-        border-radius: 15rem; /* Large enough for capsule shape */
-        overflow: hidden;
-        background: #550bc9; /* Slightly darker placeholder */
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        position: relative;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    .line {
+        height: 4px;
+        background: #e0e0e0;
+        border-radius: 2px;
+    }
+    .line.sm {
+        width: 30px;
+    }
+    .line.lg {
+        width: 50px;
     }
 
-    .image-flip-container {
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
-
-    .flip-image {
+    /* Bottom Curve */
+    .custom-shape-divider-bottom-1678901234 {
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 0;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0;
-        /* Use simple CSS transitions for performance */
-        transition: opacity 0.6s ease-in-out;
-    }
-
-    .flip-image.active {
-        opacity: 1;
-    }
-
-    /* Floating Cards - Hidden on Mobile */
-    .floating-card {
-        display: none;
-    }
-
-    /* Hero Line / Glass Box */
-    .hero-line-container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 3rem;
-        z-index: 25;
-    }
-
-    .glass-box {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 0.75rem 1.5rem;
-        border-radius: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .flipping-wrapper {
-        display: flex;
-        align-items: center;
-        flex-direction: column; /* Stack on mobile */
-        gap: 0.25rem;
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #fff;
-    }
-
-    .word-flip-container {
-        height: 2rem;
         overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        line-height: 0;
+        transform: rotate(180deg);
     }
 
-    .made-easy {
-        opacity: 0.8;
+    .custom-shape-divider-bottom-1678901234 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 80px;
     }
 
-    .word-flip {
-        color: #bfa3ff;
+    .custom-shape-divider-bottom-1678901234 .shape-fill {
+        fill: #ffffff; /* Or whatever the section below is color */
     }
+    /* Assuming next section is white or light grey. Adjust if needed. */
 
-    /* Utilities */
-    .desktop-only {
-        display: none !important;
-    }
-
-    .hero-content-desktop {
-        display: contents; /* Flattens div in mobile view if mostly hidden/reused */
-    }
-
-    .hero-content-desktop .title-top,
-    .hero-content-desktop .title-bottom {
-        display: none;
-    }
-
-    /* DESKTOP STYLES (Progressive Enhancement) */
-    @media (min-width: 1024px) {
-        .hero {
-            padding-top: 140px;
-            overflow: hidden; /* Ensure simplified mask clips well */
+    /* Responsive */
+    @media (min-width: 960px) {
+        .grid-layout {
+            grid-template-columns: 1fr 1fr;
         }
 
-        .container {
-            padding: 0 4rem;
-            min-height: calc(100vh - 140px);
-            position: relative;
-            flex-direction: column;
+        .hero-title {
+            font-size: 4rem;
         }
 
-        /* Hide mobile specific elements */
-        .hero-main-mobile {
-            display: none;
-        }
-
-        .desktop-only {
-            display: flex !important;
-        }
-
-        .hero-content-desktop {
-            display: flex;
-            flex: 1;
-            position: relative;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .hero-content-desktop .title-top,
-        .hero-content-desktop .title-bottom {
-            display: block;
-            position: absolute;
-            z-index: 10;
-        }
-
-        .title-top {
-            top: 5%;
-            left: 0;
-        }
-        .title-bottom {
-            bottom: 15%;
-            right: 0;
-            text-align: right;
-        }
-
-        h1 {
-            font-size: min(5vw, 4rem);
-            font-weight: 900;
-            line-height: 0.82;
-            margin: 0;
-            /* text-transform: uppercase; inherited */
-        }
-
-        /* Visual Center Desktop */
-        .visual-center {
-            width: min(38vw, 520px);
-            height: min(75vh, 720px);
-            max-width: none;
-            aspect-ratio: auto;
-            margin: 0;
-        }
-
-        .oval-mask {
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .floating-card {
-            display: flex;
-            position: absolute;
-            border-radius: 12px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-            z-index: 15;
-            background: white;
-        }
-
-        .video-card {
-            width: 280px;
-            bottom: 15%;
-            left: -60%;
-            padding: 10px;
-            gap: 15px;
-            color: black;
-        }
-
-        /* Video Card Internal Styles */
-        .video-preview-wrapper {
-            width: 110px;
-            height: 130px;
-            border-radius: 10px;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-        .video-preview-wrapper video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .video-info {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 5px 0;
-        }
-        .video-info h3 {
-            font-size: 1.25rem;
-            font-weight: 800;
-            margin: 0;
-            line-height: 1.1;
-            color: #660ef0;
-        }
-        .play-action {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 11px;
-            font-weight: 700;
-            color: #660ef0;
-        }
-        .play-icon {
-            width: 30px;
-            height: 30px;
-            background: #660ef0;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: auto;
-            color: white;
-        }
-        .play-icon svg {
-            width: 14px;
-            height: 14px;
-        }
-
-        .hero-line-container {
-            position: absolute;
-            bottom: 150px;
-            left: 50%;
-            transform: translateX(-50%);
-            margin: 0;
-            width: auto;
-        }
-
-        .glass-box {
-            padding: 1rem 3rem;
-            border-radius: 50px;
-        }
-
-        .flipping-wrapper {
-            flex-direction: row;
-            font-size: 2.5rem;
-            gap: 0.8rem;
-        }
-
-        .word-flip-container {
-            height: 3rem;
-            justify-content: flex-end;
-            min-width: 200px;
-        }
-
-        /* Bottom Bar */
-        .bottom-bar {
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(102, 14, 240, 0.8);
-            backdrop-filter: blur(20px);
-            z-index: 30;
-            padding: 0 1rem;
-            width: 100%;
-            box-sizing: border-box;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-        }
-
-        .subtitle {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.8);
-            max-width: 480px;
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        .cta {
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-        .cta:hover {
-            opacity: 0.8;
-        }
-        .cta span {
-            font-size: 0.95rem;
-            color: white;
-        }
-        .cta strong {
-            color: white;
-        }
-        .arrow-circle {
-            width: 36px;
-            height: 36px;
-            border: 1.5px solid rgba(255, 255, 255, 0.4);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .arrow-circle svg {
-            width: 16px;
-            height: 16px;
+        .custom-shape-divider-bottom-1678901234 svg {
+            height: 150px;
         }
     }
 </style>
-
-<script>
-    import { gsap } from "gsap";
-
-    document.addEventListener("DOMContentLoaded", () => {
-        // Only run complex animations on desktop or if device is powerful enough?
-        // For now, we will simplify.
-
-        const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
-
-        // Animate elements in
-        const tl = gsap.timeline();
-
-        if (isDesktop) {
-            tl.from(".title-top h1", {
-                x: -50,
-                opacity: 0,
-                duration: 1,
-                ease: "power3.out",
-            })
-                .from(
-                    ".title-bottom h1",
-                    { x: 50, opacity: 0, duration: 1, ease: "power3.out" },
-                    "-=0.8",
-                )
-                .from(
-                    ".visual-center",
-                    { scale: 0.9, opacity: 0, duration: 1.2, ease: "expo.out" },
-                    "-=0.8",
-                )
-                .from(
-                    ".floating-card",
-                    {
-                        y: 30,
-                        opacity: 0,
-                        duration: 0.8,
-                        ease: "back.out(1.7)",
-                        delay: 0.2,
-                    },
-                    "-=0.5",
-                );
-        } else {
-            // Simpler mobile entrance
-            tl.from(".hero-main-mobile", {
-                y: 20,
-                opacity: 0,
-                duration: 0.8,
-                ease: "power2.out",
-            })
-                .from(
-                    ".visual-center",
-                    { scale: 0.95, opacity: 0, duration: 0.8 },
-                    "-=0.6",
-                )
-                .from(
-                    ".hero-line-container",
-                    { y: 20, opacity: 0, duration: 0.6 },
-                    "-=0.6",
-                );
-        }
-
-        // Cycle Images & Text
-        const items = [
-            "Mobility",
-            "Funding",
-            "Recruitment",
-            "Visa",
-            "Scholarship",
-            "Internship",
-            "Up-Skilling",
-        ];
-
-        const wordElement = document.querySelector(".word-flip") as HTMLElement;
-        const images = document.querySelectorAll(".flip-image");
-        let currentIndex = 0;
-
-        if (!wordElement || images.length === 0) return;
-
-        function flipCycle() {
-            const nextIndex = (currentIndex + 1) % items.length;
-            const currentImg = images[currentIndex];
-            const nextImg = images[nextIndex];
-
-            // Text Flip
-            gsap.to(wordElement, {
-                y: -30,
-                opacity: 0,
-                duration: 0.4,
-                ease: "power2.in",
-                onComplete: () => {
-                    wordElement.textContent = items[nextIndex];
-                    gsap.fromTo(
-                        wordElement,
-                        { y: 30, opacity: 0 },
-                        { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" },
-                    );
-                },
-            });
-
-            // Image Swap (Crossfade for smoothness/performance instead of flip)
-            // Flip is cool but heavy. Let's do a nice crossfade + scale?
-            // Actually, existing code had a slide up/down. We'll stick to crossfade for static feeling.
-
-            gsap.to(currentImg, { opacity: 0, duration: 0.6 });
-            gsap.fromTo(
-                nextImg,
-                { opacity: 0 },
-                {
-                    opacity: 1,
-                    duration: 0.6,
-                    onStart: () => {
-                        currentImg.classList.remove("active");
-                        nextImg.classList.add("active");
-                    },
-                },
-            );
-
-            currentIndex = nextIndex;
-        }
-
-        // Interval
-        setInterval(flipCycle, 3000);
-
-        // Floating animation only for desktop cards
-        if (isDesktop) {
-            gsap.to("#videoCard", {
-                y: 15,
-                duration: 3,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut",
-            });
-        }
-    });
-</script>
